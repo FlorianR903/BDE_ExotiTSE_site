@@ -4,7 +4,7 @@ return (
 <nav className="fixed top-4 left-4 right-4 z-40 flex justify-between items-center">
 <div className="flex items-center gap-3">
 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 flex items-center justify-center font-bold text-white">Ex</div>
-<div className="hidden md:block text-white font-semibold">Exotit'TSE</div>
+<div className="hidden md:block text-white font-semibold">Exoti'TSE</div>
 </div>
 <div className="flex gap-2">
 <Link href="/"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</a></Link>
@@ -16,4 +16,5 @@ return (
 </div>
 </nav>
 )
+
 }
