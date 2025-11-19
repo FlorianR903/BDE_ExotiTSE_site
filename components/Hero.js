@@ -13,5 +13,5 @@ export default function Hero() {
                 <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
             </motion.div>
         </motion.section>
-);
+    );
 }
