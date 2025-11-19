@@ -1,30 +1,48 @@
 // components/TeamSection.js
 import { motion } from 'framer-motion'
+import Image from "next/image";
+
 export default function TeamSection() {
     const members = [
         {
-            name: "Nom 1",
-            role: "Role 1",
-            bio: "Description ici",
+            id: 1,
+            name: "Vaïty",
+            role: "Président",
+            bio: "Si y'a pas de limousin du préz, alors c'est pas une soirée exotiTSE !",
+            img: "mettre le lien de l'image ici",
         },
         {
-            name: "Nom 2",
-            role: "Role 2",
-            bio: "Description ici",
+            id: 2,
+            name: "Andjy",
+            role: "Vice-Président",
+            bio: "Ses bonbons bananes c'est une tuerie la vérité !",
+            img: "mettre le lien de l'image ici",
         },
+        {
+            id: 3,
+            name: "Clara",
+            role: "Vice-Président",
+            bio: "Je fais des meilleurs pancakes qu'elle askip' !",
+            img: "mettre le lien de l'image ici",
+        }
+
     ];
 
     return (
-        <section className="py-12 px-4">
-            <h2 className="text-3xl font-bold text-center mb-6">L'équipe</h2>
+        <section id="members" className="py-20 text-center text-white">
+            <h2 className="text-4xl font-bold mb-12">L'équipe des Tropiques</h2>
 
-            <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                {members.map((m, idx) => (
-                    <motion.div key={m.id} whileHover={{ scale: 1.02 }} className="card-bg rounded-2xl p-4 text-center">
-                        <div className="w-20 h-20 rounded-full bg-white/10 mx-auto flex items-center justify-center text-xl font-bold">{m.name[0]}</div>
-                        <div className="mt-3 font-semibold">{m.name}</div>
-                        <div className="text-sm text-white/80">{m.role}</div>
-                        <p className="mt-2 text-sm text-white/70">{m.bio}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+                {members.map((m) => (
+                    <motion.div key={m.id} whileHover={{ scale: 1.02 }} className="group bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl transition hover:scale-105 hover:bg-white/20">
+
+                        <div className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg">
+                            <Image src={m.img} alt={m.name} width={200} height={200} className="object-cover"/>
+                        </div>
+                        <h3 className="mt-5 text-2xl font-semibold">{m.name}</h3>
+                        <p className="text-yellow-300 font-medium">{m.role}</p>
+
+                        <p className="mt-3 text-white/80 text-sm">{m.bio}</p>
                     </motion.div>
                 ))}
             </div>
