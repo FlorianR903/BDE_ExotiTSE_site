@@ -24,8 +24,28 @@ export default function TeamSection() {
             role: "Vice-Président",
             bio: "Je fais des meilleurs pancakes qu'elle askip' !",
             img: "mettre le lien de l'image ici",
+        },
+        {
+            id: 4,
+            name: "Guillaume",
+            role: "Trésorier",
+            bio: "(ajouter un truc drôle)",
+            img: "mettre le lien de l'image ici",
+        },
+        {
+            id: 5,
+            name: "Lyam",
+            role: "Vice-Trésorier",
+            bio: "(ajouter un truc drôle)",
+            img: "mettre le lien de l'image ici",
+        },
+        {
+            id: 6,
+            name: "Lucas",
+            role: "Secrétaire Général",
+            bio: "(ajouter un truc drôle)",
+            img: "mettre le lien de l'image ici",
         }
-
     ];
 
     return (
