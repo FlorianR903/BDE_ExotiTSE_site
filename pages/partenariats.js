@@ -27,7 +27,7 @@ export default function Partenariats() {
     return (
         <>
             <Head>
-                <title>Partenariats — Exoti'TSE</title>
+                <title>Exoti'TSE</title>
             </Head>
 
             <Nav />
