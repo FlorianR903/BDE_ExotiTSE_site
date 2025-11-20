@@ -31,19 +31,23 @@ export default function Nav(){
 
                 {/* Hamburger */}
                 <button
-                    className="md:hidden text-white text-3xl"
+                    className="md:hidden text-white p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20"
                     onClick={() => setOpen(!open)}
                 >
-                    ☰
+                    {open ? (
+                        <span className="text-3xl font-bold">✕</span>
+                    ) : (
+                        <span className="text-3xl">☰</span>
+                    )}
                 </button>
 
             {/* Menu Mobile */}
             <div
-                className={`md:hidden bg-black/70 backdrop-blur-sm border-t border-white/10 transition-all duration-300 overflow-hidden ${
+                className={`md:hidden bg-black/60 backdrop-blur-lg border-t border-white/10 transition-all duration-300 overflow-hidden ${
                     open ? "max-h-96 py-4" : "max-h-0"
                 }`}
             >
-                <div className="flex flex-col gap-4 px-6 text-white font-medium">
+                <div className="flex flex-col gap-4 px-6 text-white font-medium text-lg">
                     <Link href="/" onClick={() => setOpen(false)}>Accueil</Link>
                     <Link href="/events" onClick={() => setOpen(false)}>Événements</Link>
                     <Link href="/team" onClick={() => setOpen(false)}>Équipe</Link>
