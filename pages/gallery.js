@@ -14,7 +14,7 @@ export default function Gallery(){
 
             <Nav />
 
-            <section className="py-20 px-6 bg-black min-h-screen text-white">
+            <section className="py-20 px-6 text-white">
                 <h1 className="text-4xl font-bold text-center mb-10">Galerie</h1>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
