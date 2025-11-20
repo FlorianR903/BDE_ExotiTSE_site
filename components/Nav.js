@@ -5,7 +5,7 @@ export default function Nav(){
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="relative top-4 left-4 right-4 z-40 flex justify-between items-center">
+        <nav className="fixed top-4 left-4 right-4 z-40 flex justify-between items-center">
 
             {/* Logo */}
             <div className="flex items-center gap-3">
@@ -19,7 +19,7 @@ export default function Nav(){
 
             {/* Hamburger */}
             <button
-                className="md:hidden text-white p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 absolute right-4 top-4 z-40"
+                className="md:hidden text-white p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 fixed right-4 top-2"
                 onClick={() => setOpen(!open)}
             >
                 {open ? (
