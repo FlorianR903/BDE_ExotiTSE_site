@@ -50,7 +50,7 @@ export default function TeamSection() {
 
     return (
         <motion.section id="members"
-                        className="py-24 px-6 relative overflow-hidden"
+                        className="py-24 px-6 relative overflow-hidden text-center"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}

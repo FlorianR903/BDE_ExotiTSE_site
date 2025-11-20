@@ -3,17 +3,17 @@ import { motion } from 'framer-motion'
 
 export default function ContactSection() {
   return (
-      <motion.section className="py-24 px-6 relative overflow-hidden"
+      <motion.section className="py-24 px-6 relative overflow-hidden text-center"
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
                       viewport={{ once: true }}>
 
-      <h2 className="text-4xl font-bold mb-6">Contact</h2>
-      <p className="mt-6 text-lg text-white/90">
-          Une question ? Une idée ? Besoin d’infos ?
-          Voici tous nos moyens de contact. N'hésitez pas !
-      </p>
+        <h2 className="text-4xl font-bold mb-6">Contact</h2>
+        <p className="mt-6 text-lg text-white/90">
+            Une question ? Une idée ? Besoin d’infos ?
+            Voici tous nos moyens de contact. N'hésitez pas !
+        </p>
 
         <div className="mt-10 space-y-5 text-lg">
 
