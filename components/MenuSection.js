@@ -26,6 +26,13 @@ export default function MenuSection({ items = [] }) {
                         className="p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-xl
                                    hover:scale-[1.03] transition-all text-white"
                     >
+
+                        {/* Espace image */}
+                        <div className="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/30 transition">
+                            <span className="text-3xl text-white/50">+</span>
+                        </div>
+
+                        {/* Infos du plat */}
                         <div className="flex justify-between items-center">
                             <h3 className="text-2xl font-semibold">{item.title}</h3>
                             <span className="text-lg font-bold bg-white/20 px-3 py-1 rounded-xl">
