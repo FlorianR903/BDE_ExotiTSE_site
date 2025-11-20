@@ -2,39 +2,65 @@
 
 export default function EventsSection({ events=[] }){
 
+    // Si aucun événement en props → fallback
+    const defaultEvents = [
+        {
+            id: 1,
+            title: "Soirée d’intégration",
+            date: "15 octobre 2025",
+            desc: "Une soirée mémorable pour accueillir les nouveaux étudiants dans une ambiance festive !"
+        },
+        {
+            id: 2,
+            title: "Tournoi de jeux vidéo",
+            date: "27 octobre 2025",
+            desc: "Affrontez les autres étudiants dans un tournoi fun et compétitif sur plusieurs jeux."
+        },
+        {
+            id: 3,
+            title: "Sortie patinoire",
+            date: "4 novembre 2025",
+            desc: "Une après-midi conviviale à la patinoire pour créer des souvenirs et partager de bons moments."
+        }
+    ];
+
+    const list = events.length > 0 ? events : defaultEvents;
+
     return (
-        <section id="evenements" className="py-20 px-6 bg-gradient-to-br from-purple-700/20 to-pink-500/20">
-            <h2 className="text-3xl font-bold text-center mb-6">Événements</h2>
+        <section id="evenements" className="py-24 px-6 bg-gradient-to-b from-purple-900/20 to-pink-700/20 backdrop-blur-lg">
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* TITRE */}
+            <h2 className="text-5xl font-extrabold text-center mb-12 tracking-wide">
+                Événements à venir
+            </h2>
 
-                {/* Carte 1 */}
-                <div className="card-bg p-6 rounded-2xl border border-white/10 shadow-lg hover:scale-[1.02] transition-all">
-                    <h3 className="text-2xl font-semibold text-white">Soirée d’intégration</h3>
-                    <p className="text-white/80 mt-2">15 octobre 2025</p>
-                    <p className="text-white/70 mt-4">
-                        Une soirée mémorable pour accueillir les nouveaux étudiants dans une ambiance festive !
-                    </p>
-                </div>
+            {/* GRID DES EVENTS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-                {/* Carte 2 */}
-                <div className="card-bg p-6 rounded-2xl border border-white/10 shadow-lg hover:scale-[1.02] transition-all">
-                    <h3 className="text-2xl font-semibold text-white">Tournoi de jeux vidéo</h3>
-                    <p className="text-white/80 mt-2">27 octobre 2025</p>
-                    <p className="text-white/70 mt-4">
-                        Affrontez les autres étudiants dans un tournoi fun et compétitif sur plusieurs jeux.
-                    </p>
-                </div>
+                {list.map((event) => (
+                    <div key={event.id} className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
 
-                {/* Carte 3 */}
-                <div className="card-bg p-6 rounded-2xl border border-white/10 shadow-lg hover:scale-[1.02] transition-all">
-                    <h3 className="text-2xl font-semibold text-white">Sortie patinoire</h3>
-                    <p className="text-white/80 mt-2">4 novembre 2025</p>
-                    <p className="text-white/70 mt-4">
-                        Une après-midi conviviale à la patinoire pour créer des souvenirs et partager de bons moments.
-                    </p>
-                </div>
+                        {/* Badge Date */}
+                        <span className="absolute top-4 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
+                            {event.date}
+                        </span>
 
+                        {/* Titre */}
+                        <h3 className="text-2xl font-bold text-white drop-shadow-md">
+                            {event.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-white/80 mt-4 text-sm leading-relaxed">
+                            {event.desc}
+                        </p>
+
+                        {/* CTA éventuelle (plus tard) */}
+                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white">
+                            En savoir plus
+                        </button>
+                    </div>
+                ))}
             </div>
         </section>
     );
