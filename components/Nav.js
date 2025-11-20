@@ -5,7 +5,7 @@ export default function Nav(){
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="w-full fixed top-0 left-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
+        <nav className="w-full fixed top-0 left-0 z-50">
             <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
                 {/* Logo */}
@@ -17,10 +17,11 @@ export default function Nav(){
 
                 {/* Menu Desktop */}
                 <div className="hidden md:flex gap-8 text-white">
-                    <Link href="/gallery" className="hover:text-pink-400 transition">Galerie</Link>
-                    <Link href="/menu" className="hover:text-pink-400 transition">Menu</Link>
+                    <Link href="/index" className="hover:text-pink-400 transition">Accueil</Link>
                     <Link href="/events" className="hover:text-pink-400 transition">Événements</Link>
                     <Link href="/team" className="hover:text-pink-400 transition">Équipe</Link>
+                    <Link href="/gallery" className="hover:text-pink-400 transition">Galerie</Link>
+                    <Link href="/menu" className="hover:text-pink-400 transition">Menu</Link>
                     <Link href="/contact" className="hover:text-pink-400 transition">Contact</Link>
                     <Link href="/partenariats" className="hover:text-pink-400 transition">Partenariat</Link>
                 </div>
@@ -37,10 +38,11 @@ export default function Nav(){
             {/* Menu Mobile */}
             {open && (
                 <div className="md:hidden bg-black/80 px-6 py-4 flex flex-col gap-4 text-white border-t border-white/10">
-                    <Link href="/gallery">Galerie</Link>
-                    <Link href="/menu">Menu</Link>
+                    <Link href="/index">Accueil</Link>
                     <Link href="/events">Événements</Link>
                     <Link href="/team">Équipe</Link>
+                    <Link href="/gallery">Galerie</Link>
+                    <Link href="/menu">Menu</Link>
                     <Link href="/contact">Contact</Link>
                     <Link href="/partenariats">Partenariats</Link>
                 </div>
