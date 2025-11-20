@@ -9,7 +9,7 @@ export default function ContactSection() {
                       transition={{ duration: 0.6 }}
                       viewport={{ once: true }}>
 
-        <h2 className="text-4xl font-bold mb-6">Contact</h2>
+        <h2 className="text-4xl font-extrabold mb-6">Contact</h2>
         <p className="mt-6 text-lg text-white/90">
             Une question ? Une idée ? Besoin d’infos ?
             Voici tous nos moyens de contact. N'hésitez pas !
@@ -19,7 +19,7 @@ export default function ContactSection() {
 
             {/* Numéro de téléphone */}
             <div>
-                <span className="font-semibold">Téléphone : </span>
+                <span className="font-bold">Téléphone : </span>
                 <a href="tel:0601020304" className="underline hover:text-yellow-300">
                     07 81 29 55 74
                 </a>
@@ -27,7 +27,7 @@ export default function ContactSection() {
 
             {/* Instagram */}
             <div>
-                <span className="font-semibold">Instagram : </span>
+                <span className="font-bold">Instagram : </span>
                 <a
                     href="https://instagram.com/ton_compte"
                     target="_blank"
@@ -39,7 +39,7 @@ export default function ContactSection() {
 
             {/* Mail */}
             <div>
-                <span className="font-semibold">Mail : </span>
+                <span className="font-bold">Mail : </span>
                 <a
                     href="mailto:exotitse.contact@example.com"
                     className="underline hover:text-yellow-300"
@@ -50,7 +50,7 @@ export default function ContactSection() {
 
             {/* Adresse postale */}
             <div>
-                <span className="font-semibold">Quartier Général : </span>
+                <span className="font-bold">Quartier Général : </span>
                 <p className="inline-block">
                     24 Rue des Tropiques, Toulouse, France
                 </p>

@@ -4,7 +4,6 @@ import GallerySection from '../components/GallerySection'
 import Head from "next/head";
 
 export default function Gallery(){
-    const demo = []
     const placeholderBoxes = Array(9).fill(null); // 9 cases par exemple
 
     return (
@@ -21,7 +20,7 @@ export default function Gallery(){
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}>
 
-                <h1 className="text-4xl font-bold text-center mb-10">Galerie</h1>
+                <h1 className="text-4xl font-extrabold text-center mb-10">Galerie</h1>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                     {placeholderBoxes.map((_, index) => (

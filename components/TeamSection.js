@@ -55,7 +55,7 @@ export default function TeamSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}>
-            <h2 className="text-4xl font-bold mb-12">L'équipe des Tropiques</h2>
+            <h2 className="text-4xl font-extrabold mb-12">L'équipe des Tropiques</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
                 {members.map((m) => (

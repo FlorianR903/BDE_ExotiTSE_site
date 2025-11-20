@@ -44,7 +44,7 @@ export default function Nav(){
 
             {/* Menu Mobile */}
             <div
-                className={`md:hidden bg-black/60 backdrop-blur-lg border-t border-white/10 transition-all duration-300 overflow-hidden ${
+                className={`md:hidden border-white/10 transition-all duration-300 overflow-hidden ${
                     open ? "max-h-96 py-4" : "max-h-0"
                 }`}
             >
