@@ -12,21 +12,24 @@ export default function Home() {
 
             <Nav />
 
-            <main className="pt-20">
+            <main className="pt-32 pb-20 px-6 text-white">
+
                 <Hero />
 
-                {/* SECTION À PROPOS */}
-                <section id="about" className="max-w-5xl mx-auto py-20 px-6 text-center text-white">
-                    <h2 className="text-4xl font-bold mb-6">À propos</h2>
-                    <p className="text-lg leading-relaxed text-white/90 max-w-3xl mx-auto">
-                        Exoti'TSE est un Bureau Des Étudiants dynamique et créatif,
-                        dont l’objectif est de proposer aux étudiants de la TSE
-                        des événements mémorables, des partenariats avantageux
-                        et une vie de campus riche et chaleureuse.
-                        Notre équipe se mobilise pour organiser des soirées,
-                        afterworks, animations et initiatives solidaires tout au long de notre semaine.
+                {/* Rubrique À PROPOS */}
+                <div className="mt-10 bg-white/10 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-white/10 shadow-lg">
+                    <h2 className="text-3xl font-bold mb-4">À propos</h2>
+                    <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                        Le BDE <strong>Exoti'TSE</strong> représente la vie étudiante
+                        de la filière TSE en organisant des événements, soirées, sorties,
+                        tournois et activités toute l’année.
+                        <br /><br />
+                        Notre mission ? Créer une ambiance chaleureuse, fédérer les étudiants
+                        et vous offrir des moments mémorables.
+                        <br /><br />
+                        Prépare-toi : l’année s’annonce intense, fun et pleine de surprises 🌴🔥
                     </p>
-                </section>
+                </div>
             </main>
         </>
     );
