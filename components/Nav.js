@@ -11,13 +11,15 @@ export default function Nav(){
 
                 {/* Logo */}
                 <Link href="/">
-                    <span className="text-2xl font-bold text-white cursor-pointer">
+                    <span className="hidden md:block text-2xl font-bold text-white cursor-pointer">
                         Exoti'TSE
                     </span>
                 </Link>
 
+            <div/>
+
                 {/* Menu Desktop */}
-                <div className="hidden md:flex gap-8 text-white">
+                <div className="flex gap-2">
                     <Link href="/index" className="hover:text-pink-400 transition">Accueil</Link>
                     <Link href="/events" className="hover:text-pink-400 transition">Événements</Link>
                     <Link href="/team" className="hover:text-pink-400 transition">Équipe</Link>
