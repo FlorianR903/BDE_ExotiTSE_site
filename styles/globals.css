@@ -16,3 +16,7 @@ background: linear-gradient(135deg, #FFD166 0%, #F76BAA 50%, #8E44AD 100%);
 
 /* small helpers */
 .card-bg { background: rgba(255,255,255,0.08); backdrop-filter: blur(6px); }
+
+h1, h2, h3, h4, h5, h6 {
+    @apply text-white;
+}
