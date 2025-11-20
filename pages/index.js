@@ -12,7 +12,7 @@ export default function Home() {
 
             <Nav />
 
-            <main className="pt-32 pb-20 px-6 text-white">
+            <main className="pt-20 text-white">
 
                 <Hero />
 
