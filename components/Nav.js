@@ -38,17 +38,21 @@ export default function Nav(){
                 </button>
 
             {/* Menu Mobile */}
-            {open && (
-                <div className="md:hidden bg-black/80 px-6 py-4 flex flex-col gap-4 text-white border-t border-white/10">
-                    <Link href="/index">Accueil</Link>
-                    <Link href="/events">Événements</Link>
-                    <Link href="/team">Équipe</Link>
-                    <Link href="/gallery">Galerie</Link>
-                    <Link href="/menu">Menu</Link>
-                    <Link href="/contact">Contact</Link>
-                    <Link href="/partenariats">Partenariats</Link>
+            <div
+                className={`md:hidden bg-black/70 backdrop-blur-sm border-t border-white/10 transition-all duration-300 overflow-hidden ${
+                    open ? "max-h-96 py-4" : "max-h-0"
+                }`}
+            >
+                <div className="flex flex-col gap-4 px-6 text-white font-medium">
+                    <Link href="/" onClick={() => setOpen(false)}>Accueil</Link>
+                    <Link href="/events" onClick={() => setOpen(false)}>Événements</Link>
+                    <Link href="/team" onClick={() => setOpen(false)}>Équipe</Link>
+                    <Link href="/gallery" onClick={() => setOpen(false)}>Galerie</Link>
+                    <Link href="/menu" onClick={() => setOpen(false)}>Menu</Link>
+                    <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+                    <Link href="/partenariats" onClick={() => setOpen(false)}>Partenariat</Link>
                 </div>
-            )}
+            </div>
         </nav>
     );
 }
