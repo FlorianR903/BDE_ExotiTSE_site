@@ -6,20 +6,20 @@ export default function Nav(){
 
     return (
         <nav className="fixed top-4 left-4 right-4 z-40 flex justify-between items-center">
-            <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 flex items-center justify-center font-bold text-white">Ex</div>
 
-                {/* Logo */}
-                <Link href="/">
-                    <span className="hidden md:block text-2xl font-bold text-white cursor-pointer">
-                        Exoti'TSE
-                    </span>
-                </Link>
+            {/* Logo */}
+                <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 flex items-center justify-center font-bold text-white">Ex</div>
 
-            <div/>
+                    <Link href="/">
+                        <span className="text-2xl font-bold text-white cursor-pointer">
+                            Exoti'TSE
+                        </span>
+                    </Link>
+                </div>
 
                 {/* Menu Desktop */}
-                <div className="flex gap-2">
+                <div className="hidden md:flex gap-8 text-white">
                     <Link href="/index" className="hover:text-pink-400 transition">Accueil</Link>
                     <Link href="/events" className="hover:text-pink-400 transition">Événements</Link>
                     <Link href="/team" className="hover:text-pink-400 transition">Équipe</Link>
@@ -36,7 +36,6 @@ export default function Nav(){
                 >
                     ☰
                 </button>
-            </div>
 
             {/* Menu Mobile */}
             {open && (
