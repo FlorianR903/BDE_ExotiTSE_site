@@ -1,23 +1,48 @@
 import Link from 'next/link'
+import { useState } from "react";
 
 export default function Nav(){
+    const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed top-4 left-4 right-4 z-40 flex justify-between items-center">
-            <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 flex items-center justify-center font-bold text-white">Ex</div>
-            <div className="hidden md:block text-white font-semibold">Exoti'TSE</div>
-            </div>
-            <div className="flex gap-2">
-                <Link href="/"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</a></Link>
-                <Link href="/events"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Événements</a></Link>
-                <Link href="/team"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Équipe</a></Link>
-                <Link href="/gallery"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Galerie</a></Link>
-                <Link href="/menu"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Menus</a></Link>
-                <Link href="/contact"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Contact</a></Link>
-                <Link href="/partenariats"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Partenariats</a></Link>
-            </div>
-        </nav>
-);
+        <nav className="w-full fixed top-0 left-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
+            <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
+                {/* Logo */}
+                <Link href="/">
+                    <span className="text-2xl font-bold text-white cursor-pointer">
+                        Exoti'TSE
+                    </span>
+                </Link>
+
+                {/* Menu Desktop */}
+                <div className="hidden md:flex gap-8 text-white">
+                    <Link href="/gallery" className="hover:text-pink-400 transition">Galerie</Link>
+                    <Link href="/menu" className="hover:text-pink-400 transition">Menu</Link>
+                    <Link href="/events" className="hover:text-pink-400 transition">Événements</Link>
+                    <Link href="/team" className="hover:text-pink-400 transition">Équipe</Link>
+                    <Link href="/contact" className="hover:text-pink-400 transition">Contact</Link>
+                </div>
+
+                {/* Hamburger */}
+                <button
+                    className="md:hidden text-white text-3xl"
+                    onClick={() => setOpen(!open)}
+                >
+                    ☰
+                </button>
+            </div>
+
+            {/* Menu Mobile */}
+            {open && (
+                <div className="md:hidden bg-black/80 px-6 py-4 flex flex-col gap-4 text-white border-t border-white/10">
+                    <Link href="/gallery">Galerie</Link>
+                    <Link href="/menu">Menu</Link>
+                    <Link href="/events">Événements</Link>
+                    <Link href="/team">Équipe</Link>
+                    <Link href="/contact">Contact</Link>
+                </div>
+            )}
+        </nav>
+    );
 }
