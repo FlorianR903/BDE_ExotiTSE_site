@@ -20,13 +20,13 @@ export default function Nav(){
 
                 {/* Menu Desktop */}
                 <div className="hidden md:flex gap-8 text-white">
-                    <Link href="/index" className="hover:text-pink-400 transition">Accueil</Link>
-                    <Link href="/events" className="hover:text-pink-400 transition">Événements</Link>
-                    <Link href="/team" className="hover:text-pink-400 transition">Équipe</Link>
-                    <Link href="/gallery" className="hover:text-pink-400 transition">Galerie</Link>
-                    <Link href="/menu" className="hover:text-pink-400 transition">Menu</Link>
-                    <Link href="/contact" className="hover:text-pink-400 transition">Contact</Link>
-                    <Link href="/partenariats" className="hover:text-pink-400 transition">Partenariat</Link>
+                    <Link href="/index"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</a></Link>
+                    <Link href="/events"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Événements</a></Link>
+                    <Link href="/team"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Équipe</a></Link>
+                    <Link href="/gallery"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Galerie</a></Link>
+                    <Link href="/menu"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Menu</a></Link>
+                    <Link href="/contact"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Contact</a></Link>
+                    <Link href="/partenariats"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Partenariat</a></Link>
                 </div>
 
                 {/* Hamburger */}
