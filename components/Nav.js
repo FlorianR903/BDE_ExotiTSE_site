@@ -22,6 +22,7 @@ export default function Nav(){
                     <Link href="/events" className="hover:text-pink-400 transition">Événements</Link>
                     <Link href="/team" className="hover:text-pink-400 transition">Équipe</Link>
                     <Link href="/contact" className="hover:text-pink-400 transition">Contact</Link>
+                    <Link href="/partenariats" className="hover:text-pink-400 transition">Partenariat</Link>
                 </div>
 
                 {/* Hamburger */}
@@ -41,6 +42,7 @@ export default function Nav(){
                     <Link href="/events">Événements</Link>
                     <Link href="/team">Équipe</Link>
                     <Link href="/contact">Contact</Link>
+                    <Link href="/partenariats">Partenariats</Link>
                 </div>
             )}
         </nav>
