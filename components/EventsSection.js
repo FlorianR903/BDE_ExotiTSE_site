@@ -1,5 +1,5 @@
 /* ÉVÉNEMENTS À VENIR */
-
+import { motion } from "framer-motion";
 export default function EventsSection({ events=[] }){
 
     // Si aucun événement en props → fallback
