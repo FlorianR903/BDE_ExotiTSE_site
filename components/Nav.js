@@ -19,7 +19,7 @@ export default function Nav(){
 
             {/* Hamburger */}
             <button
-                className="md:hidden text-white p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 absolute right-4 top-2"
+                className="md:hidden text-white p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 fixed right-4 top-2.5 z-50"
                 onClick={() => setOpen(!open)}
             >
                 {open ? (
