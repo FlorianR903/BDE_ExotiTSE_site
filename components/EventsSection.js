@@ -27,7 +27,7 @@ export default function EventsSection({ events=[] }){
     const list = events.length > 0 ? events : defaultEvents;
 
     return (
-        <motion.section className="min-h-screen flex items-center justify-center text-center relative overflow-hidden"
+        <motion.section className="py-24 px-6 bg-gradient-to-b from-purple-900/20 to-pink-700/20 backdrop-blur-lg"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
