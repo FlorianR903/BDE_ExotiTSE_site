@@ -5,8 +5,9 @@ export default function Nav(){
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="w-full fixed top-0 left-0 z-50">
-            <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <nav className="fixed top-4 left-4 right-4 z-40 flex justify-between items-center">
+            <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 flex items-center justify-center font-bold text-white">Ex</div>
 
                 {/* Logo */}
                 <Link href="/">
