@@ -1,4 +1,5 @@
 // components/MenuSection.js
+import { motion } from 'framer-motion'
 
 export default function MenuSection({ items = [] }) {
 
@@ -14,7 +15,11 @@ export default function MenuSection({ items = [] }) {
     const menu = items.length > 0 ? items : fallbackMenu;
 
     return (
-        <section id="menu" className="py-24 px-6 bg-gradient-to-b from-pink-700/20 to-orange-500/20">
+        <motion.section className="py-24 px-6 relative overflow-hidden"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}>
 
             <h2 className="text-5xl font-extrabold text-center mb-12">Menu</h2>
 
@@ -45,6 +50,6 @@ export default function MenuSection({ items = [] }) {
                 ))}
 
             </div>
-        </section>
+        </motion.section>
     );
 }

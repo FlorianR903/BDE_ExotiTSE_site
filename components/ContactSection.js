@@ -1,7 +1,14 @@
 // components/ContactSection.js
+import { motion } from 'framer-motion'
+
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 text-white text-center">
+      <motion.section className="py-24 px-6 relative overflow-hidden"
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}>
+
       <h2 className="text-4xl font-bold mb-6">Contact</h2>
       <p className="mt-6 text-lg text-white/90">
           Une question ? Une idée ? Besoin d’infos ?
@@ -50,6 +57,6 @@ export default function ContactSection() {
             </div>
 
         </div>
-    </section>
+    </motion.section>
   );
 }

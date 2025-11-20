@@ -1,4 +1,5 @@
 import Nav from '../components/Nav'
+import { motion } from 'framer-motion'
 import GallerySection from '../components/GallerySection'
 import Head from "next/head";
 
@@ -14,7 +15,12 @@ export default function Gallery(){
 
             <Nav />
 
-            <section className="py-20 px-6 text-white">
+            <motion.section className="py-24 px-6 relative overflow-hidden"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}>
+
                 <h1 className="text-4xl font-bold text-center mb-10">Galerie</h1>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -27,7 +33,7 @@ export default function Gallery(){
                         </div>
                     ))}
                 </div>
-            </section>
+            </motion.section>
         </>
     );
 }

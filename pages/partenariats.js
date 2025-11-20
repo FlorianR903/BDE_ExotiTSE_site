@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import Head from "next/head";
+import { motion } from 'framer-motion'
 
 export default function Partenariats() {
 
@@ -32,7 +33,11 @@ export default function Partenariats() {
 
             <Nav />
 
-            <main className="pt-24 px-6 pb-20 bg-gradient-to-b from-purple-900/20 via-pink-600/10 to-purple-900/20">
+            <motion.section className="py-24 px-6 relative overflow-hidden"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}>
 
                 <h1 className="text-5xl font-extrabold text-center mb-12">Nos Partenariats</h1>
 
@@ -57,7 +62,7 @@ export default function Partenariats() {
                     ))}
 
                 </div>
-            </main>
+            </motion.section>
         </>
     );
 }
