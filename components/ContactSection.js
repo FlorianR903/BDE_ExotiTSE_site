@@ -44,7 +44,7 @@ export default function ContactSection() {
                     href="mailto:exotitse.contact@example.com"
                     className="underline hover:text-yellow-300"
                 >
-                    exotitse.contact@example.com
+                    exotitse.contact@gmail.com
                 </a>
             </div>
 

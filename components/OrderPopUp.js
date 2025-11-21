@@ -31,7 +31,7 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-6 w-full max-w-md shadow-lg">
-                <h2 className="text-2xl font-bold mb-4 text-center">
+                <h2 className="text-2xl font-bold mb-4 text-center text-black">
                     Commander : {itemName}
                 </h2>
 
@@ -45,7 +45,8 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
                             required
                             value={formData.fullName}
                             onChange={handleChange}
-                            className="w-full border rounded-lg px-3 py-2"
+                            className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
+                            placeholder="Nom & Prénom"
                         />
                     </div>
 
@@ -58,7 +59,8 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
                             required
                             value={formData.quantity}
                             onChange={handleChange}
-                            className="w-full border rounded-lg px-3 py-2"
+                            className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
+                            placeholder="Quantité"
                         />
                     </div>
 
@@ -69,8 +71,9 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
                             required
                             value={formData.address}
                             onChange={handleChange}
-                            className="w-full border rounded-lg px-3 py-2"
+                            className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
                             rows="3"
+                            placeholder="Adresse postale"
                         />
                     </div>
 
