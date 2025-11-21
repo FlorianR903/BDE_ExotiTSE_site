@@ -1,5 +1,7 @@
 // components/MenuSection.js
 import { motion } from 'framer-motion'
+import { useState } from "react";
+import OrderModal from "./OrderPopUp";
 
 export default function MenuSection({ items = [] }) {
 
@@ -13,6 +15,19 @@ export default function MenuSection({ items = [] }) {
     ];
 
     const menu = items.length > 0 ? items : fallbackMenu;
+
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (item) => {
+        setSelectedItem(item);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedItem(null);
+    };
 
     return (
         <motion.section className="py-24 px-6 relative overflow-hidden"
@@ -48,13 +63,22 @@ export default function MenuSection({ items = [] }) {
                         <p className="mt-4 text-white/80 text-sm">{item.desc}</p>
 
                         {/* Bouton pour commander */}
-                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white">
+                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white"
+                                onClick={() => openModal(item.name)}
+                        >
                             Commander
                         </button>
                     </div>
                 ))}
 
             </div>
+
+            <OrderModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                itemName={selectedItem}
+            />
+
         </motion.section>
     );
 }
