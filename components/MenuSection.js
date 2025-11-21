@@ -48,8 +48,8 @@ export default function MenuSection({ items = [] }) {
                         <p className="mt-4 text-white/80 text-sm">{item.desc}</p>
 
                         {/* Bouton pour commander */}
-                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white">
-                            En savoir plus
+                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white">
+                            Commander
                         </button>
                     </div>
                 ))}
