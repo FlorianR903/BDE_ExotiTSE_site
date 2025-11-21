@@ -5,6 +5,7 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
         fullName: "",
         quantity: 1,
         address: "",
+        email: "",
     });
 
     const handleChange = (e) => {
@@ -14,16 +15,26 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log("Commande envoyée :", {
-            produit: itemName,
-            ...formData,
+        const response = await fetch("/api/sendOrder", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                itemName,
+                ...formData,
+            }),
         });
 
-        alert("Votre commande a bien été envoyée !");
-        onClose();
+        if (response.ok) {
+            alert("Votre commande a bien été envoyée !");
+            onClose();
+        } else {
+            alert("Une erreur est survenue.");
+        }
     };
 
     if (!isOpen) return null;
@@ -47,6 +58,19 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
                             onChange={handleChange}
                             className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
                             placeholder="Nom & Prénom"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block font-medium mb-1">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
+                            placeholder="Adresse email"
                         />
                     </div>
 
