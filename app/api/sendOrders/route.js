@@ -1,16 +1,14 @@
 import nodemailer from "nodemailer";
 
-export default async function handler(req, res) {
-    if (req.method !== "POST") {
-        return res.status(405).json({ message: "Méthode non autorisée" });
-    }
-
-    const { itemName, fullName, quantity, address, email } = req.body;
+export async function POST(req) {
 
     try {
+        const { itemName, fullName, quantity, address, email } = await req.json();
+
         // Transporteur email (exemple Gmail)
         const transporter = nodemailer.createTransport({
             service: "gmail",
+            secure: process.env.MAIL_SECURE === "true",
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASSWORD,
@@ -20,12 +18,11 @@ export default async function handler(req, res) {
         const mailOptions = {
             from: process.env.MAIL_USER,
             to: process.env.MAIL_DESTINATION, // adresse qui recevra les commandes
-            replyTo: email,
+            replyTo: email, //email du client
             subject: `Nouvelle commande : ${itemName}`,
             text: `
             Une nouvelle commande a été passée !
             
-            Produit : ${itemName}
             Nom : ${fullName}
             Email : ${email}
             Quantité : ${quantity}
@@ -35,10 +32,12 @@ export default async function handler(req, res) {
 
         await transporter.sendMail(mailOptions);
 
-        return res.status(200).json({ message: "Commande envoyée par mail." });
+        return new Response(JSON.stringify({ message: "Commande envoyée par mail." }), { status: 200 });
 
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({ message: "Erreur lors de l'envoi du mail." });
+        console.error("Erreur SMTP :", error);
+        return new Response(JSON.stringify({message: "Erreur lors de l'envoi du mail."}), {
+            status: 500,
+        });
     }
 }

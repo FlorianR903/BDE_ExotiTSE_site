@@ -18,7 +18,7 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch("/api/sendOrder", {
+        const response = await fetch("/api/sendOrders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
