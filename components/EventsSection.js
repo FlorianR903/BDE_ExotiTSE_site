@@ -90,10 +90,10 @@ export default function EventsSection({ events=[] }){
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
                 {list.map((event) => (
-                    <div key={event.id} className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 min-h-[260px]">
+                    <div key={event.id} className="relative p-6 pt-10 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 min-h-[260px]">
 
                         {/* Badge Date */}
-                        <span className="absolute top-4 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
+                        <span className="absolute top-6 right-6 text-sm px-4 py-1.5 rounded-full bg-white/20 text-white/90">
                             {event.date}
                         </span>
 
