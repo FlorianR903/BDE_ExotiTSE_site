@@ -93,12 +93,12 @@ export default function EventsSection({ events=[] }){
                     <div key={event.id} className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
 
                         {/* Titre */}
-                        <h3 className="text-2xl font-bold text-white drop-shadow-md">
+                        <h3 className="text-2xl font-bold text-white drop-shadow-md pt-2">
                             {event.title}
                         </h3>
 
                         {/* Badge Date */}
-                        <span className="absolute top-7 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
+                        <span className="mt-5 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
                             {event.date}
                         </span>
 
