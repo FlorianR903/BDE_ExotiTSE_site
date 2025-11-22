@@ -98,7 +98,7 @@ export default function EventsSection({ events=[] }){
                         </h3>
 
                         {/* Badge Date */}
-                        <span className="mt-8 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
+                        <span className="top-7 right-4 text-sm px-3 py-2 rounded-full bg-white/20 text-white/90">
                             {event.date}
                         </span>
 
