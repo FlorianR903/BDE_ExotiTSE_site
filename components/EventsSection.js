@@ -90,17 +90,17 @@ export default function EventsSection({ events=[] }){
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
                 {list.map((event) => (
-                    <div key={event.id} className="relative p-6 pt-10 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 min-h-[260px]">
-
-                        {/* Badge Date */}
-                        <span className="absolute top-6 right-6 text-sm px-4 py-1.5 rounded-full bg-white/20 text-white/90">
-                            {event.date}
-                        </span>
+                    <div key={event.id} className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
 
                         {/* Titre */}
                         <h3 className="text-2xl font-bold text-white drop-shadow-md">
                             {event.title}
                         </h3>
+
+                        {/* Badge Date */}
+                        <span className="top-4 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
+                            {event.date}
+                        </span>
 
                         {/* Description */}
                         <p className="text-white/80 mt-4 text-sm leading-relaxed">
