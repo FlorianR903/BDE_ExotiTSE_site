@@ -6,12 +6,12 @@ import OrderModal from "./OrderPopUp";
 export default function MenuSection({ items = [] }) {
 
     const fallbackMenu = [
-        { img: "C:/Perso/Site Internet BDE/exotittse-next/public/rougail_saucisse.jpeg", id: 1, title: "Rougail Saucisse", price: "8€", desc: "Saucisse, riz, tomates, oignons, épices" },
-        { img:'+', id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
-        { img:'+', id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
-        { img:'+', id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
-        { img:'+', id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
-        { img:'+', id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
+        { img: '+', id: 1, title: "Rougail Saucisse", price: "8€", desc: "Saucisse, riz, tomates, oignons, épices" },
+        { img: '+', id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
+        { img: '+', id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
+        { img: '+', id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
+        { img: '+', id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
+        { img: '+', id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
     ];
 
     const menu = items.length > 0 ? items : fallbackMenu;
