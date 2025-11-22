@@ -87,10 +87,10 @@ export default function EventsSection({ events=[] }){
             </h2>
 
             {/* GRID DES EVENTS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
                 {list.map((event) => (
-                    <div key={event.id} className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
+                    <div key={event.id} className="relative p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 min-h-[260px]">
 
                         {/* Badge Date */}
                         <span className="absolute top-4 right-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
