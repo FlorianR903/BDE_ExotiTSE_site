@@ -22,6 +22,12 @@ export default function Partenariats() {
             name: "Le SpringBreak 🥂",
             address: "5 Place Centrale, 87000 Limoges",
             event: "Shatta Night 🔥"
+        },
+        {
+            id: 4,
+            name: "Energy Drink Ragnarok 🥂",
+            address: "5 Place Centrale, 87000 Limoges",
+            event: "Tous les events !"
         }
     ];
 
