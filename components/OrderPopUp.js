@@ -6,6 +6,7 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
         quantity: 1,
         address: "",
         email: "",
+        phone: "",
     });
 
     const handleChange = (e) => {
@@ -85,6 +86,19 @@ export default function OrderModal({ isOpen, onClose, itemName }) {
                             onChange={handleChange}
                             className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
                             placeholder="Quantité"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block font-medium mb-1">Téléphone</label>
+                        <textarea
+                            name="phone"
+                            required
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-400"
+                            rows="3"
+                            placeholder="Téléphone"
                         />
                     </div>
 
