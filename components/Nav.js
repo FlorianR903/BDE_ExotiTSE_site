@@ -31,7 +31,7 @@ export default function Nav(){
 
             {/* Menu Desktop */}
             <div className="hidden md:flex gap-8 text-white">
-                <Link href="/index"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</a></Link>
+                <Link href="/"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</a></Link>
                 <Link href="/events"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Événements</a></Link>
                 <Link href="/team"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Équipe</a></Link>
                 <Link href="/gallery"><a className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Galerie</a></Link>
@@ -49,13 +49,13 @@ export default function Nav(){
                 }`}
             >
                 <div className="flex flex-col gap-4 px-6 text-white font-medium text-lg">
-                    <Link href="/" onClick={() => setOpen(false)}>Accueil</Link>
-                    <Link href="/events" onClick={() => setOpen(false)}>Événements</Link>
-                    <Link href="/team" onClick={() => setOpen(false)}>Équipe</Link>
-                    <Link href="/gallery" onClick={() => setOpen(false)}>Galerie</Link>
-                    <Link href="/menu" onClick={() => setOpen(false)}>Menu</Link>
-                    <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
-                    <Link href="/partenariats" onClick={() => setOpen(false)}>Partenariat</Link>
+                    <Link href="/"><a onClick={() => setOpen(false)}>Accueil</a></Link>
+                    <Link href="/events"><a onClick={() => setOpen(false)}>Événements</a></Link>
+                    <Link href="/team"><a onClick={() => setOpen(false)}>Équipe</a></Link>
+                    <Link href="/gallery"><a onClick={() => setOpen(false)}>Galerie</a></Link>
+                    <Link href="/menu"><a onClick={() => setOpen(false)}>Menu</a></Link>
+                    <Link href="/contact"><a onClick={() => setOpen(false)}>Contact</a></Link>
+                    <Link href="/partenariats"><a onClick={() => setOpen(false)}>Partenariat</a></Link>
                 </div>
             </div>
         </nav>
