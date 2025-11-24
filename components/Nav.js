@@ -89,8 +89,10 @@ export default function Nav() {
 
                     {isCartOpen && (
                         <div className="absolute right-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl z-50">
-                            <div className="flex justify-between items-center mb-2">
-                                <h3 className="text-white font-bold">Mon Panier</h3>
+                            <div className="flex justify-between items-center mb-3">
+                                <h3 className="text-white font-bold text-lg">
+                                    Panier ({itemCount} article{itemCount > 1 ? 's' : ''})
+                                </h3>
                                 <button
                                     onClick={toggleCart}
                                     className="text-white/60 hover:text-white"
@@ -139,8 +141,10 @@ export default function Nav() {
             {/* Cart panel for mobile */}
             {isCartOpen && (
                 <div className="absolute right-4 top-full mt-2 w-80 md:hidden bg-black/90 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl z-50">
-                    <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-white font-bold">Mon Panier</h3>
+                    <div className="flex justify-between items-center mb-3">
+                        <h3 className="text-white font-bold text-lg">
+                            Panier ({itemCount} article{itemCount > 1 ? 's' : ''})
+                        </h3>
                         <button
                             onClick={toggleCart}
                             className="text-white/60 hover:text-white"

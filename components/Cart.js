@@ -45,8 +45,6 @@ export default function Cart() {
 
   return (
     <div className="text-sm text-white">
-      <h3 className="text-lg font-bold mb-3">Panier ({items.length} article{items.length > 1 ? 's' : ''})</h3>
-      
       <ul className="space-y-3 max-h-96 overflow-y-auto pr-2">
         {items.map((item) => (
           <li key={item.id} className="bg-white/5 rounded-lg p-3 border border-white/10">
