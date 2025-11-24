@@ -7,6 +7,10 @@ export async function POST(req) {
   try {
     const { items } = await req.json();
 
+    // Récupération dynamique de l'origine pour success_url et cancel_url
+    // Cela évite les erreurs si NEXT_PUBLIC_BASE_URL n'est pas défini en local
+    const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
     if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
         { error: 'Panier vide ou données manquantes' },
@@ -14,23 +18,38 @@ export async function POST(req) {
       );
     }
 
-    const lineItems = items.map((item) => ({
+    const validItems = items.filter(item => item.stripePriceId);
+
+    if (validItems.length === 0) {
+      return NextResponse.json(
+        { error: 'Aucun article valide pour le paiement (manque stripePriceId)' },
+        { status: 400 }
+      );
+    }
+
+    const lineItems = validItems.map((item) => ({
       price: item.stripePriceId,
       quantity: item.quantity ?? 1,
     }));
 
     const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
+      ui_mode: 'embedded',
       line_items: lineItems,
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/menu`,
+      mode: 'payment',
+      return_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      shipping_address_collection: {
+        allowed_countries: ['FR'],
+      },
+      phone_number_collection: {
+        enabled: true,
+      },
     });
 
-    return NextResponse.json({ url: session.url });
+    return NextResponse.json({ clientSecret: session.client_secret });
   } catch (err) {
     console.error('Stripe Checkout error:', err);
     return NextResponse.json(
-      { error: 'Erreur lors de la création de la session de paiement' },
+      { error: err.message || 'Erreur lors de la création de la session de paiement' },
       { status: 500 }
     );
   }

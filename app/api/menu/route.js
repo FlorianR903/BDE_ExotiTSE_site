@@ -26,7 +26,7 @@ export async function GET() {
           id: p.id,
           title: p.name,
           desc: p.description,
-          img: p.images?.[0] || '/placeholder.jpg',
+          img: p.images?.[0] || '/placeholder.webp',
           stripePriceId: price.id,
           rawAmount: price.unit_amount,
           currency: price.currency,
