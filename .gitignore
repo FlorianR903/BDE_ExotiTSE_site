@@ -12,3 +12,4 @@
 .next/
 
 package-lock.json
+.env.local
