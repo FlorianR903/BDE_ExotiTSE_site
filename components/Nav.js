@@ -10,7 +10,7 @@ export default function Nav(){
 
             {/* Logo */}
             <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br">
+                <div className="w-14 h-14 rounded-full bg-fuchsia-400/60">
                     <Image src="/images/logo_empty_bg.png" alt="Logo du site" width={80} height={20} className="object-contain"></Image>
                 </div>
                 <Link href="/">
