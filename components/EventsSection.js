@@ -30,7 +30,7 @@ export default function EventsSection({ events=[] }){
         },
         {
             id: 5,
-            title: "Viens rouler les R avec nous 🎙️ ",
+            title: "Viens rouler les R avec nous 🎙️",
             date: "4 novembre 2025",
             desc: "Une après-midi conviviale à la patinoire pour créer des souvenirs et partager de bons moments."
         },
