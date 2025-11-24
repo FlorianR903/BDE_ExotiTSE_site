@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Nav(){
     const [open, setOpen] = useState(false);
@@ -9,7 +10,9 @@ export default function Nav(){
 
             {/* Logo */}
             <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 flex items-center justify-center font-bold text-white">Ex</div>
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br">
+                    <Image src="/images/logo_empty_bg.png" alt="Logo du site" width={80} height={20} className="object-contain"></Image>
+                </div>
                 <Link href="/">
                     <span className="text-2xl font-bold text-white cursor-pointer">
                         Exoti'TSE
