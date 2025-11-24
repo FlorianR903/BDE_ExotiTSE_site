@@ -13,10 +13,29 @@ font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 background: linear-gradient(135deg, #ffc966 0%, #F76BAA 50%, #8d37b1 100%);
 }
 
-
 /* small helpers */
 .card-bg { background: rgba(255,255,255,0.08); backdrop-filter: blur(6px); }
 
 h1, h2, h3, h4, h5, h6 {
     @apply text-white;
+}
+
+@keyframes float-rotate {
+    0% { transform: rotate(-12deg) translateY(0); }
+    50% { transform: rotate(-12deg) translateY(-6px); }
+    100% { transform: rotate(-12deg) translateY(0); }
+}
+
+@keyframes float-rotate-right {
+    0% { transform: rotate(12deg) translateY(0); }
+    50% { transform: rotate(12deg) translateY(-6px); }
+    100% { transform: rotate(12deg) translateY(0); }
+}
+
+.polaroid-left {
+    animation: float-rotate 4s ease-in-out infinite;
+}
+
+.polaroid-right {
+    animation: float-rotate-right 4s ease-in-out infinite;
 }
