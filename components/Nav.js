@@ -10,6 +10,7 @@ export default function Nav() {
     const [isCartOpen, setIsCartOpen] = useState(false); // cart panel
     const { items = [] } = useCart();
     const itemCount = items.reduce((sum, i) => sum + (i.quantity || 1), 0);
+    const cartRef = useRef(null);
 
     const toggleMobile = () => {
         setOpen(o => !o);
@@ -20,6 +21,23 @@ export default function Nav() {
         setIsCartOpen(c => !c);
         if (open) setOpen(false);
     };
+
+    // Close cart when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (cartRef.current && !cartRef.current.contains(event.target)) {
+                setIsCartOpen(false);
+            }
+        };
+
+        if (isCartOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isCartOpen]);
 
     return (
         <nav className="fixed top-4 left-4 right-4 z-50 flex justify-between items-center">
@@ -56,16 +74,33 @@ export default function Nav() {
                 </div>
 
                 {/* Cart button (desktop) */}
-                <div className="relative">
+                <div className="relative" ref={cartRef}>
                     <button
-                        className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white"
+                        className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center gap-2"
                         onClick={toggleCart}
                     >
-                        Panier ({itemCount})
+                        <span>Panier</span>
+                        {itemCount > 0 && (
+                            <span className="px-2 py-0.5 text-xs bg-emerald-500 rounded-full font-bold">
+                                {itemCount}
+                            </span>
+                        )}
                     </button>
 
                     {isCartOpen && (
-                        <div className="absolute right-0 mt-2 w-72 bg-black/80 border border-white/20 rounded-2xl p-4 z-50">
+                        <div className="absolute right-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl z-50">
+                            <div className="flex justify-between items-center mb-2">
+                                <h3 className="text-white font-bold">Mon Panier</h3>
+                                <button
+                                    onClick={toggleCart}
+                                    className="text-white/60 hover:text-white"
+                                    title="Fermer"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
                             <Cart />
                         </div>
                     )}
@@ -103,7 +138,19 @@ export default function Nav() {
 
             {/* Cart panel for mobile */}
             {isCartOpen && (
-                <div className="absolute right-4 top-full mt-2 w-72 md:hidden bg-black/80 border border-white/20 rounded-2xl p-4 z-50">
+                <div className="absolute right-4 top-full mt-2 w-80 md:hidden bg-black/90 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl z-50">
+                    <div className="flex justify-between items-center mb-2">
+                        <h3 className="text-white font-bold">Mon Panier</h3>
+                        <button
+                            onClick={toggleCart}
+                            className="text-white/60 hover:text-white"
+                            title="Fermer"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
                     <Cart />
                 </div>
             )}
