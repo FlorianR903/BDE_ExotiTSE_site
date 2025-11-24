@@ -1,9 +1,12 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { CartProvider } from '../components/CartContext';
 
-export default function MyApp({ Component, pageProps }) {
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-700/20 to-pink-500/20 text-white">
-            <Component {...pageProps} />
-        </div>
-    );
+function MyApp({ Component, pageProps }) {
+  return (
+    <CartProvider>
+      <Component {...pageProps} />
+    </CartProvider>
+  );
 }
+
+export default MyApp;
