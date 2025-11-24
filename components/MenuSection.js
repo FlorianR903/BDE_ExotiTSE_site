@@ -18,6 +18,7 @@ export default function MenuSection({ items = [] }) {
   const [error, setError] = useState(null);
 
   const { addItem } = useCart();
+  const [addedItemId, setAddedItemId] = useState(null);
 
   // 🔁 récupère les produits Stripe via /api/menu
   useEffect(() => {
@@ -143,10 +144,14 @@ export default function MenuSection({ items = [] }) {
             {/* Boutons */}
             <div className="mt-6 flex gap-3">
               <button
-                className="flex-1 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white text-sm"
+                className={`flex-1 px-4 py-2 rounded-xl font-bold text-white text-sm transition-all ${
+                  addedItemId === item.id
+                    ? 'bg-emerald-500 scale-105'
+                    : 'bg-white/20 hover:bg-white/30'
+                }`}
                 onClick={() => handleAddToCart(item)}
               >
-                Ajouter au panier
+                {addedItemId === item.id ? '✓ Ajouté !' : 'Ajouter au panier'}
               </button>
 
               <button
