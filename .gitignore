@@ -7,4 +7,9 @@
 /dataSources/
 /dataSources.local.xml
 
-node_modules/**
+# Ignore all node_modules directories and their contents
+**/node_modules/
+.next/
+
+package-lock.json
+.env.local

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -8,80 +7,10 @@ export default function Hero() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}>
-
-            {/*Background*/}
-            <div className="fixed inset-0 -z-10 bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 bg-no-repeat bg-cover bg-fixed"/>
-
+            <div className="fixed inset-0 -z-10 bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 bg-no-repeat bg-cover bg-fixed" />
             <motion.div initial={{ y: -10, opacity: 0 }} animate={{ y:0, opacity:1 }} transition={{ duration: 0.8 }} className="p-8">
-
-                {/* Polaroid Gauche 1 */}
-                <div className="absolute top-36 left-40 md:w-40 md:h-48 hidden md:block polaroid-left">
-                    <Image
-                        src="/images/andjy.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10"
-                    />
-                </div>
-
-                {/* Polaroid Gauche 2 */}
-                <div className="absolute bottom-32 left-72 md:w-40 md:h-48 hidden md:block polaroid-right">
-                    <Image
-                        src="/images/lyam.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10 w-48 h-80"
-                    />
-                </div>
-
-                {/*Titre*/}
-                <Image src="/images/palmiers_empty.png" alt={"Palmiers de fond"} width={400} height={100} className="mb-auto"></Image>
                 <h1 className="text-5xl md:text-7xl font-extrabold text-white">Exoti'TSE <span>🌺</span></h1>
                 <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
-
-                {/* Polaroid Droite 1 */}
-                <div className="absolute top-36 right-40 md:w-40 md:h-48 hidden md:block polaroid-right">
-                    <Image
-                        src="/images/lucas.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10"
-                    />
-                </div>
-
-                {/* Polaroid Droite 2 */}
-                <div className="absolute bottom-32 right-72 md:w-40 md:h-48 hidden md:block polaroid-left">
-                    <Image
-                        src="/images/andjy.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10"
-                    />
-                </div>
             </motion.div>
         </motion.section>
     );

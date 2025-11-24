@@ -50,11 +50,11 @@ export default function TeamSection() {
 
     return (
         <motion.section id="members"
-                        className="py-24 px-6 relative overflow-hidden text-center"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}>
+            className="py-24 px-6 relative overflow-hidden text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}>
             <h2 className="text-4xl font-extrabold mb-12">L'équipe des Tropiques</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
@@ -62,7 +62,7 @@ export default function TeamSection() {
                     <motion.div key={m.id} whileHover={{ scale: 1.02 }} className="group bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl transition hover:scale-105 hover:bg-white/20">
 
                         <div className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg">
-                            <Image src={m.img} width={200} height={200} className="object-cover"/>
+                            <Image src={m.img} width={200} height={200} className="object-cover" />
                         </div>
                         <h3 className="mt-5 text-2xl font-semibold">{m.name}</h3>
                         <p className="text-yellow-300 font-medium">{m.role}</p>
