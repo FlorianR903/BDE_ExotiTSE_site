@@ -7,21 +7,27 @@ export default function Partenariats() {
     const partners = [
         {
             id: 1,
-            name: "Le Bar du Campus",
+            name: "Le Soggy Bottom 🍻",
             address: "12 Avenue des Étudiants, 87000 Limoges",
-            event: "Soirée Étudiante : Tropical Night — 15 Octobre 2025"
+            event: "Le fameux Aparton 🍻🏃‍♂️"
         },
         {
             id: 2,
-            name: "La Jungle Lounge",
+            name: "Le Deer Pub 🍾",
             address: "48 Rue des Arts, 87000 Limoges",
-            event: "After-Exam Chill — 20 Janvier 2026"
+            event: "Casse des 🥥, pas les couil***"
         },
         {
             id: 3,
-            name: "O’Bamboo Pub",
+            name: "Le SpringBreak 🥂",
             address: "5 Place Centrale, 87000 Limoges",
-            event: "Tournoi Mario Kart — 27 Octobre 2025"
+            event: "Shatta Night 🔥"
+        },
+        {
+            id: 4,
+            name: "Energy Drink Ragnarok 🥂",
+            address: "5 Place Centrale, 87000 Limoges",
+            event: "Tous les events !"
         }
     ];
 

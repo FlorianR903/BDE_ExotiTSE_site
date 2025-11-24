@@ -10,6 +10,7 @@
 	"dependencies": {
 		"framer-motion": "^7.10.3",
 		"next": "^13.5.4",
+		"nodemailer": "^7.0.10",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},

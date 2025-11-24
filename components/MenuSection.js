@@ -1,18 +1,33 @@
 // components/MenuSection.js
 import { motion } from 'framer-motion'
+import { useState } from "react";
+import OrderModal from "./OrderPopUp";
 
 export default function MenuSection({ items = [] }) {
 
     const fallbackMenu = [
-        { id: 1, title: "Cocktail Exotique", price: "6€", desc: "Rhum, ananas, sirop maison" },
-        { id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
-        { id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
-        { id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
-        { id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
-        { id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
+        { img: '+', id: 1, title: "Rougail Saucisse", price: "8€", desc: "Saucisse, riz, tomates, oignons, épices" },
+        { img: '+', id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
+        { img: '+', id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
+        { img: '+', id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
+        { img: '+', id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
+        { img: '+', id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
     ];
 
     const menu = items.length > 0 ? items : fallbackMenu;
+
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (item) => {
+        setSelectedItem(item);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedItem(null);
+    };
 
     return (
         <motion.section className="py-24 px-6 relative overflow-hidden"
@@ -34,7 +49,7 @@ export default function MenuSection({ items = [] }) {
 
                         {/* Espace image */}
                         <div className="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/30 transition">
-                            <span className="text-3xl text-white/50">+</span>
+                            <span className="text-3xl text-white/50">{item.img}</span>
                         </div>
 
                         {/* Infos du plat */}
@@ -46,10 +61,24 @@ export default function MenuSection({ items = [] }) {
                         </div>
 
                         <p className="mt-4 text-white/80 text-sm">{item.desc}</p>
+
+                        {/* Bouton pour commander */}
+                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white"
+                                onClick={() => openModal(item.name)}
+                        >
+                            Commander
+                        </button>
                     </div>
                 ))}
 
             </div>
+
+            <OrderModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                itemName={selectedItem}
+            />
+
         </motion.section>
     );
 }
