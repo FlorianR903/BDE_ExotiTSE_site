@@ -2,16 +2,17 @@
 import { motion } from 'framer-motion'
 import { useState } from "react";
 import OrderModal from "./OrderPopUp";
+import Image from "next/image";
 
 export default function MenuSection({ items = [] }) {
 
     const fallbackMenu = [
-        { img: '+', id: 1, title: "Rougail Saucisse", price: "8€", desc: "Saucisse, riz, tomates, oignons, épices" },
-        { img: '+', id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
-        { img: '+', id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
-        { img: '+', id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
-        { img: '+', id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
-        { img: '+', id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
+        { img: "/images/rougail_saucisses.jpeg", id: 1, title: "Rougail Saucisse", price: "8€", desc: "Saucisse, riz, tomates, oignons, épices" },
+        { img: "/images/rougail_saucisses.jpeg", id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
+        { img: "/images/rougail_saucisses.jpeg", id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
+        { img: "/images/rougail_saucisses.jpeg", id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
+        { img: "/images/rougail_saucisses.jpeg", id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
+        { img: "/images/rougail_saucisses.jpeg", id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
     ];
 
     const menu = items.length > 0 ? items : fallbackMenu;
@@ -49,7 +50,7 @@ export default function MenuSection({ items = [] }) {
 
                         {/* Espace image */}
                         <div className="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/30 transition">
-                            <span className="text-3xl text-white/50">{item.img}</span>
+                            <Image className="rounded-lg" src={item.img} alt={"photo du plat"} width={100} height={20}></Image>
                         </div>
 
                         {/* Infos du plat */}

@@ -30,7 +30,7 @@ export default function EventsSection({ events=[] }){
         },
         {
             id: 5,
-            title: "Viens rouler les R avec nous 🎙️ ",
+            title: "Viens rouler les R avec nous 🎙️",
             date: "4 novembre 2025",
             desc: "Une après-midi conviviale à la patinoire pour créer des souvenirs et partager de bons moments."
         },
@@ -97,8 +97,10 @@ export default function EventsSection({ events=[] }){
                             {event.title}
                         </h3>
 
+                        <br/>
+
                         {/* Badge Date */}
-                        <span className="top-8 mt-4 text-sm px-3 py-1 rounded-full bg-white/20 text-white/90">
+                        <span className="px-5 py-1.5 font-semibold rounded-full bg-white/20 text-white/90">
                             {event.date}
                         </span>
 
