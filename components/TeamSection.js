@@ -9,42 +9,42 @@ export default function TeamSection() {
             name: "Vaïty",
             role: "Président",
             bio: "Si y'a pas de limousin du préz, alors c'est pas une soirée exotiTSE !",
-            img: "mettre le lien de l'image ici",
+            img: "/images/vaity.jpg",
         },
         {
             id: 2,
             name: "Andjy",
             role: "Vice-Président",
             bio: "Ses bonbons bananes c'est une tuerie la vérité !",
-            img: "mettre le lien de l'image ici",
+            img: "/images/andjy.jpg",
         },
         {
             id: 3,
             name: "Clara",
             role: "Vice-Président",
             bio: "Je fais des meilleurs pancakes qu'elle askip' !",
-            img: "mettre le lien de l'image ici",
+            img: "/images/jerem.jpg",
         },
         {
             id: 4,
             name: "Guillaume",
             role: "Trésorier",
             bio: "(ajouter un truc drôle)",
-            img: "mettre le lien de l'image ici",
+            img: "/images/jerem.jpg",
         },
         {
             id: 5,
             name: "Lyam",
             role: "Vice-Trésorier",
             bio: "(ajouter un truc drôle)",
-            img: "mettre le lien de l'image ici",
+            img: "/images/lyam.jpg",
         },
         {
             id: 6,
             name: "Lucas",
             role: "Secrétaire Général",
             bio: "(ajouter un truc drôle)",
-            img: "mettre le lien de l'image ici",
+            img: "/images/lucas.jpg",
         }
     ];
 

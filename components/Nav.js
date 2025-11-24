@@ -31,13 +31,13 @@ export default function Nav(){
 
             {/* Menu Desktop */}
             <div className="hidden md:flex gap-8 text-white">
-                <Link href="/index" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</Link>
+                <Link href="/" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Accueil</Link>
                 <Link href="/events" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Événements</Link>
                 <Link href="/team" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Équipe</Link>
                 <Link href="/gallery" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Galerie</Link>
                 <Link href="/menu" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Menu</Link>
                 <Link href="/contact" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Contact</Link>
-                <Link href="/partenariats" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Partenariat</Link>
+                <Link href="/partenariats" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10">Partenariats</Link>
             </div>
 
             {/* Menu Mobile */}
