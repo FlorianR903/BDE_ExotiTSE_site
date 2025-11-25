@@ -19,13 +19,13 @@ export default function Hero() {
                         src="/images/andjy.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-contain object-center"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-contain pointer-events-none z-10"
+                        className="object-cover pointer-events-none"
                     />
                 </div>
 
@@ -35,13 +35,13 @@ export default function Hero() {
                         src="/images/lyam.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-contain rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-contain pointer-events-none z-10 w-48 h-80"
+                        className="object-cover pointer-events-none z-10 w-48 h-80"
                     />
                 </div>
 
@@ -56,13 +56,13 @@ export default function Hero() {
                         src="/images/lucas.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-contain rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-contain pointer-events-none z-10"
+                        className="object-cover pointer-events-none z-10"
                     />
                 </div>
 
@@ -72,13 +72,13 @@ export default function Hero() {
                         src="/images/andjy.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-contain rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-contain pointer-events-none z-10"
+                        className="object-cover pointer-events-none z-10"
                     />
                 </div>
             </motion.div>
