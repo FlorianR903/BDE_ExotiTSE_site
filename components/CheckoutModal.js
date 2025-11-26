@@ -3,7 +3,8 @@ import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
 } from '@stripe/react-stripe-js';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 
 const stripePromise = process.env.STRIPE_PUBLISHABLE_KEY 
@@ -11,23 +12,32 @@ const stripePromise = process.env.STRIPE_PUBLISHABLE_KEY
   : null;
 
 export default function CheckoutModal({ clientSecret, onClose }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleClose = useCallback(() => {
     if (onClose) onClose();
   }, [onClose]);
 
+  if (!mounted) return null;
+
   if (!process.env.STRIPE_PUBLISHABLE_KEY) {
-    return (
+    return createPortal(
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
         <div className="bg-white p-8 rounded-2xl max-w-md text-center">
           <h3 className="text-xl font-bold text-red-500 mb-2">Configuration manquante</h3>
           <p className="text-gray-700">La clé publique Stripe (STRIPE_PUBLISHABLE_KEY) n'est pas définie.</p>
           <button onClick={handleClose} className="mt-4 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Fermer</button>
         </div>
-      </div>
+      </div>,
+      document.body
     );
   }
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-[100] isolate">
       {/* Backdrop - Clic pour fermer */}
       <div 
@@ -63,6 +73,7 @@ export default function CheckoutModal({ clientSecret, onClose }) {
             </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

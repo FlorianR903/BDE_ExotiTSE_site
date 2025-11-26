@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <motion.section className="min-h-screen flex items-start justify-center text-center relative overflow-hidden pt-20"
+        <motion.section className="min-h-screen flex items-center justify-center text-center relative overflow-hidden"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -14,18 +14,18 @@ export default function Hero() {
 
             <motion.div initial={{ y: -10, opacity: 0 }} animate={{ y:0, opacity:1 }} transition={{ duration: 0.8 }} className="p-8">
                 {/* Polaroid Gauche 1 */}
-                <div className="absolute top-28 left-40 md:w-40 md:h-48 hidden md:block polaroid-left">
+                <div className="absolute top-36 left-40 md:w-40 md:h-48 hidden md:block polaroid-left">
                     <Image
                         src="/images/andjy.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-contain object-center"
+                        className="object-cover rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-cover pointer-events-none"
+                        className="object-contain pointer-events-none z-10"
                     />
                 </div>
 
@@ -35,13 +35,13 @@ export default function Hero() {
                         src="/images/lyam.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-contain rounded-lg"
+                        className="object-cover rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-cover pointer-events-none z-10 w-48 h-80"
+                        className="object-contain pointer-events-none z-10 w-48 h-80"
                     />
                 </div>
 
@@ -51,18 +51,18 @@ export default function Hero() {
                 <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
 
                 {/* Polaroid Droite 1 */}
-                <div className="absolute top-28 right-40 md:w-40 md:h-48 hidden md:block polaroid-right">
+                <div className="absolute top-36 right-40 md:w-40 md:h-48 hidden md:block polaroid-right">
                     <Image
                         src="/images/lucas.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-contain rounded-lg"
+                        className="object-cover rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-cover pointer-events-none z-10"
+                        className="object-contain pointer-events-none z-10"
                     />
                 </div>
 
@@ -72,13 +72,13 @@ export default function Hero() {
                         src="/images/andjy.jpg"
                         alt="Photo soirée"
                         fill
-                        className="object-contain rounded-lg"
+                        className="object-cover rounded-lg"
                     />
                     <Image
                         src="/images/cadre_polaroid_empty.png"
                         alt="Cadre polaroid"
                         fill
-                        className="object-cover pointer-events-none z-10"
+                        className="object-contain pointer-events-none z-10"
                     />
                 </div>
             </motion.div>
