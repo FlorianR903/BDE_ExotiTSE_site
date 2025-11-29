@@ -2,6 +2,8 @@ import Nav from '../components/Nav'
 import MenuSection from '../components/MenuSection'
 import Head from "next/head";
 
+export const dynamic = 'force-dynamic';
+
 export default function Menu(){
     const demo = []
 

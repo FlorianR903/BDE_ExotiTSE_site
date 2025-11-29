@@ -1,85 +1,190 @@
 // components/MenuSection.js
-import { motion } from 'framer-motion'
-import { useState } from "react";
-import OrderModal from "./OrderPopUp";
-import Image from "next/image";
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { useCart } from './CartContext';
+import CheckoutModal from './CheckoutModal';
 
 export default function MenuSection({ items = [] }) {
+  const [menu, setMenu] = useState(items);
+  const [loading, setLoading] = useState(items.length === 0);
+  const [error, setError] = useState(null);
+  const [clientSecret, setClientSecret] = useState(null);
 
-    const fallbackMenu = [
-        { img: "/images/rougail_saucisses.jpeg", id: 1, title: "Rougail Saucisse", price: "8€", desc: "Saucisse, riz, tomates, oignons, épices" },
-        { img: "/images/rougail_saucisses.jpeg", id: 2, title: "Virgin Paradise", price: "5€", desc: "Mocktail fruits tropicaux" },
-        { img: "/images/rougail_saucisses.jpeg", id: 3, title: "Poke Bowl BDE", price: "8€", desc: "Base riz, mangue, saumon ou végé" },
-        { img: "/images/rougail_saucisses.jpeg", id: 4, title: "Wrap Poulet Crunch", price: "6€", desc: "Wrap croustillant sauce maison" },
-        { img: "/images/rougail_saucisses.jpeg", id: 5, title: "Assiette Apéro", price: "7€", desc: "Nachos, guacamole & tapas" },
-        { img: "/images/rougail_saucisses.jpeg", id: 6, title: "Smoothie Energy", price: "4€", desc: "Banane, fraise, lait d’amande" }
-    ];
+  const { addItem } = useCart();
+  const [toast, setToast] = useState(null);
 
-    const menu = items.length > 0 ? items : fallbackMenu;
+  // 🔁 récupère les produits Stripe via /api/menu
+  useEffect(() => {
+    if (items.length > 0) {
+      setMenu(items);
+      setLoading(false);
+      return;
+    }
 
-    const [selectedItem, setSelectedItem] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const fetchMenu = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch('/api/menu');
+        if (!res.ok) throw new Error('Erreur serveur');
+        const data = await res.json();
 
-    const openModal = (item) => {
-        setSelectedItem(item);
-        setIsModalOpen(true);
+        if (Array.isArray(data) && data.length > 0) {
+          setMenu(data);
+        } else {
+          setError("Aucun produit disponible pour le moment.");
+          setMenu([]);
+        }
+      } catch (err) {
+        console.error(err);
+        setError("Impossible de charger le menu en ligne.");
+        setMenu([]);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedItem(null);
-    };
+    fetchMenu();
+  }, [items]);
 
-    return (
-        <motion.section className="py-24 px-6 relative overflow-hidden"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}>
+  // ➕ Ajouter au panier
+  const handleAddToCart = (item) => {
+    addItem(item); 
+    setToast(`${item.title} ajouté au panier !`);
+    setTimeout(() => setToast(null), 3000);
+  };
 
-            <h2 className="text-5xl font-extrabold text-center mb-12">Menu</h2>
+  // 💳 Commander directement (1 exemplaire) via Stripe Checkout
+  const handleDirectCheckout = async (item) => {
+    try {
+      if (!item.stripePriceId) {
+        setToast('Erreur: Produit non disponible à l\'achat (ID manquant)');
+        setTimeout(() => setToast(null), 3000);
+        return;
+      }
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [
+            {
+              stripePriceId: item.stripePriceId,
+              quantity: 1,
+            },
+          ],
+        }),
+      });
 
-                {menu.map(item => (
-                    <div
-                        key={item.id}
-                        className="p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-xl
-                                   hover:scale-[1.03] transition-all text-white"
-                    >
+      const data = await res.json();
 
-                        {/* Espace image */}
-                        <div className="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/30 transition">
-                            <Image className="rounded-lg" src={item.img} alt={"photo du plat"} width={100} height={20}></Image>
-                        </div>
+      if (!res.ok) {
+        console.error('Erreur serveur lors de la création de la session:', data.error);
+        setToast(`Erreur: ${data.error || 'Erreur serveur'}`);
+        setTimeout(() => setToast(null), 3000);
+        return;
+      }
 
-                        {/* Infos du plat */}
-                        <div className="flex justify-between items-center">
-                            <h3 className="text-2xl font-semibold">{item.title}</h3>
-                            <span className="text-lg font-bold bg-white/20 px-3 py-1 rounded-xl">
-                                {item.price}
-                            </span>
-                        </div>
+      if (data.clientSecret) {
+        setClientSecret(data.clientSecret);
+      } else {
+        console.error('Pas de clientSecret reçu');
+        setToast("Erreur: Pas de secret de session");
+        setTimeout(() => setToast(null), 3000);
+      }
+    } catch (err) {
+      console.error('Erreur Stripe Checkout :', err);
+      setToast("Erreur de connexion au service de paiement");
+      setTimeout(() => setToast(null), 3000);
+    }
+  };
 
-                        <p className="mt-4 text-white/80 text-sm">{item.desc}</p>
+  return (
+    <motion.section
+      className="py-24 px-6 relative overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {clientSecret && (
+        <CheckoutModal 
+          clientSecret={clientSecret} 
+          onClose={() => setClientSecret(null)} 
+        />
+      )}
 
-                        {/* Bouton pour commander */}
-                        <button className="mt-6 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white"
-                                onClick={() => openModal(item.name)}
-                        >
-                            Commander
-                        </button>
-                    </div>
-                ))}
+      {toast && (
+        <div className="fixed top-24 right-6 z-50 bg-emerald-500 text-white px-6 py-3 rounded-xl shadow-2xl animate-bounce">
+          {toast}
+        </div>
+      )}
 
+      <h2 className="text-5xl font-extrabold text-center mb-12">Menu</h2>
+
+      {loading && (
+        <p className="text-center text-white/80 mb-6">Chargement du menu…</p>
+      )}
+      {error && (
+        <div className="text-center mb-6">
+            <p className="text-red-400 text-lg font-semibold">{error}</p>
+            <p className="text-white/60 text-sm mt-2">Veuillez réessayer plus tard.</p>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        {menu.map((item) => (
+          <div
+            key={item.id}
+            className="p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-xl
+                       hover:scale-[1.03] transition-all text-white flex flex-col h-full"
+          >
+            {/* Image */}
+            <div className="w-24 h-24 bg-white/20 rounded-xl overflow-hidden mb-4 mx-auto flex items-center justify-center flex-shrink-0">
+              {item.img ? (
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="text-3xl text-white/50">+</span>
+              )}
             </div>
 
-            <OrderModal
-                isOpen={isModalOpen}
-                onClose={closeModal}
-                itemName={selectedItem}
-            />
+            {/* Infos plat */}
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="text-2xl font-semibold">{item.title}</h3>
+              <span className="text-lg font-bold bg-white/20 px-3 py-1 rounded-xl whitespace-nowrap ml-2">
+                {item.price}
+              </span>
+            </div>
 
-        </motion.section>
-    );
+            <p className="mt-2 text-white/80 text-sm flex-grow mb-6">{item.desc}</p>
+
+            {/* Boutons */}
+            <div className="mt-auto flex gap-3">
+              <button
+                className="flex-1 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 font-bold text-white text-sm"
+                onClick={() => handleAddToCart(item)}
+              >
+                Ajouter au panier
+              </button>
+
+              <button
+                className={`flex-1 px-4 py-2 rounded-xl font-bold text-white text-sm ${
+                  item.stripePriceId
+                    ? 'bg-emerald-500/80 hover:bg-emerald-500'
+                    : 'bg-gray-500/60 cursor-not-allowed'
+                }`}
+                onClick={() => item.stripePriceId && handleDirectCheckout(item)}
+                disabled={!item.stripePriceId}
+              >
+                Commander
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.section>
+  );
 }

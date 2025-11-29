@@ -19,19 +19,19 @@ export default function ContactSection() {
 
             {/* Numéro de téléphone */}
             <div>
-                <span className="font-bold">Téléphone : </span>
-                <a href="tel:0601020304" className="underline hover:text-yellow-300">
+                <span className="font-bold text-white/90">Téléphone : </span>
+                <a href="tel:0601020304" className="underline hover:text-yellow-300 text-white/90">
                     07 81 29 55 74
                 </a>
             </div>
 
             {/* Instagram */}
             <div>
-                <span className="font-bold">Instagram : </span>
+                <span className="font-bold text-white/90">Instagram : </span>
                 <a
                     href="https://instagram.com/ton_compte"
                     target="_blank"
-                    className="underline hover:text-yellow-300"
+                    className="underline hover:text-yellow-300 text-white/90"
                 >
                     @florian.rmgs
                 </a>
@@ -39,10 +39,10 @@ export default function ContactSection() {
 
             {/* Mail */}
             <div>
-                <span className="font-bold">Mail : </span>
+                <span className="font-bold text-white/90">Mail : </span>
                 <a
                     href="mailto:exotitse.contact@example.com"
-                    className="underline hover:text-yellow-300"
+                    className="underline hover:text-yellow-300 text-white/90"
                 >
                     exotitse.contact@gmail.com
                 </a>
@@ -50,8 +50,8 @@ export default function ContactSection() {
 
             {/* Adresse postale */}
             <div>
-                <span className="font-bold">Quartier Général : </span>
-                <p className="inline-block">
+                <span className="font-bold text-white/90">Quartier Général : </span>
+                <p className="inline-block text-white/90">
                     24 Rue des Tropiques, Toulouse, France
                 </p>
             </div>
