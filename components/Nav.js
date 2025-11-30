@@ -72,13 +72,13 @@ export default function Nav() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-8 text-white items-center">
                     <div className="flex gap-6">
-                        <Link href="/" className="nav-link">Accueil</Link>
-                        <Link href="/events" className="nav-link">Événements</Link>
-                        <Link href="/team" className="nav-link">Équipe</Link>
-                        <Link href="/gallery" className="nav-link">Galerie</Link>
-                        <Link href="/menu" className="nav-link">Menu</Link>
-                        <Link href="/contact" className="nav-link">Contact</Link>
-                        <Link href="/partenariats" className="nav-link">Partenariat</Link>
+                        <Link href="/" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Accueil</Link>
+                        <Link href="/events" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Événements</Link>
+                        <Link href="/team" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Équipe</Link>
+                        <Link href="/gallery" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Galerie</Link>
+                        <Link href="/menu" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Menu</Link>
+                        <Link href="/contact" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Contact</Link>
+                        <Link href="/partenariats" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Partenariat</Link>
                     </div>
 
                     {/* Cart (desktop) */}
