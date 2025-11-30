@@ -47,7 +47,7 @@ export default function Hero() {
 
                 {/*Titre*/}
                 <Image src="/images/palmiers_empty.png" alt={"Palmiers de fond"} width={400} height={100} className="mb-auto"></Image>
-                <h1 className="text-5xl md:text-7xl font-extrabold text-white">Exoti'TSE <span>🌺</span></h1>
+                <h1 className="text-7xl md:text-7xl font-extrabold text-white">Exoti'TSE</h1>
                 <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
 
                 {/* Polaroid Droite 1 */}
