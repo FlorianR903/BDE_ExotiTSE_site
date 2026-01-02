@@ -1,6 +1,7 @@
 import Nav from '../components/Nav'
 import { motion, AnimatePresence } from 'framer-motion'
 import Head from "next/head";
+import Link from 'next/link';
 import { useState } from 'react';
 
 const albums = [
@@ -66,15 +67,12 @@ export default function Gallery() {
                         Retrouvez les meilleurs moments de nos événements. Vous avez pris des photos ? Partagez-les avec nous pour qu'on les ajoute ici !
                     </p>
 
-                    <a
-                        href={googleFormLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-pink-600 font-bold rounded-full shadow-lg hover:scale-105 hover:bg-gray-100 transition-transform"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                        Ajouter mes photos
-                    </a>
+                    <Link href="/upload">
+                        <button className="inline-flex items-center gap-2 px-6 py-3 bg-white text-pink-600 font-bold rounded-full shadow-lg hover:scale-105 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                Ajouter mes photos
+                        </button>
+                    </Link>
                 </div>
 
                 {/* GRILLE DES ALBUMS */}
