@@ -14,35 +14,52 @@ export default function Hero() {
 
             <motion.div initial={{ y: -10, opacity: 0 }} animate={{ y:0, opacity:1 }} transition={{ duration: 0.8 }} className="p-8">
                 {/* Polaroid Gauche 1 */}
-                <div className="absolute top-36 left-40 md:w-40 md:h-48 hidden md:block polaroid-left">
-                    <Image
-                        src="/images/andjy.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10"
-                    />
+                <div className="absolute top-28 left-36 hidden md:block polaroid-left">
+                    <div className="relative w-64 h-52">
+                        <div className="absolute top-[10%] left-[0%] w-[100%] h-[100%]">
+                            {/* Cadre */}
+                            <Image
+                                src="/images/cadre_polaroid_empty.png"
+                                alt="Cadre polaroid"
+                                fill
+                                className="object-contain pointer-events-none"
+                            />
+                        </div>
+                        {/* Photo */}
+                        <div className="absolute top-[22%] left-[25%] w-[49%] h-[70%] overflow-hidden rounded-sm">
+                            <Image
+                                src="/images/andjy.jpg"
+                                alt="Photo soirée"
+                                fill
+                                className="object-cover object-center"
+                            />
+                        </div>
+
+                    </div>
                 </div>
 
                 {/* Polaroid Gauche 2 */}
-                <div className="absolute bottom-32 left-72 md:w-40 md:h-48 hidden md:block polaroid-right">
-                    <Image
-                        src="/images/lyam.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10 w-48 h-80"
-                    />
+                <div className="absolute bottom-40 left-60 hidden md:block polaroid-right">
+                    <div className="relative w-64 h-52">
+                        <div className="absolute top-[10%] left-[0%] w-[100%] h-[100%]">
+                            {/* Cadre */}
+                            <Image
+                                src="/images/cadre_polaroid_empty.png"
+                                alt="Cadre polaroid"
+                                fill
+                                className="object-contain pointer-events-none"
+                            />
+                        </div>
+                        {/* Photo */}
+                        <div className="absolute top-[22%] left-[25%] w-[49%] h-[70%] overflow-hidden rounded-sm">
+                            <Image
+                                src="/images/lyam.jpg"
+                                alt="Photo soirée"
+                                fill
+                                className="object-cover object-center"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/*Titre*/}
@@ -51,35 +68,51 @@ export default function Hero() {
                 <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
 
                 {/* Polaroid Droite 1 */}
-                <div className="absolute top-36 right-40 md:w-40 md:h-48 hidden md:block polaroid-right">
-                    <Image
-                        src="/images/lucas.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10"
-                    />
+                <div className="absolute top-28 right-36 hidden md:block polaroid-right">
+                    <div className="relative w-64 h-52">
+                        <div className="absolute top-[10%] left-[0%] w-[100%] h-[100%]">
+                            {/* Cadre */}
+                            <Image
+                                src="/images/cadre_polaroid_empty.png"
+                                alt="Cadre polaroid"
+                                fill
+                                className="object-contain pointer-events-none"
+                            />
+                        </div>
+                        {/* Photo */}
+                        <div className="absolute top-[22%] left-[25%] w-[49%] h-[70%] overflow-hidden rounded-sm">
+                            <Image
+                                src="/images/lucas.jpg"
+                                alt="Photo soirée"
+                                fill
+                                className="object-cover object-center"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Polaroid Droite 2 */}
-                <div className="absolute bottom-32 right-72 md:w-40 md:h-48 hidden md:block polaroid-left">
-                    <Image
-                        src="/images/andjy.jpg"
-                        alt="Photo soirée"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                    <Image
-                        src="/images/cadre_polaroid_empty.png"
-                        alt="Cadre polaroid"
-                        fill
-                        className="object-contain pointer-events-none z-10"
-                    />
+                <div className="absolute bottom-40 right-60 hidden md:block polaroid-left">
+                    <div className="relative w-64 h-52">
+                        <div className="absolute top-[10%] left-[0%] w-[100%] h-[100%]">
+                            {/* Cadre */}
+                            <Image
+                                src="/images/cadre_polaroid_empty.png"
+                                alt="Cadre polaroid"
+                                fill
+                                className="object-contain pointer-events-none"
+                            />
+                        </div>
+                        {/* Photo */}
+                        <div className="absolute top-[22%] left-[25%] w-[49%] h-[70%] overflow-hidden rounded-sm">
+                            <Image
+                                src="/images/andjy.jpg"
+                                alt="Photo soirée"
+                                fill
+                                className="object-cover object-center"
+                            />
+                        </div>
+                    </div>
                 </div>
             </motion.div>
         </motion.section>
