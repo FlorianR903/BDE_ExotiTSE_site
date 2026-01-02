@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Head from "next/head";
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const albums = [
     {
@@ -21,7 +22,7 @@ const albums = [
         id: 2,
         title: "Soirée Casino",
         date: "27 Oct 2024",
-        cover: "/images/casino_cover.jpg",
+        cover: "/images/casino_soiree.jpg",
         photos: [
             "/images/casino1.jpg",
             "/images/casino2.jpg",
@@ -31,7 +32,7 @@ const albums = [
         id: 3,
         title: "Shatta Night",
         date: "4 Nov 2024",
-        cover: "/images/shatta_cover.jpg",
+        cover: "/images/shatta_night.png",
         photos: [
             "/images/shatta1.jpg",
             "/images/shatta2.jpg",
@@ -83,12 +84,11 @@ export default function Gallery() {
                             onClick={() => setSelectedAlbum(album)}
                             className="group relative aspect-video bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden cursor-pointer shadow-xl"
                         >
-                            {/* Image de couverture (si tu n'as pas d'image, enlève le composant Image et garde juste le fond coloré) */}
+                            {/* Image de couverture par défaut */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
 
-                            {/* Placeholder si pas d'image, sinon décommenter <Image /> */}
                             <div className="absolute inset-0 bg-white/5 group-hover:scale-110 transition-transform duration-500" />
-                            {/* <Image src={album.cover} layout="fill" objectFit="cover" className="group-hover:scale-110 transition-transform duration-500" /> */}
+                            <Image src={album.cover} alt={"fill"} width={400} height={50} objectFit="cover" className="group-hover:scale-110 transition-transform duration-500" />
 
                             <div className="absolute bottom-0 left-0 p-6 z-20">
                                 <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-pink-300 transition-colors">
