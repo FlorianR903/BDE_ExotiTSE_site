@@ -29,7 +29,7 @@ export default function ContactSection() {
             <div>
                 <span className="font-bold text-white/90">Instagram : </span>
                 <a
-                    href="https://instagram.com/ton_compte"
+                    href="https://instagram.com/florian.rmgs"
                     target="_blank"
                     className="underline hover:text-yellow-300 text-white/90"
                 >
