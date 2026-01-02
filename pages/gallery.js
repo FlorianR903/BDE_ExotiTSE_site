@@ -43,7 +43,6 @@ const albums = [
 
 export default function Gallery() {
     const [selectedAlbum, setSelectedAlbum] = useState(null);
-    const googleFormLink = "https://forms.google.com/ton-lien-ici"; // Ton lien Google Form
 
     return (
         <>
