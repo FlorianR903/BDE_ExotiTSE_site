@@ -4,16 +4,16 @@ import Nav from '../components/Nav';
 import Head from 'next/head';
 
 export default function UploadPhotoPage() {
-    // 1. Tes données d'événements (devraient idéalement être dans un fichier commun)
     const events = [
         { id: 1, title: "Le fameux Aparton 🍻🏃‍♂️", date: "2025-10-15" },
         { id: 2, title: "Soirée Casino ♦️♣️", date: "2026-01-03" },
         { id: 3, title: "Shatta Night 🔥", date: "2025-11-04" },
-        { id: 12, title: "Gala de Noël (Exemple Passé) 🎄", date: "2023-12-15" },
-        {id: 15, title: "koh lanta (Exemple futur) 🎄", date: "2026-12-15" } // Exemple pour tester
+        { id: 4, title: "Gala de Noël (Exemple Passé) 🎄", date: "2023-12-15" },
+        { id: 5, title: "koh lanta (Exemple futur) 🎄", date: "2026-12-15" }
+        //etc...
     ];
 
-    // 2. Filtrer uniquement les événements passés
+    // Filtrer uniquement les événements passés
     const pastEvents = useMemo(() => {
         const today = new Date();
         return events.filter(event => new Date(event.date) < today);
