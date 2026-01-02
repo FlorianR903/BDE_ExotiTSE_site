@@ -2,7 +2,6 @@ import Nav from '../components/Nav'
 import { motion, AnimatePresence } from 'framer-motion'
 import Head from "next/head";
 import { useState } from 'react';
-import Image from 'next/image';
 
 const albums = [
     {
