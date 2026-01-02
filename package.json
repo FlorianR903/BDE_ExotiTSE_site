@@ -12,8 +12,8 @@
 		"@stripe/stripe-js": "^8.5.2",
 		"dotenv": "^17.2.3",
 		"framer-motion": "^7.10.3",
-		"next": "^16.0.3",
-		"nodemailer": "^7.0.10",
+		"next": "^16.0.10",
+		"nodemailer": "7.0.11",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"stripe": "^20.0.0"
