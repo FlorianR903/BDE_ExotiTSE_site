@@ -56,18 +56,10 @@ export default function MaintenancePage() {
                 {/* 🌟 Logo & Titre (Centrés verticalement) */}
                 <div className="flex flex-col items-center gap-6 mb-10">
                     <div className="logo-glow">
-                        <Image
-                            src="/images/logo_empty_bg.png"
-                            alt="Exoti'TSE"
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                            priority
-                        />
+                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl">
+                            Exoti&apos;TSE
+                        </h1>
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl">
-                        Exoti&apos;TSE
-                    </h1>
                 </div>
 
                 <br></br>
