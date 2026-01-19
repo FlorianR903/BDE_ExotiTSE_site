@@ -41,7 +41,7 @@ export default function CookieBanner() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="fixed bottom-4 left-4 right-4 z-[100] md:left-1/2 md:-translate-x-1/2 md:max-w-3xl"
                 >
-                    <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-3xl shadow-2xl p-6 text-white">
+                    <div className="bg-gray-600/80 backdrop-blur-sm border border-white/30 rounded-3xl shadow-2xl p-6 text-white">
 
                         <h3 className="text-xl font-bold mb-2">
                             🍪 Un peu de cookies sous les tropiques ?
