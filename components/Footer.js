@@ -31,12 +31,12 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md p-2">
+                            <div className="w-12 h-12 rounded-full flex bg-white/20 backdrop-blur-md items-center p-1">
                                 <Image
-                                    src="/images/logo_empty_bg.png"
+                                    src="/images/logo_liste.png"
                                     alt="Exoti'TSE"
-                                    width={48}
-                                    height={48}
+                                    width={70}
+                                    height={70}
                                     className="object-contain"
                                 />
                             </div>

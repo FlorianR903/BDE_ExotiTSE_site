@@ -64,10 +64,16 @@ export default function Hero() {
                     </div>
                 </div>
 
+                {/* Logo géant en arrière-plan */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                    <span className="text-[14rem] md:text-[20rem] opacity-10 select-none" style={{ filter: "blur(1px)" }}>
+                        <Image src="/images/logo_liste.png" alt="Logo arriere plan" width={500} height={400}/></span>
+                </div>
+
                 {/*Titre*/}
-                <Image src="/images/palmiers_empty.png" alt={"Palmiers de fond"} width={400} height={100} className="mb-auto"></Image>
-                <h1 className="text-5xl md:text-7xl font-extrabold text-white">Exoti'TSE <span>🌺</span></h1>
-                <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
+                <Image src="/images/palmiers_empty.png" alt={"Palmiers de fond"} width={400} height={100} className="mb-auto relative z-10"></Image>
+                <h1 className="text-5xl md:text-7xl font-extrabold relative z-10 text-white">Exoti'TSE <span>🌺</span></h1>
+                <p className="mt-4 relative z-10 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">La liste tropicale — events, menus, goodies et plus.</p>
 
                 {/* Polaroid Droite 1 */}
                 <div className="absolute top-28 right-36 hidden md:block polaroid-right">

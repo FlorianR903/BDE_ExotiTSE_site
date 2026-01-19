@@ -41,12 +41,12 @@ export default function Nav() {
 
                 {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 rounded-full bg-amber-800/25 overflow-hidden flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-amber-800/25 overflow-hidden flex items-center p-1.5">
                         <Image
-                            src="/images/logo_empty_bg.png"
-                            alt="Logo du site"
-                            width={80}
-                            height={80}
+                            src="/images/logo_liste.png"
+                            alt="Exoti'TSE"
+                            width={70}
+                            height={70}
                             className="object-contain"
                         />
                     </div>
