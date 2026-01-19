@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 
 // ---- PAGE ACCUEIL ---- //
 export default function Home() {
@@ -30,6 +31,8 @@ export default function Home() {
                     </p>
                 </div>
             </main>
+
+            <Footer />
         </>
     );
 }

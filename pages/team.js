@@ -1,6 +1,7 @@
 import Nav from '../components/Nav'
 import TeamSection from '../components/TeamSection'
 import Head from "next/head";
+import Footer from "../components/Footer"
 
 export default function Team(){
     const demo = []
@@ -16,6 +17,8 @@ export default function Team(){
             <div className="pt-24">
                 <TeamSection team={demo} />
             </div>
+
+            <Footer />
         </>
     );
 }

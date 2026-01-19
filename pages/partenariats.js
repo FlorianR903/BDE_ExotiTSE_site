@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import Head from "next/head";
 import { motion } from 'framer-motion'
+import Footer from "../components/Footer";
 
 export default function Partenariats() {
 
@@ -69,6 +70,8 @@ export default function Partenariats() {
 
                 </div>
             </motion.section>
+
+            <Footer />
         </>
     );
 }
