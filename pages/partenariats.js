@@ -8,27 +8,45 @@ export default function Partenariats() {
     const partners = [
         {
             id: 1,
-            name: "Le Soggy Bottom 🍻",
-            address: "12 Avenue des Étudiants, 87000 Limoges",
-            event: "Le fameux Aparton 🍻🏃‍♂️"
+            name: "RougeGorge Lingerie 👙",
+            address: "35 Place du Peuple, 42000 Saint-Etienne",
+            lots: "Bon cadeau de 15€ à gagner !",
+            event: "A déterminer"
         },
         {
             id: 2,
-            name: "Le Deer Pub 🍾",
-            address: "48 Rue des Arts, 87000 Limoges",
-            event: "Casse des 🥥, pas les couil***"
+            name: "Resto Little Garden 🍜",
+            address: "02 Rue Dormoy, 42000 Saint-Etienne",
+            lots: "Bon cadeau de 12€ à gagner !",
+            event: "A déterminer"
         },
         {
             id: 3,
-            name: "Le SpringBreak 🥂",
-            address: "5 Place Centrale, 87000 Limoges",
-            event: "Shatta Night 🔥"
+            name: "Columbus Cafe ☕",
+            address: "12 Rue Général Foy, 42000 Saint-Etienne",
+            lots: "Quatres menus offerts au choix à gagner !",
+            event: "A déterminer"
         },
         {
             id: 4,
-            name: "Energy Drink Ragnarok 🥂",
-            address: "5 Place Centrale, 87000 Limoges",
-            event: "Tous les events !"
+            name: "Librairie de PARIS 📚",
+            address: "6 Rue Michel Rondet, 42000 Saint-Etienne",
+            lots: "De nombreux lots !",
+            event: "A déterminer"
+        },
+        {
+            id: 5,
+            name: "Mégarama Jean Jaurès 🎬",
+            address: "2 Rue Praire, Pl. Jean Jaurès, 42000 Saint-Etienne",
+            lots: "30 places de cinémas à gagner !",
+            event: "A déterminer"
+        },
+        {
+            id: 6,
+            name: "Salon Dessange 💅",
+            address: "5 Rue Sainte-Catherine, 42000 Saint-Etienne",
+            lots: "Plusieurs lots à gagner + 15% pour les étudiants !",
+            event: "A déterminer"
         }
     ];
 
@@ -39,6 +57,8 @@ export default function Partenariats() {
             </Head>
 
             <Nav />
+
+            <br/><br/>
 
             <motion.section className="py-24 px-6 relative overflow-hidden"
                             initial={{ opacity: 0, y: 40 }}
@@ -60,6 +80,10 @@ export default function Partenariats() {
 
                             <p className="text-white/80 mb-4 text-sm">
                                 <strong>Adresse :</strong><br /> {p.address}
+                            </p>
+
+                            <p className="text-white/80 mb-4 text-sm">
+                                <strong>Lots à gagner :</strong><br /> {p.lots}
                             </p>
 
                             <p className="text-white/90 text-sm">
