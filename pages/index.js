@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
+import CookieBanner from "../components/CookieBanner";
+import CookieFloatingButton from "../components/CookieFloatingButton";
 
 // ---- PAGE ACCUEIL ---- //
 export default function Home() {
@@ -11,6 +14,9 @@ export default function Home() {
             </Head>
 
             <Nav/>
+
+            <CookieBanner/>
+            <CookieFloatingButton/>
 
             <main className="pt-20 text-white">
 
@@ -30,6 +36,8 @@ export default function Home() {
                     </p>
                 </div>
             </main>
+
+            <Footer />
         </>
     );
 }

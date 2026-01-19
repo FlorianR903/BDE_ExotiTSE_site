@@ -45,3 +45,133 @@ h1, h2, h3, h4, h5, h6 {
 .polaroid-right {
     animation: float-rotate-right 4s ease-in-out infinite;
 }
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 18s ease infinite;
+}
+
+/* 🌈 Animated gradient */
+.bg-animated-gradient {
+    background: linear-gradient(120deg, #ff7a18, #ff3cac, #784ba0, #2b86c5);
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🌊 Wave overlay */
+.bg-wave-pattern {
+    background-image: radial-gradient(circle at 50% 120%, rgba(255,255,255,0.2), transparent 60%);
+}
+
+/* 📽️ Film grain */
+.bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ✨ Particles */
+.particle {
+    position: absolute;
+    bottom: -20px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 999px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* 🧊 Card animation */
+.animate-fade-up {
+    animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌟 Logo glow */
+.logo-glow {
+    padding: 20px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 85%);
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ⏳ Counter */
+.counter-card {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 1.5rem;
+    padding: 1.2rem 0;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+.counter-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.counter-label {
+    margin-top: 0.25rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+}
+
+/* 💓 Pulse */
+.pulse {
+    animation: pulseGlow 1s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 rgba(255,255,255,0.4); }
+    50% { box-shadow: 0 0 30px rgba(255,255,255,0.8); }
+    100% { box-shadow: 0 0 0 rgba(255,255,255,0.4); }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-wave {
+    animation: wave 4s linear infinite;
+}
+
+.animate-wave-slow {
+    animation: wave 7s linear infinite;
+}
+
+footer a:hover {
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}

@@ -29,11 +29,11 @@ export default function ContactSection() {
             <div>
                 <span className="font-bold text-white/90">Instagram : </span>
                 <a
-                    href="https://instagram.com/florian.rmgs"
+                    href="https://instagram.com/exoti__tse"
                     target="_blank"
                     className="underline hover:text-yellow-300 text-white/90"
                 >
-                    @florian.rmgs
+                    @exoti__tse
                 </a>
             </div>
 
@@ -52,7 +52,7 @@ export default function ContactSection() {
             <div>
                 <span className="font-bold text-white/90">Quartier Général : </span>
                 <p className="inline-block text-white/90">
-                    24 Rue des Tropiques, Toulouse, France
+                    2 Rue Clovis Hugues, 42000 Saint-Etienne
                 </p>
             </div>
 

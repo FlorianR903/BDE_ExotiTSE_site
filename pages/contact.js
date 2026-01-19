@@ -1,6 +1,7 @@
 import Nav from '../components/Nav'
 import ContactSection from '../components/ContactSection'
 import Head from "next/head";
+import Footer from '../components/Footer';
 
 export default function Contact(){
     return (
@@ -14,6 +15,8 @@ export default function Contact(){
             <div className="pt-24">
                 <ContactSection />
             </div>
+
+            <Footer />
         </>
     );
 }

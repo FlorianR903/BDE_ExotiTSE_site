@@ -1,6 +1,7 @@
 import Nav from '../components/Nav'
 import EventsSection from '../components/EventsSection'
-import Head from "next/head";
+import Head from "next/head"
+import Footer from '../components/Footer';
 
 export default function Events(){
 const demo = []
@@ -15,6 +16,8 @@ const demo = []
             <div className="pt-24">
                 <EventsSection events={demo} />
             </div>
+
+            <Footer />
         </>
     );
 }

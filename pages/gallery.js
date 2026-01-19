@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
+import Footer from '../components/Footer';
 
 const albums = [
     {
@@ -12,10 +13,7 @@ const albums = [
         date: "15 Oct 2024",
         cover: "/images/aparton_soiree.jpg", // Photo de couverture
         photos: [
-            "/images/aparton1.jpg",
-            "/images/aparton2.jpg",
-            "/images/aparton3.jpg",
-            "/images/aparton4.jpg",
+            "/images/andjy.jpg",
         ]
     },
     {
@@ -149,7 +147,7 @@ export default function Gallery() {
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                         {selectedAlbum.photos.map((photo, idx) => (
                                             <div key={idx} className="relative aspect-square rounded-xl overflow-hidden bg-white/5 hover:opacity-90 transition">
-                                                {/* <Image src={photo} layout="fill" objectFit="cover" /> */}
+                                                <Image src={photo} layout="fill" objectFit="cover" />
 
                                                 {/* Pour la démo sans images réelles : */}
                                                 <div className="w-full h-full flex items-center justify-center text-white/20 border border-white/5">
@@ -173,6 +171,8 @@ export default function Gallery() {
                 </AnimatePresence>
 
             </motion.section>
+
+            <Footer/>
         </>
     );
 }
