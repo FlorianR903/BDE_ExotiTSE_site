@@ -12,7 +12,9 @@ export default function Hero() {
             {/*Background*/}
             <div className="fixed inset-0 -z-10 bg-gradient-to-br from-tropical1 via-tropical2 to-tropical3 bg-no-repeat bg-cover bg-fixed" />
 
-            <motion.div initial={{ y: -10, opacity: 0 }} animate={{ y:0, opacity:1 }} transition={{ duration: 0.8 }} className="p-8">
+            <motion.div className="p-8"
+                        animate={{ y:0, opacity:1 }}
+                        transition={{ duration: 0.8 }}>
                 {/* Polaroid Gauche 1 */}
                 <div className="absolute top-28 left-36 hidden md:block polaroid-left">
                     <div className="relative w-64 h-52">
