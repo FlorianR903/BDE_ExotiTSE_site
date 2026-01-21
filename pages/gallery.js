@@ -45,6 +45,8 @@ export default function Gallery() {
 
     return (
         <>
+            <br/>
+
             <Head>
                 <title>Galerie - Exoti'TSE</title>
             </Head>

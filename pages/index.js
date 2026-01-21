@@ -27,10 +27,10 @@ export default function Home() {
                     <h2 className="text-3xl font-bold mb-4">À propos</h2>
                     <p className="text-lg md:text-xl text-white/80 leading-relaxed">
                         La liste <strong>Exoti'TSE</strong> va vous régaler durant <strong>TOUTE</strong> cette semaine
-                        en vous organisant des soirées inoubliables, des plats succulents, et des events avec des partenariats de qualité !
+                        en vous organisant des soirées inoubliables, des plats succulents et des events avec des partenariats de qualité.
                         <br /><br />
-                        Notre mission ? Créer une ambiance chaleureuse, fédérer les étudiants
-                        et vous offrir des moments mémorables. Vous faire kiffer tout simplement !
+                        Notre mission ? Créer une ambiance chaleureuse, réunir les étudiants
+                        en vous offrant des moments mémorables. Vous faire kiffer tout simplement !
                         <br /><br />
                         Prépare-toi : la semaine s’annonce intense, fun et pleine de surprises 🌴🔥
                     </p>

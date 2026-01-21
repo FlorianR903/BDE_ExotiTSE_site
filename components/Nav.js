@@ -78,7 +78,7 @@ export default function Nav() {
                         <Link href="/gallery" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Galerie</Link>
                         <Link href="/menu" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Menu</Link>
                         <Link href="/contact" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Contact</Link>
-                        <Link href="/partenariats" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Partenariat</Link>
+                        <Link href="/partenariats" className="px-3 py-1 rounded-full text-white/90 hover:bg-white/10 nav-link">Partenariats</Link>
                     </div>
 
                     {/* Cart (desktop) */}

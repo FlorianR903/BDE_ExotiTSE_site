@@ -76,9 +76,19 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-lg mb-4">Contact</h4>
                         <p className="text-white/80 text-sm">
-                            📍 Campus TSE<br />
-                            📧 contact@exotitse.fr
+                            📍 Sous les Sunlights des Tropiques<br />
+                            📧 exotitse.contact@gmail.com<br />
                         </p>
+
+                        <br/>
+
+                        {/* Logo Insta */}
+                        <a href="https://instagram.com/exoti__tse">
+                            <div className="w-12 h-12 rounded-full flex bg-white/20 backdrop-blur-md items-center p-1">
+                                <Image src="/images/logo_insta.png" alt="instagram" width={70} height={70} className="object-contain"/>
+                                <p className="absolute text-sm text-white/80 font-bold left-16">exoti__tse</p>
+                            </div>
+                        </a>
                     </div>
 
                 </div>
