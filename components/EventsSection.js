@@ -36,23 +36,23 @@ export default function EventsSection({ events = [] }) {
             id: 4,
             title: "Koh-Lanta'waii 🧭",
             date: "29 janvier 2026 de 15h à 18h",
-            desc: "Aventuriers, aventurières, oubliez le confort de vos salons ! Ce soir on prend une tournure sauvage et exotique 🌴 Deux tribus s'affrontent pour la gloire, le totem et... le droit de faire la fête !" + "Le destin est entre vos mains. Serez-vous le dernier sur le poteau ou le premier au bar à cocktails ?",
+            desc: "Aventuriers, aventurières, oubliez le confort de vos salons ! Cette aprèm on prend une tournure sauvage et exotique 🌴 Deux tribus s'affrontent pour la gloire, le totem et... le droit de faire la fête !" + "Le destin est entre vos mains. Serez-vous le dernier sur le poteau ou le premier au bar à cocktails ?",
             details: "💥 Au programme :\n Des épreuves pensées pour vous régaler ! Saurez-vous survivre aux différentes étapes ? 👀 "
         },
         {
             id: 3,
-            title: "🔥 Soirée Mystère 🔥",
-            date: "31 janvier 2026",
-            desc: "Vous n'aurez pas plus d'informations..." +
+            title: "🔥 Shatta Night 🔥",
+            date: "30 janvier 2026 à partir de 21h",
+            desc: "Prépare-toi pour une nuit 100% SHATTA 🥵 !!! \n" +
                 "Ramène ton meilleur déhanché, appelle ta clique, et viens vibrer AU MAXXXX 🔥! \n" +
                 "On vous prépare quelques surprises tout au long de la nuit... 👀 \n",
             details: "💥 Au programme :\n Shatta • Afrobeat • Dancehall • Amapiano \n Ambiance tropicale garantie !"
         },
         {
             id: 3,
-            title: "🔥 Shatta Night 🔥",
-            date: "30 janvier 2026 à partir de 21h",
-            desc: "Prépare-toi pour une nuit 100% SHATTA 🥵 !!! \n",
+            title: "❓ Soirée Mystère ❓",
+            date: "31 janvier 2026",
+            desc: "Vous n'aurez pas plus d'informations...",
             details: "",
         }
         /*
@@ -199,7 +199,7 @@ export default function EventsSection({ events = [] }) {
                                 <div className="p-4 rounded-xl bg-white/5 border border-white/10 mt-4">
                                     <h4 className="font-bold text-pink-300 mb-2">Détails de l'événement :</h4>
                                     <p className="text-sm text-white/70">
-                                        {selectedEvent.details || "Plus d'informations à venir prochainement..."}
+                                        {selectedEvent.details || "Plus d'informations à venir prochainement... ⏳"}
                                     </p>
                                 </div>
                             </div>

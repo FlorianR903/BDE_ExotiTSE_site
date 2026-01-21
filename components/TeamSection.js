@@ -12,8 +12,8 @@ export default function TeamSection() {
         },
         "Event": {
             icon: "🎉",
-            gradient: "from-pink-400 via-red-400 to-orange-400",
-            glow: "shadow-pink-400/40",
+            gradient: "from-cyan-500 via-blue-400 to-indigo-400",
+            glow: "shadow-yellow-400/40",
         },
         "COM": {
             icon: "📣",
