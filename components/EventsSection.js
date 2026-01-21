@@ -9,34 +9,53 @@ export default function EventsSection({ events = [] }) {
     const defaultEvents = [
         {
             id: 1,
-            title: "Le fameux Aparton 🍻🏃‍♂️",
-            date: "15 octobre 2025",
-            desc: "Pourquoi rester dans un seul bar quand on peut explorer bien au-délà ? Ce soir, on transforme nos salons en escales festives 🎉 ! L'Aparton, c'est le marathon ultime où la ligne d'arrivée n'est qu'un prétexte pour faire la fête !",
-            details: "💥 Au programme :" + "\n Création des équipes. " + "Dans chaque lieu : 1 thème - 1 défi - 1 nouvelle ambiance 🔥 ! " + " Final : Regroupement pour élire la meilleure équipe et l'appart le plus stylé de la soirée ! " + "🚨 Points bonus par déguisement dans l'équipe !"
+            title: "🌈🔥 Soirée Flashy 🔥🌈️",
+            date: "26 janvier 2026 à partir de 21h",
+            desc: "Prépare toi à briller comme jamais !! La soirée Flashy débarque et une seule règle s'impose : \n🚫 Aucune couleur monotone autorisée 🚫 Que tu viennes en fluo intégral ou en combo improbable,\n" +
+                "une chose est sûre : personne ne passera inaperçu !",
+            details: "💥 Au programme :" + " Sors tes tenues les plus colorées, fluo, flashy, décalées..." + " Ici, plus c'est voyant, mieux c'est 😎🌴 🎶 Ambiance survoltée\n" +
+                "🍹 Boissons exotiques\n" +
+                "💃 Danse jusqu’au bout de la nuit\n" +
+                "📸 Photos ultra stylées garanties"
         },
         {
             id: 2,
             title: "♠️♥️ Soirée Casino ♦️♣️",
-            date: "27 octobre 2025",
+            date: "27 janvier 2026 à partir de 20h",
             desc: "Venez affrontez les autres étudiants lors d'une soirée riche en divertissement ! Tentez de remporter des cadeaux sur chaque jeux 🎁 tout en détrônant vos adversaires ! Les mises sont fermées... Rien ne va plus ! 🚨  ",
             details: "💥 Au programme : La Roulette Américaine - Poker - Blackjack - Baccara - Roue de la Fortune (Version ExotiTSE 👀). \n Tenue correcte exigée !"
         },
         {
+            id: 1,
+            title: "Le fameux Apparthon 🍻🏃‍♂️",
+            date: "28 janvier 2026 à partir de 20h",
+            desc: "Pourquoi rester dans un seul bar quand on peut explorer bien au-délà ? Ce soir, on transforme nos salons en escales festives 🎉 ! L'Aparton, c'est le marathon ultime où la ligne d'arrivée n'est qu'un prétexte pour faire la fête !",
+            details: "💥 Au programme :" + "\n Création des équipes. " + "Dans chaque lieu : 1 thème - 1 défi - 1 nouvelle ambiance 🔥 ! " + " Final : Regroupement pour élire la meilleure équipe et l'appart le plus stylé de la soirée ! " + "🚨 Points bonus par déguisement dans l'équipe !"
+        },
+        {
+            id: 4,
+            title: "Koh-Lanta'waii 🧭",
+            date: "29 janvier 2026 de 15h à 18h",
+            desc: "Aventuriers, aventurières, oubliez le confort de vos salons ! Ce soir on prend une tournure sauvage et exotique 🌴 Deux tribus s'affrontent pour la gloire, le totem et... le droit de faire la fête !" + "Le destin est entre vos mains. Serez-vous le dernier sur le poteau ou le premier au bar à cocktails ?",
+            details: "💥 Au programme :\n Des épreuves pensées pour vous régaler ! Saurez-vous survivre aux différentes étapes ? 👀 "
+        },
+        {
             id: 3,
-            title: "Shatta Night 🔥",
-            date: "4 novembre 2025",
-            desc: "Prépare-toi pour une nuit 100% SHATTA 🥵 !!! \n" +
+            title: "🔥 Soirée Mystère 🔥",
+            date: "31 janvier 2026",
+            desc: "Vous n'aurez pas plus d'informations..." +
                 "Ramène ton meilleur déhanché, appelle ta clique, et viens vibrer AU MAXXXX 🔥! \n" +
                 "On vous prépare quelques surprises tout au long de la nuit... 👀 \n",
             details: "💥 Au programme :\n Shatta • Afrobeat • Dancehall • Amapiano \n Ambiance tropicale garantie !"
         },
         {
-            id: 4,
-            title: "Koh-Lanta'waii 🧭",
-            date: "4 novembre 2025",
-            desc: "Aventuriers, aventurières, oubliez le confort de vos salons ! Ce soir on prend une tournure sauvage et exotique 🌴 Deux tribus s'affrontent pour la gloire, le totem et... le droit de faire la fête !" + "Le destin est entre vos mains. Serez-vous le dernier sur le poteau ou le premier au bar à cocktails ?",
-            details: "💥 Au programme :\n Des épreuves pensées pour vous régaler ! Saurez-vous survivre aux différentes étapes ? 👀 "
-        },
+            id: 3,
+            title: "🔥 Shatta Night 🔥",
+            date: "30 janvier 2026 à partir de 21h",
+            desc: "Prépare-toi pour une nuit 100% SHATTA 🥵 !!! \n",
+            details: "",
+        }
+        /*
         {
             id: 5,
             title: "Viens rouler les R avec nous 🎙️",
@@ -86,6 +105,7 @@ export default function EventsSection({ events = [] }) {
             desc: "Tout le monde en parle, mais personne ne sait où il est... Le légendaire Vaïty s'est fondu dans la foule, et votre mission est de le retrouver. Est-il en train de prendre un café en terrasse ? Est-il caché derrière un journal au parc ? Ou déguisé en touriste avec une chemise à fleurs ? 🎭",
             details: "💥 Au programme : Aujourd'hui, vous êtes tous des détectives. Mais attention, Vaïty est malin : il change d'apparence, il se déplace et il s'est entouré de \"faux Vaïty\" pour vous perdre. Ouvrez l'œil, suivez les pistes sur les réseaux, et soyez le premier à lui mettre la main dessus !"
         }
+        */
     ];
 
     const list = events.length > 0 ? events : defaultEvents;

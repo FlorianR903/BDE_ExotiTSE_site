@@ -386,6 +386,8 @@ export default function TeamSection() {
         },
     ];
 
+    const realMembers = members.filter(item => item.type === "member");
+
     // 1. State pour suivre l'index du membre actuel
     const [currentIndex, setCurrentIndex] = useState(0);
     // State pour stocker la direction du dernier swipe (pour l'animation de sortie)
@@ -425,6 +427,12 @@ export default function TeamSection() {
         // L'animation de sortie dépend de la direction du swipe (exitX)
         exit: { opacity: 0, x: exitX > 0 ? 300 : -300, rotate: exitX > 0 ? 20 : -20, transition: { duration: 0.2 } },
     };
+
+    const isMember = currentMember.type === "member";
+
+    const realMemberIndex = isMember
+        ? realMembers.findIndex(m => m.id === currentMember.id)
+        : null;
 
     return (
         <motion.section id="members"
@@ -522,16 +530,20 @@ export default function TeamSection() {
             </div>
 
             {/* COMPTEUR EN BAS DE PAGE */}
-            <motion.div className="mt-8 font-semibold text-white/70 bg-white/10 inline-block px-6 py-2 rounded-full"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        key={currentIndex} // Petit effet de fade sur le compteur quand il change
-            >
-                Membre {currentIndex + 1} sur {members.length}
-            </motion.div>
+            {isMember && (
+                <motion.div
+                    className="mt-8 font-semibold text-white/70 bg-white/10 inline-block px-6 py-2 rounded-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    key={currentMember.id}
+                >
+                    Membre {realMemberIndex + 1} sur {realMembers.length}
+                </motion.div>
+            )}
+
 
             {/* Instructions (Optionnel, pour aider l'utilisateur) */}
-            <p className="text-sm text-white/50 mt-4">Swipez pour découvrir l'équipe</p>
+            <p className="text-sm text-white/80 mt-4">Certains sont compris dans 2 pôles différents, nous sommes 27 au total !</p>
 
         </motion.section>
     );
