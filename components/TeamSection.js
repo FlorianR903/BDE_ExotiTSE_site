@@ -5,15 +5,45 @@ import Image from "next/image";
 
 export default function TeamSection() {
     const POLE_STYLE = {
-        "Bureau": {
+        "Bureau des îles": {
             icon: "👑",
-            gradient: "from-yellow-300 via-orange-400 to-pink-400",
+            gradient: "from-yellow-300 via-yellow-150 to-yellow-100",
             glow: "shadow-yellow-400/40",
         },
-        "Pôle Event": {
+        "Event": {
             icon: "🎉",
             gradient: "from-pink-400 via-red-400 to-orange-400",
             glow: "shadow-pink-400/40",
+        },
+        "COM": {
+            icon: "📣",
+            gradient: "from-pink-600 via-fuchsia-600 to-purple-400",
+            glow: "shadow-yellow-400/40",
+        },
+        "VSS": {
+            icon: "🛡️",
+            gradient: "from-purple-400 via-pink-600 to-red-600",
+            glow: "shadow-yellow-400/40",
+        },
+        "Partenariats": {
+            icon: "🤝",
+            gradient: "from-green-500 via-emerald4500 to-teal-400",
+            glow: "shadow-yellow-400/40",
+        },
+        "SI": {
+            icon: "💻",
+            gradient: "from-cyan-400 via-blue-400 to-indigo-400",
+            glow: "shadow-yellow-400/40",
+        },
+        "Tourisme": {
+            icon: "✈️",
+            gradient: "from-sky-400 via-cyan-400 to-teal-300",
+            glow: "shadow-yellow-400/40",
+        },
+        "Filière": {
+            icon: "🎓",
+            gradient: "from-indigo-500 via-purple-500 to-pink-600",
+            glow: "shadow-yellow-400/40",
         },
     };
 
@@ -21,7 +51,7 @@ export default function TeamSection() {
         {
             id: "pole-bureau",
             type: "pole",
-            poleName: "Bureau",
+            poleName: "Bureau des îles",
         },
         {
             id: 1,
@@ -45,7 +75,7 @@ export default function TeamSection() {
             name: "Clara",
             role: "Vice-Président",
             bio: "Je fais des meilleurs pancakes qu'elle askip' !",
-            img: "/images/jerem.jpg",
+            img: "",
         },
         {
             id: 4,
@@ -61,7 +91,7 @@ export default function TeamSection() {
             name: "Guillaume",
             role: "Trésorier",
             bio: "(ajouter un truc drôle)",
-            img: "/images/jerem.jpg",
+            img: "",
         },
         {
             id: 6,
@@ -82,8 +112,278 @@ export default function TeamSection() {
         {
             id: "pole-event",
             type: "pole",
-            poleName: "Pôle Event",
-        }
+            poleName: "Event",
+        },
+        {
+            id: 8,
+            type: "member",
+            name: "Aaron",
+            role: "Respo Event",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 9,
+            type: "member",
+            name: "Antoine",
+            role: "Membre Event",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 10,
+            type: "member",
+            name: "Jean",
+            role: "Membre Event",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 11,
+            type: "member",
+            name: "Yvan",
+            role: "Membre Event",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 12,
+            type: "member",
+            name: "Sacha",
+            role: "Membre Event",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: "pole-com",
+            type: "pole",
+            poleName: "COM",
+        },
+        {
+            id: 13,
+            type: "member",
+            name: "Aubane",
+            role: "Respo COM",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 14,
+            type: "member",
+            name: "Jérémy",
+            role: "Membre COM",
+            bio: "(ajouter un truc drôle)",
+            img: "/images/jerem.jpg",
+        },
+        {
+            id: 15,
+            type: "member",
+            name: "Walid",
+            role: "Membre COM",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 16,
+            type: "member",
+            name: "Salma",
+            role: "Membre COM",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: "pole-vss",
+            type: "pole",
+            poleName: "VSS",
+        },
+        {
+            id: 17,
+            type: "member",
+            name: "Manon",
+            role: "Respo VSS",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 18,
+            type: "member",
+            name: "Emilie",
+            role: "Membre VSS",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 19,
+            type: "member",
+            name: "Théophile",
+            role: "Membre VSS",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: "pole-partenariats",
+            type: "pole",
+            poleName: "Partenariats",
+        },
+        {
+            id: 20,
+            type: "member",
+            name: "Martin",
+            role: "Respo Partenariats",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 21,
+            type: "member",
+            name: "Raphaël",
+            role: "Membre Partenariats",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 22,
+            type: "member",
+            name: "Flo le 2nd",
+            role: "Membre Partenariats",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 23,
+            type: "member",
+            name: "Eliott",
+            role: "Membre Partenariats",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: "pole-si",
+            type: "pole",
+            poleName: "SI",
+        },
+        {
+            id: 24,
+            type: "member",
+            name: "Florian",
+            role: "Respo SI",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 25,
+            type: "member",
+            name: "Virgile",
+            role: "Membre SI",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 26,
+            type: "member",
+            name: "Kylian",
+            role: "Membre SI",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 27,
+            type: "member",
+            name: "Mattéo",
+            role: "Membre SI",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: "pole-tourisme",
+            type: "pole",
+            poleName: "Tourisme",
+        },
+        {
+            id: 28,
+            type: "member",
+            name: "Vaïty",
+            role: "Réunion",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 29,
+            type: "member",
+            name: "Andjy",
+            role: "Réunion",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 30,
+            type: "member",
+            name: "Lyam",
+            role: "Guyane",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 31,
+            type: "member",
+            name: "Florian",
+            role: "Madagascar",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 32,
+            type: "member",
+            name: "Jérémy",
+            role: "Guadeloupe",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: "pole-filière",
+            type: "pole",
+            poleName: "Filière",
+        },
+        {
+            id: 33,
+            type: "member",
+            name: "Aubane",
+            role: "Bachelor1",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 34,
+            type: "member",
+            name: "Walid",
+            role: "CiTiSE1",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 35,
+            type: "member",
+            name: "Virgile",
+            role: "CiTiSE1",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 36,
+            type: "member",
+            name: "Florian",
+            role: "FISA1",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
+        {
+            id: 37,
+            type: "member",
+            name: "Mattéo",
+            role: "FISA1",
+            bio: "(ajouter un truc drôle)",
+            img: "",
+        },
     ];
 
     // 1. State pour suivre l'index du membre actuel
@@ -177,7 +477,7 @@ export default function TeamSection() {
                                     </motion.div>
 
                                     {/* Label */}
-                                    <span className="uppercase tracking-[0.35em] text-xs text-white/60 mb-2">Pôle</span>
+                                    <span className="uppercase tracking-[0.35em] text-xs text-white/60 mb-2 font-bold">Pôle</span>
 
                                     {/* Nom du pôle */}
                                     <h3 className={`text-4xl font-extrabold bg-gradient-to-r ${pole.gradient} bg-clip-text text-transparent`}>
