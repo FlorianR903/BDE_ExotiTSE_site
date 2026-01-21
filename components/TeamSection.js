@@ -405,7 +405,7 @@ export default function TeamSection() {
             setTimeout(() => {
                 setCurrentIndex((prev) => (prev === 0 ? members.length - 1 : prev - 1));
                 setExitX(0); // Reset pour la prochaine
-            }, 200); // Petit délai pour laisser l'animation se faire
+            }, 80); // Petit délai pour laisser l'animation se faire
 
         } else if (offset.x < -swipeThreshold || velocity.x < -500) {
             // Swipe vers la GAUCHE (Suivant)
@@ -414,7 +414,7 @@ export default function TeamSection() {
             setTimeout(() => {
                 setCurrentIndex((prev) => (prev === members.length - 1 ? 0 : prev + 1));
                 setExitX(0);
-            }, 200);
+            }, 80);
         }
     };
 
