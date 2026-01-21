@@ -11,33 +11,30 @@ export default function EventsSection({ events = [] }) {
             id: 1,
             title: "🌈🔥 Soirée Flashy 🔥🌈️",
             date: "26 janvier 2026 à partir de 21h",
-            desc: "Prépare toi à briller comme jamais !! La soirée Flashy débarque et une seule règle s'impose : \n🚫 Aucune couleur monotone autorisée 🚫 Que tu viennes en fluo intégral ou en combo improbable,\n" +
+            desc: "Prépare toi à briller comme jamais !! La soirée Flashy débarque et une seule règle s'impose : \n🚫 Aucune couleur monotone autorisée 🚫  Sors tes tenues les plus colorées, fluo, flashy, décalées..." + " Ici, plus c'est voyant, mieux c'est 😎 " +
                 "une chose est sûre : personne ne passera inaperçu !",
-            details: "💥 Au programme :" + " Sors tes tenues les plus colorées, fluo, flashy, décalées..." + " Ici, plus c'est voyant, mieux c'est 😎🌴 🎶 Ambiance survoltée\n" +
-                "🍹 Boissons exotiques\n" +
-                "💃 Danse jusqu’au bout de la nuit\n" +
-                "📸 Photos ultra stylées garanties"
+            details: "💥 Au programme : RDV à la Cowloc (3 Pl. Jean Jaurès) pour une ambiance survoltée !"
         },
         {
             id: 2,
             title: "♠️♥️ Soirée Casino ♦️♣️",
             date: "27 janvier 2026 à partir de 20h",
             desc: "Venez affrontez les autres étudiants lors d'une soirée riche en divertissement ! Tentez de remporter des cadeaux sur chaque jeux 🎁 tout en détrônant vos adversaires ! Les mises sont fermées... Rien ne va plus ! 🚨  ",
-            details: "💥 Au programme : La Roulette Américaine - Poker - Blackjack - Baccara - Roue de la Fortune (Version ExotiTSE 👀). \n Tenue correcte exigée !"
+            details: "💥 Au programme : Poker, Dominos, Bingo, Roulette... \n Tenue correcte exigée !\n" + "RDV aux Deux Cagettes (3 Pl. Grenette)"
         },
         {
             id: 1,
             title: "Le fameux Apparthon 🍻🏃‍♂️",
             date: "28 janvier 2026 à partir de 20h",
-            desc: "Pourquoi rester dans un seul bar quand on peut explorer bien au-délà ? Ce soir, on transforme nos salons en escales festives 🎉 ! L'Aparton, c'est le marathon ultime où la ligne d'arrivée n'est qu'un prétexte pour faire la fête !",
-            details: "💥 Au programme :" + "\n Création des équipes. " + "Dans chaque lieu : 1 thème - 1 défi - 1 nouvelle ambiance 🔥 ! " + " Final : Regroupement pour élire la meilleure équipe et l'appart le plus stylé de la soirée ! " + "🚨 Points bonus par déguisement dans l'équipe !"
+            desc: "Pourquoi rester dans un seul bar quand on peut explorer bien au-délà ? Ce soir, on transforme nos salons en escales festives 🎉 ! L'Apparthon, c'est le marathon ultime où la ligne d'arrivée n'est qu'un prétexte pour faire la fête !",
+            details: "💥 Au programme :" + "\n Prenez part à 6 soirées dans Sainté ! " + "Dans chaque lieu : 1 thème - 1 activité - 1 nouvelle ambiance 🔥 ! " + " N'oubliez pas de récupérer votre carte de passage au 1er appart ! " + "🚨 1 livraison gratuite est offerte aux personnes ayant récolté TOUS les stickers !"
         },
         {
             id: 4,
             title: "Koh-Lanta'waii 🧭",
             date: "29 janvier 2026 de 15h à 18h",
-            desc: "Aventuriers, aventurières, oubliez le confort de vos salons ! Cette aprèm on prend une tournure sauvage et exotique 🌴 Deux tribus s'affrontent pour la gloire, le totem et... le droit de faire la fête !" + "Le destin est entre vos mains. Serez-vous le dernier sur le poteau ou le premier au bar à cocktails ?",
-            details: "💥 Au programme :\n Des épreuves pensées pour vous régaler ! Saurez-vous survivre aux différentes étapes ? 👀 "
+            desc: "Aventuriers, aventurières, oubliez le confort de vos salons ! Cette aprèm on prend une tournure sauvage et exotique 🌴 Des tribus s'affrontent pour la gloire, le totem et... le droit de faire la fête !" + "Le destin est entre vos mains. Serez-vous le dernier sur le poteau ou le premier au bar à cocktails ?",
+            details: "💥 Au programme :\n RDV au boulodrome de l'étivallière. Des épreuves pensées pour vous régaler ! Que la meilleure équipe gagne car... Il n'en restera qu'un 👀 "
         },
         {
             id: 3,
@@ -45,8 +42,9 @@ export default function EventsSection({ events = [] }) {
             date: "30 janvier 2026 à partir de 21h",
             desc: "Prépare-toi pour une nuit 100% SHATTA 🥵 !!! \n" +
                 "Ramène ton meilleur déhanché, appelle ta clique, et viens vibrer AU MAXXXX 🔥! \n" +
-                "On vous prépare quelques surprises tout au long de la nuit... 👀 \n",
-            details: "💥 Au programme :\n Shatta • Afrobeat • Dancehall • Amapiano \n Ambiance tropicale garantie !"
+                "On vous prépare quelques surprises tout au long de la nuit... 👀 \n" +
+                "C'est le moment de montrer que t'as appris la chorée de la liste !!!🕺",
+            details: "💥 Au programme :\n RDV au Viv (28 Rue Bourgneuf). Shatta • Afrobeat • Dancehall • Amapiano -- \n Ambiance tropicale garantie ! OBJECTIF BORA BORA toute la soirée !"
         },
         {
             id: 3,
