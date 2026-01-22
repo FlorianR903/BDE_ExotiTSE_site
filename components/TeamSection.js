@@ -67,7 +67,7 @@ export default function TeamSection() {
             name: "Andjy",
             role: "Vice-Président",
             bio: "Ses bonbons bananes c'est une tuerie la vérité !",
-            img: "/images/andjy.jpg",
+            img: "/images/andjyy.png",
         },
         {
             id: 3,
@@ -99,15 +99,7 @@ export default function TeamSection() {
             name: "Lyam",
             role: "Vice-Trésorier",
             bio: "(ajouter un truc drôle)",
-            img: "/images/lyam.jpg",
-        },
-        {
-            id: 7,
-            type: "member",
-            name: "Lucas",
-            role: "Secrétaire Général",
-            bio: "(ajouter un truc drôle)",
-            img: "/images/lucas.jpg",
+            img: "/images/lyamm.png",
         },
         {
             id: "pole-event",
@@ -115,7 +107,7 @@ export default function TeamSection() {
             poleName: "Event",
         },
         {
-            id: 8,
+            id: 7,
             type: "member",
             name: "Aaron",
             role: "Respo Event",
@@ -123,7 +115,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 9,
+            id: 8,
             type: "member",
             name: "Antoine",
             role: "Membre Event",
@@ -131,7 +123,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 10,
+            id: 9,
             type: "member",
             name: "Jean",
             role: "Membre Event",
@@ -139,7 +131,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 11,
+            id: 10,
             type: "member",
             name: "Yvan",
             role: "Membre Event",
@@ -147,12 +139,12 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 12,
+            id: 11,
             type: "member",
             name: "Sacha",
             role: "Membre Event",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/sacha.png",
         },
         {
             id: "pole-com",
@@ -160,7 +152,7 @@ export default function TeamSection() {
             poleName: "COM",
         },
         {
-            id: 13,
+            id: 12,
             type: "member",
             name: "Aubane",
             role: "Respo COM",
@@ -168,15 +160,15 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 14,
+            id: 13,
             type: "member",
             name: "Jérémy",
             role: "Membre COM",
             bio: "(ajouter un truc drôle)",
-            img: "/images/jerem.jpg",
+            img: "/images/jeremyy.jpg",
         },
         {
-            id: 15,
+            id: 14,
             type: "member",
             name: "Walid",
             role: "Membre COM",
@@ -184,7 +176,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 16,
+            id: 15,
             type: "member",
             name: "Salma",
             role: "Membre COM",
@@ -197,23 +189,23 @@ export default function TeamSection() {
             poleName: "VSS",
         },
         {
-            id: 17,
+            id: 16,
             type: "member",
             name: "Manon",
             role: "Respo VSS",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/manon.png",
         },
         {
-            id: 18,
+            id: 17,
             type: "member",
             name: "Emilie",
             role: "Membre VSS",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/emilie.png",
         },
         {
-            id: 19,
+            id: 18,
             type: "member",
             name: "Théophile",
             role: "Membre VSS",
@@ -226,7 +218,7 @@ export default function TeamSection() {
             poleName: "Partenariats",
         },
         {
-            id: 20,
+            id: 19,
             type: "member",
             name: "Martin",
             role: "Respo Partenariats",
@@ -234,7 +226,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 21,
+            id: 20,
             type: "member",
             name: "Raphaël",
             role: "Membre Partenariats",
@@ -242,7 +234,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 22,
+            id: 21,
             type: "member",
             name: "Flo le 2nd",
             role: "Membre Partenariats",
@@ -250,7 +242,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 23,
+            id: 22,
             type: "member",
             name: "Eliott",
             role: "Membre Partenariats",
@@ -263,7 +255,7 @@ export default function TeamSection() {
             poleName: "SI",
         },
         {
-            id: 24,
+            id: 23,
             type: "member",
             name: "Florian",
             role: "Respo SI",
@@ -271,7 +263,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 25,
+            id: 24,
             type: "member",
             name: "Virgile",
             role: "Membre SI",
@@ -279,7 +271,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 26,
+            id: 25,
             type: "member",
             name: "Kylian",
             role: "Membre SI",
@@ -287,7 +279,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 27,
+            id: 26,
             type: "member",
             name: "Mattéo",
             role: "Membre SI",
@@ -300,7 +292,7 @@ export default function TeamSection() {
             poleName: "Tourisme",
         },
         {
-            id: 28,
+            id: 27,
             type: "member",
             name: "Vaïty",
             role: "Réunion",
@@ -308,7 +300,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 29,
+            id: 28,
             type: "member",
             name: "Andjy",
             role: "Réunion",
@@ -316,7 +308,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 30,
+            id: 29,
             type: "member",
             name: "Lyam",
             role: "Guyane",
@@ -324,7 +316,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 31,
+            id: 30,
             type: "member",
             name: "Florian",
             role: "Madagascar",
@@ -332,7 +324,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 32,
+            id: 31,
             type: "member",
             name: "Jérémy",
             role: "Guadeloupe",
@@ -345,7 +337,7 @@ export default function TeamSection() {
             poleName: "Filière",
         },
         {
-            id: 33,
+            id: 32,
             type: "member",
             name: "Aubane",
             role: "Bachelor1",
@@ -353,7 +345,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 34,
+            id: 33,
             type: "member",
             name: "Walid",
             role: "CiTiSE1",
@@ -361,7 +353,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 35,
+            id: 34,
             type: "member",
             name: "Virgile",
             role: "CiTiSE1",
@@ -369,7 +361,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 36,
+            id: 35,
             type: "member",
             name: "Florian",
             role: "FISA1",
@@ -377,7 +369,7 @@ export default function TeamSection() {
             img: "",
         },
         {
-            id: 37,
+            id: 36,
             type: "member",
             name: "Mattéo",
             role: "FISA1",
@@ -543,7 +535,7 @@ export default function TeamSection() {
 
 
             {/* Instructions (Optionnel, pour aider l'utilisateur) */}
-            <p className="text-sm text-white/80 mt-4">Certains sont compris dans 2 pôles différents, nous sommes 27 au total !</p>
+            <p className="text-sm text-white/80 mt-4">Certains sont compris dans 2 pôles différents, nous sommes 26 au total !</p>
 
         </motion.section>
     );

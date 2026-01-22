@@ -5,12 +5,12 @@ import Head from 'next/head';
 
 export default function UploadPhotoPage() {
     const events = [
-        { id: 1, title: "Le fameux Aparton 🍻🏃‍♂️", date: "2025-10-15" },
-        { id: 2, title: "Soirée Casino ♦️♣️", date: "2026-01-03" },
-        { id: 3, title: "Shatta Night 🔥", date: "2025-11-04" },
-        { id: 4, title: "Gala de Noël (Exemple Passé) 🎄", date: "2023-12-15" },
-        { id: 5, title: "koh lanta (Exemple futur) 🎄", date: "2026-12-15" }
-        //etc...
+        { id: 1, title: "🌈🔥 Soirée Flashy 🔥🌈️", date: "2026-01-27" },
+        { id: 2, title: "♠️♥️ Soirée Casino ♦️♣️", date: "2026-01-28" },
+        { id: 3, title: "Le fameux Apparthon 🍻", date: "2026-01-29" },
+        { id: 4, title: "Koh-Lanta'waii 🧭", date: "2026-01-29" },
+        { id: 5, title: "🔥 Shatta Night 🔥", date: "2026-01-31" },
+        { id: 6, title: "❓ Soirée Mystère ❓", date: "2026-02-01" }
     ];
 
     // Filtrer uniquement les événements passés
@@ -105,8 +105,8 @@ export default function UploadPhotoPage() {
                                     ))}
                                 </select>
                                 {pastEvents.length === 0 && (
-                                    <p className="text-orange-400 text-xs mt-2 italic">
-                                        Aucun événement n'est encore terminé. Patience !
+                                    <p className="text-white/60 mt-1 italic">
+                                        Aucun événement n'est encore terminé. Patience mon p'tit rayon de soleil !
                                     </p>
                                 )}
                             </div>
@@ -123,8 +123,8 @@ export default function UploadPhotoPage() {
                                         className="absolute inset-0 opacity-0 cursor-pointer"
                                     />
                                     <div className="text-4xl mb-2">📁</div>
-                                    <p className="text-white/50 text-sm">Clique ou glisse tes photos ici</p>
-                                    <p className="text-[10px] text-white/30 mt-1">PNG, JPG jusqu'à 10Mo par fichier</p>
+                                    <p className="text-white/60 text-sm">Clique ou glisse tes photos ici (import non affiché)</p>
+                                    <p className="text-[10px] text-white/45 mt-1">PNG, JPG jusqu'à 10Mo par fichier</p>
                                 </div>
                             </div>
 
