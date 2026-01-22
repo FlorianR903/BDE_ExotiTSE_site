@@ -49,7 +49,7 @@ export default function EventsSection({ events = [] }) {
         {
             id: 3,
             title: "❓ Soirée Mystère ❓",
-            date: "31 janvier 2026",
+            date: "31 janvier 2026 à partir de 20h30",
             desc: "Vous n'aurez pas plus d'informations...",
             details: "",
         }

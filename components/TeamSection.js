@@ -59,7 +59,7 @@ export default function TeamSection() {
             name: "Vaïty",
             role: "Président",
             bio: "Si y'a pas de limousin du préz, alors c'est pas une soirée exotiTSE !",
-            img: "/images/vaity.jpg",
+            img: "/images/vaityy.png",
         },
         {
             id: 2,
