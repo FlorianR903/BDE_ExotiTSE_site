@@ -28,6 +28,7 @@ export async function GET() {
 
     try {
         const products = await stripe.products.list({
+            limit: 20,
             active: true,
             expand: ['data.default_price'],
         });
@@ -48,6 +49,7 @@ export async function GET() {
                 title: p.name,
                 desc: p.description,
                 img: p.images?.[0] || '/images/logo.png',
+                day: p.metadata?.Day, // on récupère le jour (lun, mar, etc.)
                 stripePriceId: price.id,
                 rawAmount: price.unit_amount,
                 currency: price.currency,
