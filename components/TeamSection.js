@@ -67,7 +67,7 @@ export default function TeamSection() {
             name: "Andjy",
             role: "Vice-Président",
             bio: "Ses bonbons bananes c'est une tuerie la vérité !",
-            img: "/images/andjyy.png",
+            img: "/images/andjy.png",
         },
         {
             id: 3,
