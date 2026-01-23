@@ -31,7 +31,7 @@ export default function Hero() {
                         {/* Photo */}
                         <div className="absolute top-[22%] left-[25%] w-[49%] h-[70%] overflow-hidden rounded-sm">
                             <Image
-                                src="/images/andjy.jpg"
+                                src="/images/img_1058.jpeg"
                                 alt="Photo soirée"
                                 fill
                                 className="object-cover object-center"
