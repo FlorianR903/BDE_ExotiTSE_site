@@ -9,9 +9,9 @@ import Footer from '../components/Footer';
 const albums = [
     {
         id: 1,
-        title: "Le fameux Aparton",
+        title: "Soirée Flashy",
         date: "15 Oct 2024",
-        cover: "/images/aparton_soiree.jpg", // Photo de couverture
+        cover: "/images/flashy.jpg", // Photo de couverture
         photos: [
             "/images/andjy.jpg",
         ]
@@ -27,6 +27,24 @@ const albums = [
         ]
     },
     {
+        id: 1,
+        title: "Le fameux Apparthon",
+        date: "15 Oct 2024",
+        cover: "/images/apparthon.jpg", // Photo de couverture
+        photos: [
+            "/images/andjy.jpg",
+        ]
+    },
+    {
+        id: 1,
+        title: "Koh-Lanta'waii",
+        date: "15 Oct 2024",
+        cover: "/images/koh-lant_hawaii.jpg", // Photo de couverture
+        photos: [
+            "/images/andjy.jpg",
+        ]
+    },
+    {
         id: 3,
         title: "Shatta Night",
         date: "4 Nov 2024",
@@ -35,6 +53,15 @@ const albums = [
             "/images/shatta1.jpg",
             "/images/shatta2.jpg",
             "/images/shatta3.jpg",
+        ]
+    },
+    {
+        id: 1,
+        title: "Soirée Mystère",
+        date: "15 Oct 2024",
+        cover: "/images/mystere.png", // Photo de couverture
+        photos: [
+            "/images/andjy.jpg",
         ]
     },
     // Ajoute d'autres albums ici

@@ -157,7 +157,7 @@ export default function TeamSection() {
             name: "Aubane",
             role: "Respo COM",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/aubane.jpeg",
         },
         {
             id: 13,
