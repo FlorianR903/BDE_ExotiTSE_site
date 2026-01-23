@@ -82,7 +82,7 @@ export default function TeamSection() {
             type: "member",
             name: "Lucas",
             role: "Secrétaire Général",
-            bio: "(ajouter un truc drôle)",
+            bio: "Attendez avant de le regarder... il se recoiffe !",
             img: "/images/lucas.jpg",
         },
         {
@@ -120,7 +120,7 @@ export default function TeamSection() {
             name: "Antoine",
             role: "Membre Event",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/antoine.jpeg",
         },
         {
             id: 9,
@@ -209,8 +209,8 @@ export default function TeamSection() {
             type: "member",
             name: "Théophile",
             role: "Membre VSS",
-            bio: "(ajouter un truc drôle)",
-            img: "",
+            bio: "Oui oui c'est ce mec qui est censé assurer votre sécurité...",
+            img: "/images/theo.jpeg",
         },
         {
             id: "pole-partenariats",
@@ -223,7 +223,7 @@ export default function TeamSection() {
             name: "Martin",
             role: "Respo Partenariats",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/martin.jpeg",
         },
         {
             id: 20,
@@ -247,7 +247,7 @@ export default function TeamSection() {
             name: "Eliott",
             role: "Membre Partenariats",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/eliott.jpeg",
         },
         {
             id: "pole-si",
