@@ -10,42 +10,42 @@ const albums = [
     {
         id: 1,
         title: "Soirée Flashy",
-        date: "15 Oct 2024",
+        date: "26 janvier 2026",
         cover: "/images/flashy.jpg", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1VJ0mdDB_pexcV3KzuuN4VZYBzKXBD93c"
     },
     {
         id: 2,
         title: "Soirée Casino",
-        date: "27 Oct 2024",
+        date: "27 janvier 2026",
         cover: "/images/casino_soiree.jpg",
         driveLink: "https://drive.google.com/drive/u/1/folders/1kxsGvjxtsiSvUIR-dx6-fEYU7MTT3Q5X"
     },
     {
         id: 3,
         title: "Le fameux Apparthon",
-        date: "15 Oct 2024",
+        date: "28 janvier 2026",
         cover: "/images/apparthon.jpg", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1lfPozV3Uey6r1p9j-LEiSuCRlNfc7OGF"
     },
     {
         id: 4,
         title: "Koh-Lanta'waii",
-        date: "15 Oct 2024",
+        date: "29 janvier 2026",
         cover: "/images/koh-lant_hawaii.jpg", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1f9-gpiEb_ko47VZw0fTcKsSJUpA_5a82"
     },
     {
         id: 5,
         title: "Shatta Night",
-        date: "4 Nov 2024",
+        date: "30 janvier 2026",
         cover: "/images/shatta_night.png",
         driveLink: "https://drive.google.com/drive/u/1/folders/1GNLBjcBpYiSH8lk_b_6HRB4wLwfY86Cy"
     },
     {
         id: 6,
         title: "Soirée Mystère",
-        date: "15 Oct 2024",
+        date: "31 janvier 2026",
         cover: "/images/mystere.png", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1lK3jTOPWtLVMmbsKLtxUoV18S2QNxIeC"
     },
