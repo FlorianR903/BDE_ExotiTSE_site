@@ -91,7 +91,7 @@ export default function TeamSection() {
             name: "Guillaume",
             role: "Trésorier",
             bio: "(ajouter un truc drôle)",
-            img: "/images/",
+            img: "/images/guillaume.jpeg",
         },
         {
             id: 6,
@@ -136,7 +136,7 @@ export default function TeamSection() {
             name: "Yvan",
             role: "Membre Event",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/yvan.jpeg",
         },
         {
             id: 11,
@@ -173,7 +173,7 @@ export default function TeamSection() {
             name: "Walid",
             role: "Membre COM",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/walid.jpeg",
         },
         {
             id: 15,
