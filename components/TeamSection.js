@@ -75,7 +75,7 @@ export default function TeamSection() {
             name: "Clara",
             role: "Vice-Président",
             bio: "Je fais des meilleurs pancakes qu'elle askip' !",
-            img: "",
+            img: "/images/clara.png",
         },
         {
             id: 4,
@@ -91,7 +91,7 @@ export default function TeamSection() {
             name: "Guillaume",
             role: "Trésorier",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/",
         },
         {
             id: 6,
@@ -112,7 +112,7 @@ export default function TeamSection() {
             name: "Aaron",
             role: "Respo Event",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/aaron.jpeg",
         },
         {
             id: 8,
@@ -128,7 +128,7 @@ export default function TeamSection() {
             name: "Jean",
             role: "Membre Event",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/jean.jpeg",
         },
         {
             id: 10,
@@ -231,7 +231,7 @@ export default function TeamSection() {
             name: "Raphaël",
             role: "Membre Partenariats",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/raph.jpeg",
         },
         {
             id: 21,
@@ -239,7 +239,7 @@ export default function TeamSection() {
             name: "Flo le 2nd",
             role: "Membre Partenariats",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/phleau.jpeg",
         },
         {
             id: 22,
@@ -268,7 +268,7 @@ export default function TeamSection() {
             name: "Virgile",
             role: "Membre SI",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/virgile.jpeg",
         },
         {
             id: 25,
