@@ -181,7 +181,7 @@ export default function TeamSection() {
             name: "Salma",
             role: "Membre COM",
             bio: "(ajouter un truc drôle)",
-            img: "",
+            img: "/images/salma.jpeg",
         },
         {
             id: "pole-vss",
