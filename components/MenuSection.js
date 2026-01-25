@@ -12,6 +12,14 @@ export default function MenuSection({ items = [] }) {
 
   const { addItem } = useCart();
   const [toast, setToast] = useState(null);
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const date = new Date();
+    const options = { weekday: 'long' };
+    const formatted = date.toLocaleDateString('fr-FR', options);
+    setCurrentDate(formatted.charAt(0).toUpperCase() + formatted.slice(1));
+  }, []);
 
   // 🔁 récupère les produits Stripe via /api/menu
   useEffect(() => {
@@ -29,7 +37,18 @@ export default function MenuSection({ items = [] }) {
         const data = await res.json();
 
         if (Array.isArray(data) && data.length > 0) {
-          setMenu(data);
+          // Filtrage par jour
+          const days = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'];
+          const currentDay = days[new Date().getDay()];
+
+          const filteredData = data.filter((item) => {
+            // Si pas de métadonnée 'Day', on l'affiche tout le temps
+            if (!item.day) return true;
+            // Sinon, on compare avec le jour actuel (minuscule pour être sûr)
+            return item.day.toLowerCase() === currentDay;
+          });
+
+          setMenu(filteredData);
         } else {
           setError("Aucun produit disponible pour le moment.");
           setMenu([]);
@@ -119,7 +138,9 @@ export default function MenuSection({ items = [] }) {
         </div>
       )}
 
-      <h2 className="text-5xl font-extrabold text-center mb-12">Menu</h2>
+      <h2 className="text-5xl font-extrabold text-center mb-12">
+        Menu du {currentDate || '...'}
+      </h2>
 
       {loading && (
         <p className="text-center text-white/80 mb-6">Chargement du menu…</p>

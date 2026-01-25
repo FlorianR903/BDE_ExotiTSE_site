@@ -72,7 +72,7 @@ export default function CheckoutModal({ clientSecret, onClose }) {
             <div className="absolute inset-0 flex items-center justify-center sm:p-4 pointer-events-none">
 
                 {/* Modal Content */}
-                <div className="bg-white w-full h-full sm:h-[85vh] sm:max-w-4xl rounded-none sm:rounded-2xl overflow-hidden flex flex-col shadow-2xl pointer-events-auto">
+                <div className="bg-white w-full h-full sm:h-[85vh] sm:max-w-5xl lg:max-w-6xl rounded-none sm:rounded-2xl overflow-hidden flex flex-col shadow-2xl pointer-events-auto">
 
                     {/* Header avec bouton fermer */}
                     <div className="flex justify-end p-3 bg-white border-b border-gray-100 shrink-0 z-10">

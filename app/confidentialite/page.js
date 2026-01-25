@@ -44,7 +44,7 @@ export default function Confidentialite() {
                     <li>- de rectification</li>
                     <li>- de suppression</li>
                 </ul>
-                Vous pouvez demander la suppression de vos données en écrivant à : contact@exotitse.fr
+                Vous pouvez demander la suppression de vos données en écrivant à : exotitse.contact@gmail.com
             </p>
         </main>
     );

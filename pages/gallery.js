@@ -9,35 +9,46 @@ import Footer from '../components/Footer';
 const albums = [
     {
         id: 1,
-        title: "Le fameux Aparton",
-        date: "15 Oct 2024",
-        cover: "/images/aparton_soiree.jpg", // Photo de couverture
-        photos: [
-            "/images/andjy.jpg",
-        ]
+        title: "Soirée Flashy",
+        date: "26 janvier 2026",
+        cover: "/images/flashy.jpg", // Photo de couverture
+        driveLink: "https://drive.google.com/drive/u/1/folders/1VJ0mdDB_pexcV3KzuuN4VZYBzKXBD93c"
     },
     {
         id: 2,
         title: "Soirée Casino",
-        date: "27 Oct 2024",
+        date: "27 janvier 2026",
         cover: "/images/casino_soiree.jpg",
-        photos: [
-            "/images/casino1.jpg",
-            "/images/casino2.jpg",
-        ]
+        driveLink: "https://drive.google.com/drive/u/1/folders/1kxsGvjxtsiSvUIR-dx6-fEYU7MTT3Q5X"
     },
     {
         id: 3,
-        title: "Shatta Night",
-        date: "4 Nov 2024",
-        cover: "/images/shatta_night.png",
-        photos: [
-            "/images/shatta1.jpg",
-            "/images/shatta2.jpg",
-            "/images/shatta3.jpg",
-        ]
+        title: "Le fameux Apparthon",
+        date: "28 janvier 2026",
+        cover: "/images/apparthon.jpg", // Photo de couverture
+        driveLink: "https://drive.google.com/drive/u/1/folders/1lfPozV3Uey6r1p9j-LEiSuCRlNfc7OGF"
     },
-    // Ajoute d'autres albums ici
+    {
+        id: 4,
+        title: "Koh-Lanta'waii",
+        date: "29 janvier 2026",
+        cover: "/images/koh-lant_hawaii.jpg", // Photo de couverture
+        driveLink: "https://drive.google.com/drive/u/1/folders/1f9-gpiEb_ko47VZw0fTcKsSJUpA_5a82"
+    },
+    {
+        id: 5,
+        title: "Shatta Night",
+        date: "30 janvier 2026",
+        cover: "/images/shatta_night.png",
+        driveLink: "https://drive.google.com/drive/u/1/folders/1GNLBjcBpYiSH8lk_b_6HRB4wLwfY86Cy"
+    },
+    {
+        id: 6,
+        title: "Soirée Mystère",
+        date: "31 janvier 2026",
+        cover: "/images/mystere.png", // Photo de couverture
+        driveLink: "https://drive.google.com/drive/u/1/folders/1lK3jTOPWtLVMmbsKLtxUoV18S2QNxIeC"
+    },
 ];
 
 export default function Gallery() {
@@ -94,9 +105,6 @@ export default function Gallery() {
                                 <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-pink-300 transition-colors">
                                     {album.title}
                                 </h3>
-                                <span className="text-sm text-white/70 font-medium bg-white/10 px-3 py-1 rounded-full">
-                                    {album.photos.length} photos
-                                </span>
                             </div>
 
                             {/* Date en haut à droite */}
@@ -144,24 +152,29 @@ export default function Gallery() {
                                     </button>
                                 </div>
 
-                                {/* Contenu Scrollable (Grille de photos) */}
-                                <div className="flex-1 overflow-y-auto p-6">
-                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                        {selectedAlbum.photos.map((photo, idx) => (
-                                            <div key={idx} className="relative aspect-square rounded-xl overflow-hidden bg-white/5 hover:opacity-90 transition">
-                                                <Image src={photo} layout="fill" objectFit="cover" />
+                                {/* Contenu photos sur le drive */}
+                                <div className="flex-1 flex flex-col items-center justify-center text-center p-10 gap-6">
+                                    <div className="text-6xl">📸</div>
 
-                                                {/* Pour la démo sans images réelles : */}
-                                                <div className="w-full h-full flex items-center justify-center text-white/20 border border-white/5">
-                                                    Photo {idx + 1}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    {selectedAlbum.photos.length === 0 && (
-                                        <p className="text-center text-white/40 py-10">Les photos arrivent bientôt !</p>
-                                    )}
+                                    <p className="text-white/70 max-w-md">
+                                        Les photos de cet événement sont disponibles dans notre album en ligne.
+                                        Cliquez ci-dessous pour les découvrir ✨
+                                    </p>
+
+                                    <a
+                                        href={selectedAlbum.driveLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-500 to-orange-400 text-white font-extrabold text-lg rounded-full shadow-xl hover:scale-105 transition-transform"
+                                    >
+                                        🚀 Voir l’album Google Drive
+                                    </a>
+
+                                    <p className="text-xs text-white/40 mt-4">
+                                        Accès externe – ouverture dans un nouvel onglet
+                                    </p>
                                 </div>
+
 
                                 {/* Footer Modale */}
                                 <div className="p-4 border-t border-white/10 bg-[#252525] text-center">
