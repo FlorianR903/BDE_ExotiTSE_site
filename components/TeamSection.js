@@ -58,7 +58,7 @@ export default function TeamSection() {
             type: "member",
             name: "Vaïty",
             role: "Président",
-            bio: "Si y'a pas de limousin du préz, alors c'est pas une soirée exotiTSE !",
+            bio: "Plus de limousins à son actif que de réunions sans gueuler !",
             img: "/images/vaityy.png",
         },
         {
@@ -74,7 +74,7 @@ export default function TeamSection() {
             type: "member",
             name: "Clara",
             role: "Vice-Président",
-            bio: "Je fais des meilleurs pancakes qu'elle askip' !",
+            bio: "Elue miss râleuse sous peu !",
             img: "/images/clara.png",
         },
         {
@@ -127,7 +127,7 @@ export default function TeamSection() {
             type: "member",
             name: "Jean",
             role: "Membre Event",
-            bio: "",
+            bio: "Tout droit sorti de la cambrousse !",
             img: "/images/jean.jpeg",
         },
         {
@@ -135,7 +135,7 @@ export default function TeamSection() {
             type: "member",
             name: "Yvan",
             role: "Membre Event",
-            bio: "(ajouter un truc drôle)",
+            bio: "Russe et alcoolique, rien de plus banal !",
             img: "/images/yvan.jpeg",
         },
         {
@@ -143,7 +143,7 @@ export default function TeamSection() {
             type: "member",
             name: "Sacha",
             role: "Membre Event",
-            bio: "(ajouter un truc drôle)",
+            bio: "Vous voulez sa mort, parlez lui du PSG !",
             img: "/images/sacha.png",
         },
         {
@@ -156,15 +156,15 @@ export default function TeamSection() {
             type: "member",
             name: "Aubane",
             role: "Respo COM",
-            bio: "(ajouter un truc drôle)",
+            bio: "Non elle est pas majeure les gens...",
             img: "/images/aubane.jpeg",
         },
         {
             id: 13,
             type: "member",
-            name: "Jérémy",
+            name: "Jérémie",
             role: "Membre COM",
-            bio: "(ajouter un truc drôle)",
+            bio: "1 seule femme, sa bouteille de rhum !",
             img: "/images/jeremyy.jpg",
         },
         {
@@ -172,7 +172,7 @@ export default function TeamSection() {
             type: "member",
             name: "Walid",
             role: "Membre COM",
-            bio: "(ajouter un truc drôle)",
+            bio: "Mentalement indisponible...",
             img: "/images/walid.jpeg",
         },
         {
@@ -180,7 +180,7 @@ export default function TeamSection() {
             type: "member",
             name: "Salma",
             role: "Membre COM",
-            bio: "(ajouter un truc drôle)",
+            bio: "CIEL !... Elle est tombée du ciel !",
             img: "/images/salma.jpeg",
         },
         {
@@ -193,7 +193,7 @@ export default function TeamSection() {
             type: "member",
             name: "Manon",
             role: "Respo VSS",
-            bio: "(ajouter un truc drôle)",
+            bio: "Princesse tout droit sortie d'un conte de fée !",
             img: "/images/manon.png",
         },
         {
@@ -201,7 +201,7 @@ export default function TeamSection() {
             type: "member",
             name: "Emilie",
             role: "Membre VSS",
-            bio: "(ajouter un truc drôle)",
+            bio: "On l'appelle Mimi, c'est ce qui l'a définit !",
             img: "/images/emilie.png",
         },
         {
@@ -222,7 +222,7 @@ export default function TeamSection() {
             type: "member",
             name: "Martin",
             role: "Respo Partenariats",
-            bio: "(ajouter un truc drôle)",
+            bio: "Sa confiance va lui jouer des tours un jour...",
             img: "/images/martin.jpeg",
         },
         {
@@ -230,7 +230,7 @@ export default function TeamSection() {
             type: "member",
             name: "Raphaël",
             role: "Membre Partenariats",
-            bio: "(ajouter un truc drôle)",
+            bio: "Finit vos plats, taxe vos femmes !",
             img: "/images/raph.jpeg",
         },
         {
@@ -238,7 +238,7 @@ export default function TeamSection() {
             type: "member",
             name: "Flo le 2nd",
             role: "Membre Partenariats",
-            bio: "(ajouter un truc drôle)",
+            bio: "Vous livrera vos commandes en Nimbus 2000 !",
             img: "/images/phleau.jpeg",
         },
         {
@@ -246,7 +246,7 @@ export default function TeamSection() {
             type: "member",
             name: "Eliott",
             role: "Membre Partenariats",
-            bio: "(ajouter un truc drôle)",
+            bio: "Un clochard un peu trop aisé à mon goût !",
             img: "/images/eliott.jpeg",
         },
         {
@@ -259,7 +259,7 @@ export default function TeamSection() {
             type: "member",
             name: "Florian",
             role: "Respo SI",
-            bio: "(ajouter un truc drôle)",
+            bio: "Toulousain dans l'âme, toujours sur son 31 !",
             img: "/images/florian.jpeg",
         },
         {
@@ -267,7 +267,7 @@ export default function TeamSection() {
             type: "member",
             name: "Virgile",
             role: "Membre SI",
-            bio: "(ajouter un truc drôle)",
+            bio: "Par-delà son apparence, ce mec est un vrai génie !",
             img: "/images/virgile.jpeg",
         },
         {
@@ -275,7 +275,7 @@ export default function TeamSection() {
             type: "member",
             name: "Kylian",
             role: "Membre SI",
-            bio: "(ajouter un truc drôle)",
+            bio: "J'vous jure il est dans la liste ! (jamais venu aux réunions...)",
             img: "/images/kylian.jpeg",
         },
         {
@@ -283,7 +283,7 @@ export default function TeamSection() {
             type: "member",
             name: "Mattéo",
             role: "Membre SI",
-            bio: "(ajouter un truc drôle)",
+            bio: "Surfeur, flexeur, charmeur, il a tout pour plaire !",
             img: "/images/matteo.jpeg",
         },
         {
@@ -296,7 +296,7 @@ export default function TeamSection() {
             type: "member",
             name: "Vaïty",
             role: "Réunion",
-            bio: "(ajouter un truc drôle)",
+            bio: "Comme Kirikou, le boug est petit mais vaillant !",
             img: "/images/vaityy.png",
         },
         {
@@ -304,7 +304,7 @@ export default function TeamSection() {
             type: "member",
             name: "Andjy",
             role: "Réunion",
-            bio: "(ajouter un truc drôle)",
+            bio: "Le vrai puant de la liste !",
             img: "/images/andjy.png",
         },
         {
@@ -312,7 +312,7 @@ export default function TeamSection() {
             type: "member",
             name: "Lyam",
             role: "Guyane",
-            bio: "(ajouter un truc drôle)",
+            bio: "Ambassadeur de la gamme Garnier Ultra Doux (ses boucles miammm)",
             img: "/images/lyamm.png",
         },
         {
@@ -320,7 +320,7 @@ export default function TeamSection() {
             type: "member",
             name: "Florian",
             role: "Madagascar",
-            bio: "(ajouter un truc drôle)",
+            bio: "I like to move it, move it !!",
             img: "/images/florian.jpeg",
         },
         {
@@ -328,7 +328,7 @@ export default function TeamSection() {
             type: "member",
             name: "Jérémy",
             role: "Guadeloupe",
-            bio: "(ajouter un truc drôle)",
+            bio: "Toujours là tu connais...",
             img: "/images/jeremyy.jpg",
         },
         {
@@ -341,7 +341,7 @@ export default function TeamSection() {
             type: "member",
             name: "Aubane",
             role: "Bachelor1",
-            bio: "(ajouter un truc drôle)",
+            bio: "Qui vous a dit qu'on avait pas de com ???!",
             img: "/images/aubane.jpeg",
         },
         {
@@ -349,7 +349,7 @@ export default function TeamSection() {
             type: "member",
             name: "Walid",
             role: "CiTiSE1",
-            bio: "(ajouter un truc drôle)",
+            bio: "Des idées il en a, les réaliser c'est un autre niveau...",
             img: "/images/walid.jpeg",
         },
         {
@@ -357,7 +357,7 @@ export default function TeamSection() {
             type: "member",
             name: "Virgile",
             role: "CiTiSE1",
-            bio: "(ajouter un truc drôle)",
+            bio: "Toujours réveiller à pas d'heure, un vampire vraiment !",
             img: "/images/virgile.jpeg",
         },
         {
@@ -365,7 +365,7 @@ export default function TeamSection() {
             type: "member",
             name: "Florian",
             role: "FISA1",
-            bio: "(ajouter un truc drôle)",
+            bio: "Imbattable au blindtest ! Tu me crois pas, viens je t'attends !",
             img: "/images/florian.jpeg",
         },
         {
@@ -373,7 +373,7 @@ export default function TeamSection() {
             type: "member",
             name: "Mattéo",
             role: "FISA1",
-            bio: "(ajouter un truc drôle)",
+            bio: "Y'a pas de problèmes, y'a que des solutions, chiillll !",
             img: "/images/matteo.jpeg",
         },
     ];

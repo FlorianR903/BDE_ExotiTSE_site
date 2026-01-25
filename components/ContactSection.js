@@ -21,7 +21,7 @@ export default function ContactSection() {
             <div>
                 <span className="font-bold text-white/90">Téléphone : </span>
                 <a href="tel:0601020304" className="underline hover:text-yellow-300 text-white/90">
-                    07 81 29 55 74
+                    06 51 44 10 13
                 </a>
             </div>
 
