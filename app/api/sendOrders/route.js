@@ -1,10 +1,26 @@
 import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
 
     try {
         const { itemName, fullName, quantity, address, email } = await req.json();
 
+        // --- SÉCURISATION (Validation des entrées) ---
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+             return NextResponse.json({ message: "Email invalide." }, { status: 400 });
+        }
+        if (!fullName || fullName.length > 100) {
+             return NextResponse.json({ message: "Nom invalide ou trop long." }, { status: 400 });
+        }
+        if (!address || address.length > 500) {
+             return NextResponse.json({ message: "Adresse trop longue." }, { status: 400 });
+        }
+        if (typeof quantity !== 'number' && typeof quantity !== 'string') {
+             return NextResponse.json({ message: "Quantité invalide." }, { status: 400 });
+        }
+        // Nettoyage basique terminé
+        
         // Transporteur email (exemple Gmail)
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -32,12 +48,13 @@ export async function POST(req) {
 
         await transporter.sendMail(mailOptions);
 
-        return new Response(JSON.stringify({ message: "Commande envoyée par mail." }), { status: 200 });
+        return NextResponse.json({ message: "Commande envoyée par mail." }, { status: 200 });
 
     } catch (error) {
         console.error("Erreur SMTP :", error);
-        return new Response(JSON.stringify({message: "Erreur lors de l'envoi du mail."}), {
-            status: 500,
-        });
+        return NextResponse.json(
+            { message: "Erreur lors de l'envoi du mail." }, 
+            { status: 500 }
+        );
     }
 }

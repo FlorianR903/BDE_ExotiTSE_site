@@ -34,19 +34,40 @@
             );
         }
 
-        const validItems = items.filter(item => item.stripePriceId);
+        // --- DÉBUT SÉCURISATION ---
+        const lineItems = [];
+        
+        for (const item of items) {
+            // Ignorer les items sans ID de prix valide (format string)
+            if (!item.stripePriceId || typeof item.stripePriceId !== 'string') {
+                continue;
+            }
 
-        if (validItems.length === 0) {
+            // Conversion et validation de la quantité
+            let qty = parseInt(item.quantity);
+            
+            // Si la quantité est invalide ou < 1, on met 1 par défaut
+            if (isNaN(qty) || qty < 1) {
+                qty = 1;
+            }
+            // Plafond de sécurité (anti-spam / anti-grosses commandes accidentelles)
+            if (qty > 50) {
+                qty = 50;
+            }
+
+            lineItems.push({
+                price: item.stripePriceId,
+                quantity: qty,
+            });
+        }
+
+        if (lineItems.length === 0) {
             return NextResponse.json(
-            { error: 'Aucun article valide pour le paiement (manque stripePriceId)' },
+            { error: 'Aucun article valide dans le panier' },
             { status: 400 }
             );
         }
-
-        const lineItems = validItems.map((item) => ({
-            price: item.stripePriceId,
-            quantity: item.quantity ?? 1,
-        }));
+        // --- FIN SÉCURISATION ---
 
         const session = await stripe.checkout.sessions.create({
             ui_mode: 'embedded',

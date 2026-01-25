@@ -30,7 +30,8 @@ export default function UploadPhotoPage() {
         const eventName = eventSelect.options[eventSelect.selectedIndex].text;
         const files = Array.from(fileInput.files);
 
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbweIC5VBTWR5eN7dtshdpYt-XIUsUMiv03NZyquXnH1Am1JF-GhdYEoq2IKP21sWz80/exec"; // URL du gg Script
+        // Nouvelle route interne sécurisée (pensez à retirer l'URL Google du code client)
+        const API_URL = "/api/proxy-upload";
 
         try {
             for (const file of files) {
@@ -42,12 +43,14 @@ export default function UploadPhotoPage() {
                     eventName: eventName
                 };
 
-                await fetch(SCRIPT_URL, {
+                // Appel à notre API interne au lieu de Google directement
+                const res = await fetch(API_URL, {
                     method: "POST",
-                    mode: "no-cors", // Mode nécessaire pour Google Script
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data)
                 });
+
+                if (!res.ok) throw new Error("Erreur upload");
             }
             setStatus('success');
         } catch (error) {
