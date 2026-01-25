@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function MaintenancePage() {
-    const endDate = new Date("2026-01-25T18:00:00");
+    const endDate = new Date("2026-01-25T20:00:00");
     const [time, setTime] = useState(null);
 
     useEffect(() => {
