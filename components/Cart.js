@@ -3,13 +3,12 @@
 
 import { useState } from 'react';
 import { useCart } from './CartContext';
-import CheckoutModal from './CheckoutModal';
+// import CheckoutModal from './CheckoutModal'; // REPLACED: SumUp ne nécessite pas ce modal Stripe
 
 export default function Cart() {
   const { items, totalAmount, updateQuantity, removeItem } = useCart();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [clientSecret, setClientSecret] = useState(null);
 
   if (!items.length) {
     return <p className="text-sm text-white/80">Votre panier est vide.</p>;
@@ -20,10 +19,10 @@ export default function Cart() {
       setLoading(true);
       setError(null);
 
-      // Filtrer les items qui n'ont pas de stripePriceId
+      // Filtrer les items qui n'ont pas de stripePriceId (maintenant appelé internal ID)
       const validItems = items.filter(item => item.stripePriceId);
       if (validItems.length === 0) {
-        throw new Error("Aucun article valide pour le paiement Stripe (manque stripePriceId).");
+        throw new Error("Aucun article valide pour le paiement.");
       }
 
       const res = await fetch('/api/create-checkout-session', {
@@ -38,14 +37,22 @@ export default function Cart() {
         throw new Error(data.error || 'Erreur serveur');
       }
 
-      if (data.clientSecret) {
-        setClientSecret(data.clientSecret);
+      if (data.checkoutId) {
+        // --- LOGIQUE SUMUP ---
+        // SumUp nécessite souvent l'utilisation de leur SDK Widget ou une redirection spécifique.
+        // Comme nous n'avons pas le SDK chargé, nous affichons l'ID.
+        // IDÉALEMENT: Rediriger vers une page de paiement ou ouvrir le widget SumUp ici.
+        // Pour l'instant, simulons une "commande créée" car l'intégration complète Front SumUp requiert un script externe.
+        alert(`Commande SumUp créée avec succès ! ID: ${data.checkoutId}\n(Intégration du widget à finaliser)`);
+        
+        // TODO: Implémenter le widget SumUp : https://developer.sumup.com/docs/checkouts/
+        
       } else {
-        throw new Error("Pas de clientSecret reçu de Stripe");
+        throw new Error("Pas de checkoutId reçu de SumUp");
       }
     } catch (err) {
       console.error(err);
-      setError(err.message || "Impossible de lancer le paiement Stripe.");
+      setError(err.message || "Impossible de lancer le paiement.");
     } finally {
       setLoading(false);
     }
@@ -53,12 +60,7 @@ export default function Cart() {
 
   return (
     <div className="text-sm text-white">
-      {clientSecret && (
-        <CheckoutModal 
-          clientSecret={clientSecret} 
-          onClose={() => setClientSecret(null)} 
-        />
-      )}
+      {/* Simulation checkout */}
       <ul className="space-y-2 max-h-60 overflow-y-auto pr-1 custom-scrollbar">
         {items.map((item) => (
           <li key={item.id} className="flex flex-col gap-1 bg-white/5 p-2 rounded-lg border border-white/10">

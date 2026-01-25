@@ -1,0 +1,68 @@
+Item name,Variations,Option set 1,Option 1,Option set 2,Option 2,Option set 3,Option 3,Option set 4,Option 4,Is variation visible? (Yes/No),Price,Variable price? (Yes/No),On sale in Online Store?,Regular price (before sale),Tax rate (%),Set up different prices and VAT for takeaway,Takeaway price,Takeaway tax rate,Unit,Track inventory? (Yes/No),Quantity,Low stock threshold,SKU,Barcode,Modifiers,Description (Online Store and Invoices only),Category,Display colour in POS checkout,Image 1,Image 2,Image 3,Image 4,Image 5,Image 6,Image 7,Display item in Online Store? (Yes/No),SEO title (Online Store only),SEO description (Online Store only),Shipping weight [kg] (Online Store only),Item id (Do not change),Variant id (Do not change)
+10 Billets de Tombola,,,,,,,,,,Yes,16.00,No,No,,,No,,,each.each,No,0,0,,,,,Goodies,Light blue,,,,,,,,Yes,,,,26f9a685-2403-4ce4-bbe0-dfc8a8f6926e,85d4e0a6-fff3-4e7b-8cb8-4c7d4d83cf0f
+1 Billet de Tombola,,,,,,,,,,Yes,2.00,No,No,,,No,,,each.each,No,0,0,,,,,Goodies,Light blue,,,,,,,,Yes,,,,ff94dc2e-f6d3-4ade-8f40-54abf640076c,03473bd6-8a9b-4fe2-b004-dfaa31e85d64
+20 Billets de Tombola,,,,,,,,,,Yes,20.00,No,No,,,No,,,each.each,No,0,0,,,,,Goodies,Light blue,,,,,,,,Yes,,,,2be46f49-a82a-4a5a-988e-42065aa257ac,5aa6bb46-ebde-467a-9211-a0b94ed9a935
+5 Billets de Tombola,,,,,,,,,,Yes,9.00,No,No,,,No,,,each.each,No,0,0,,,,,Goodies,Light blue,,,,,,,,Yes,,,,d10bfc7f-ac99-4351-bb7a-65129794c214,27f9a504-5d30-4a93-9109-22432a75db5b
+Bokit,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi REPAS,Light red,,,,,,,,Yes,,,,f060781a-7003-4173-a601-247e24eeda35,8ec5566e-e616-433c-83cb-51485ceb8fd8
+Bonbon banane,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,,,,e837c837-da10-4351-a6c5-5c79a469fd57,a769a4ea-b43e-4123-919a-c84cee6140e5
+Champignon coco,,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,Champignon coco,,,31f67c56-b233-45cb-91d9-7880e93c9abb,4c052bd0-a35c-4343-9395-09a36dd7dbd9
+Coca-cola,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Soft,Orange,,,,,,,,Yes,,,,32ede1b3-3eb3-4899-aad8-3f111d9373fb,f9ba5840-a6b4-4d93-bcd4-6517ffda6a36
+Cocktail rose,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,d559ac53-5d34-46a3-a7a2-e6962e6e6d9b,d68ba8c5-d5aa-41c1-ab98-074f55707d17
+Coktail Rose,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,9817a27c-f7f4-474f-8d70-c3df05df88b9,43bdb5f4-0dc2-487a-ae51-8fa6f015a59f
+Cookie 3 Chocolats,,,,,,,,,,Yes,2.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,Cookie 3 Chocolats,,,887d1355-632e-4c3e-a19e-092ad4fed603,bc3a96ee-e5bc-4f98-b890-c5df4d8530a2
+Cookie Chocolat au lait & noisettes,,,,,,,,,,Yes,2.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,Cookie Chocolat au lait & noisettes,,,bb69cdb6-94da-40d6-9102-3e31432e57d9,1e481aa4-901c-4818-b426-6795cd6697eb
+Cookie Chocolat Blanc & noix de pécan,,,,,,,,,,Yes,2.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,Cookie Chocolat Blanc & noix de pécan,,,707b1a06-1366-4fef-b82f-728e27519f10,0aa46675-0203-426c-9d8a-b2fafa6c3bb5
+Cookie Nutella,Cookie Nutella,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,,,,72f81698-17a0-4b9c-aab1-45277e989f7b,6772133c-7cf8-40ef-8230-9253c07241b4
+Cookie spéculos,,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,Cookie spéculos,,,0a671cff-07ec-4310-a594-aa5458129cb7,812ccf11-f151-4343-9816-bc7a39725243
+Crêpes caramel,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,,,,c4f4705f-d7b9-4486-9e60-cdaa13e573c8,a74cdcc7-2e2c-4e16-981f-254e959118e7
+Crêpes Nutella,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,,,,665d7160-87c0-424a-9b5d-06c88e54763c,d23f0556-7dcb-454c-a390-b032b159fd8a
+Crêpes sucre,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,,,,86612cc0-9d77-45c2-831e-f806477ce198,82613c09-ccfe-4ebf-ae14-c69ce1620280
+Croque monsieur,,,,,,,,,,Yes,2.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi REPAS,Light red,,,,,,,,Yes,,,,73bef4f8-814e-4eb8-b4c5-ae0b0c26934b,19192f9f-f30c-43c0-821c-faf30da7ac16
+Cuba libre,,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,987ae8fe-ef08-4520-94bc-62bde446a331,316db692-cd6d-4a1d-88f4-b2e615adc841
+Cuba libre,,,,,,,,,,Yes,2.00,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,06605a87-143b-4173-9e19-6413ebacde7e,12772558-854a-412b-a556-acee9a0a9a5f
+Dessert Mystère,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,Dessert Mystère,,,58e19d6a-da62-43b4-ad76-db95352f5f00,884bb8f0-5c6b-4b12-b26e-205c2f7e97b1
+Éco-cups,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Goodies,Light blue,,,,,,,,Yes,,,,eeccb579-2c9b-4db1-bafe-ff0c42510978,6f234a8f-22af-409e-bf17-c2376bfd71fe
+Gâteau à l'ananas,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,7855b6d1-5fba-4289-b5d6-516be7de86b2,e4aa98a3-3bd9-40a1-85c6-fc172a9ba869
+Gâteau au Chocolat,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,3efa353b-b60e-4850-be79-c673be2c1564,ca255ba6-8e7e-4012-8799-8ef9f17180f5
+Gratin d’autistois,,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,,,,363603f6-2dc5-474e-9f7a-a4fdd3cf084d,f3a755e3-0ba8-4567-a818-6142ad16afea
+Jaeger Bomb,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,7f80fb9a-62ed-4979-be09-94c16c50a475,99870fb6-0359-4be0-887c-cc2cc88c869f
+Jaeger Bomb,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,762948a8-48a8-4e8b-9f7d-e1f99161c3c5,cf012c88-2ffe-42e3-b61b-20d7285ddfdd
+Jus de pomme,,,,,,,,,,Yes,0.50,No,No,,,No,,,each.each,No,0,0,,,,,Soft,Orange,,,,,,,,Yes,,,,87854601-df53-40b5-b732-ceca1e5fa7d3,33cc47a2-2fc2-4a62-a7bc-6d17aef5742b
+Jus d'orange,,,,,,,,,,Yes,0.50,No,No,,,No,,,each.each,No,0,0,,,,,Soft,Orange,,,,,,,,Yes,,,,5d47acc5-6a32-45e2-bad2-4c23ed52d078,625aa018-ead2-46ca-9fb6-25b087268eef
+Koq coco,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,,,,f6367200-549b-4242-89b2-aa31a2f8a0a2,f3025a90-f22d-41e7-9a9c-1a71635ff9f7
+Ladou,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,29c32aa7-3a86-44f6-a27d-3680af4bba18,0de88706-74f2-493e-a186-c0f49bf2c944
+Le Burgwèr,,,,,,,,,,Yes,3.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,,,,59bf9201-8b73-4d49-9c90-2d0d4bd1c461,58ecb2d6-4f6c-451d-933a-f655c2887330
+Le Burgwèr rostis,,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,Le Burgwèr rostis,,,7eb9517c-b007-4169-9895-768ac6f7c5ee,33dd2a3b-1482-48a6-974c-b4d24dd62dd5
+Le Hausse-Baisse,,,,,,,,,,Yes,3.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,,,,b5ce8ad7-4cbc-454e-88bc-5689b09774ab,e2123ce5-3180-4057-9913-162fa17410f9
+Le Hausse-Baisse Champi,,,,,,,,,,Yes,3.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,Le Hausse-Baisse Champi,,,bea11af2-53e8-4f8a-bc70-729b57d9f48a,9f202b36-ad21-486d-9da3-20bb082d6b84
+Le kontourné,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,Le kontourné,,,44028dea-e6ba-4f21-a93c-23fc0b898449,dd832af4-b0a1-4172-88e1-6ad1e2199a4d
+Le kontourné champi,,,,,,,,,,Yes,2.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,Le kontourné champi,,,8e9a7df7-8b54-4022-8eb5-b4fd3dd4e080,b5d327fe-cd67-49d4-b331-04417d34657e
+Le Sainté de Mine,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,,,,6ad5e32e-5784-4b6e-b681-4a0dd6738dac,0babed7f-59f8-4e50-95c5-32e1ecad7b42
+LUNDI SOIR (Pas Vege),,,,,,,,,,Yes,5.00,No,,,0.00,No,,,each.each,No,0,0,,,,,MENU DU SOIR,Purple,,,,,,,,Yes,,,,4FC8B8B6-224B-405E-883E-37A66799D2F1,CD296049-F9AF-4F60-85D1-DECF00F494EE
+LUNDI SOIR (Vege),,,,,,,,,,Yes,4.50,No,,,0.00,No,,,each.each,No,0,0,,,,,MENU DU SOIR,Purple,,,,,,,,Yes,,,,D8BB342A-5853-4876-A25E-463D5FF73CE6,3907E08C-BC81-4DF9-840C-A11FE9A28840
+Mojito,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,e08186ca-db68-46fd-be58-c9328f814e96,951b6086-7c2a-4cc4-be09-1e0f3e7737b8
+Mojito,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,3dcff9c3-e1d7-442b-aca9-1a3b1c62bd1b,1db4ecd3-1e25-4c47-a384-88a8c8b99d96
+Muhalabia,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,da6c5e17-97b7-4e62-8037-5bc964e05657,4047403c-cdb7-433c-a7b5-894e162276f9
+Panini chèvre gruyère mozza,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi REPAS,Light red,,,,,,,,Yes,,,,58f73e0f-e6ed-4bd5-a88b-4f0d3a126431,2a0b1d52-696c-4da6-9a37-d36f04a96dec
+Panini Nutella,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi DESSERT,Light red,,,,,,,,Yes,,,,98830604-e7dd-47be-a541-aa146ec21393,29cf8ddf-d300-4a92-9329-b4b04faeea2b
+"Panini poulet gruyère ",,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Midi REPAS,Light red,,,,,,,,Yes,,,,6fd13287-fa4c-445c-8da4-ae5386d0af39,4dd88520-8e2d-4137-834c-9b4099bdfa42
+Pass buisness (57 premiers),,,,,,,,,,Yes,6.00,No,No,,,No,,,each.each,No,0,0,,,,,Pass,Yellow,,,,,,,,No,,,,f6d238cd-4282-49fd-9399-bb555967ac54,bb06bb7d-1cbf-40ba-8e16-f88ec67deed3
+Passe buisness,,,,,,,,,,Yes,8.00,No,No,,,No,,,each.each,No,0,0,,,,,Pass,Yellow,,,,,,,,Yes,,,,875b7f77-5515-4531-863d-330da7e8047b,8488753b-c535-44db-89ed-9d9842bede44
+Pass VIP,,,,,,,,,,Yes,12.00,No,No,,,No,,,each.each,No,0,0,,,,,Pass,Yellow,,,,,,,,Yes,,,,caeb2a9b-c673-487a-bc16-654fd43604ea,a9b876ac-98ce-4c87-9485-cc37ce5a3e54
+Pass VIP (43 premiers),,,,,,,,,,Yes,10.00,No,No,,,No,,,each.each,No,0,0,,,,,Pass,Yellow,,,,,,,,Yes,,,,db5da552-7e35-4214-ad28-03122fecd2a5,515888c4-8a01-4f50-b53b-5df485c0c41c
+Pina Colada,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,0a7071ce-4e8f-4bd5-914a-4ae403fe62f9,9c9d63a7-7f9a-444a-9d28-fdc5303a0344
+Pina Colada,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,a8f9bc86-5b07-42d3-85df-306c1165d458,d8fba6f0-b682-4bff-a09f-4355deb01bd3
+Planteur/punch,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,b6a5e44d-eb72-4845-94e6-2a0de2374eb8,818c727a-f80d-471d-bea4-521bb15ba0cd
+Planteur/punch,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,c54693a3-3653-47bc-bf97-c4aef245c411,338d521d-cc2c-4583-a30d-e89e8a0b254b
+Plat mystère,,,,,,,,,,Yes,3.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,,,,4cb5a706-4bf0-4f6c-861d-eefa723736aa,013016e9-4f35-47ce-bd1d-17bedd8016ff
+Plat mystère,,,,,,,,,,Yes,3.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir REPAS,Light red,,,,,,,,Yes,Plat mystère,,,ed34eb63-b765-4b69-8406-d8dd245f2e0f,c5a63574-b262-4cdc-8713-66c2ca8659b1
+Rhum arrangé,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,3247a7db-8529-4165-847c-490efc6a92e7,32ad32d6-3386-4525-9172-e8534b7359e0
+Rhum arrangé,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,769910e4-4874-4ae1-bd9d-0ec4db0f09ee,5d953f1e-92f3-4c3a-8dd9-61402c290e5a
+Salade de fruits,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,aebf397e-2487-4add-ac33-480dbd0e1c17,9ac2a9cd-8e8c-4a2b-a9d6-d1e650c1ac07
+Sirop Grenadine,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Soft,Orange,,,,,,,,Yes,,,,6a773d4e-d117-4bd1-bef3-e76af81d7809,1e698948-4179-4b09-95a9-8b5c79d829c4
+Sirop pêche,,,,,,,,,,Yes,1.00,No,No,,,No,,,each.each,No,0,0,,,,,Soft,Orange,,,,,,,,Yes,,,,a817c24a-c9cf-4abc-87c8-10ca76f17aca,942853a1-77f6-44e8-b660-560e83557c84
+Sprite,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soft,Orange,,,,,,,,Yes,,,,054709ed-1441-41ea-bcfc-eab1aa29e2a9,6e8462da-7e53-4b1b-a36e-98cd74a521d9
+Tarte aux pommes,,,,,,,,,,Yes,1.50,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,ac1947ea-c649-4efb-84ee-f34b4d06c63c,f68d0345-adfd-4b69-93fe-d92b1681fcea
+Tequila Sunrise,,,,,,,,,,Yes,3.00,No,No,,,No,,,each.each,No,0,0,,,,,Coktails,Orange,,,,,,,,Yes,,,,dee621ad-0066-4650-bd89-e55fa41b9b83,c78e8779-ed91-4ae8-b731-6d0738c0c93c
+Tequila Sunrise,,,,,,,,,,Yes,2.50,No,No,,0.00,No,,,each.each,No,0,0,,,,,Cocktail PASS,Light green,,,,,,,,Yes,,,,f3704793-6670-4f57-ba9a-71faaa4691b1,5eb939da-cc52-40ce-aaa9-646b9d5e1cbd
+Tiramisu café,,,,,,,,,,Yes,2.00,No,No,,,No,,,each.each,No,0,0,,,,,Soir DESSERT,Light red,,,,,,,,Yes,,,,cfded42d-cd6f-4cca-904c-fb2672915a86,0a0f489e-f8b1-419d-9b83-607d89a28eb1

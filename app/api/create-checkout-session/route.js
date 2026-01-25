@@ -1,98 +1,98 @@
-    import Stripe from 'stripe';
-    import { NextResponse } from 'next/server';
+// app/api/create-checkout-session/route.js
+import { NextResponse } from 'next/server';
+import { getSumupProducts } from '../../../utils/sumup';
 
-    export async function POST(req) {
-    // Vérification de la clé secrète Stripe
-    if (!process.env.STRIPE_SECRET_KEY) {
-        console.error("❌ STRIPE_SECRET_KEY manquante !");
-        return NextResponse.json(
-        { error: "Configuration serveur manquante : STRIPE_SECRET_KEY" },
-         { status: 500 }
-        );
-    }
+const SUMUP_KEY_SECRET = process.env.SUMUP_KEY_SECRET || "sup_sk_NiXsP46x9SvhcLDXlD7edLAUznrhLC0ni";
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
+export async function POST(req) {
     try {
         const { items } = await req.json();
 
-        // Récupération dynamique de l'origine pour success_url et cancel_url
-        // Cela évite les erreurs si NEXT_PUBLIC_BASE_URL n'est pas défini en local
-        const headerOrigin = req.headers.get('origin')
-
-        let origin = headerOrigin
-            || process.env.NEXT_PUBLIC_BASE_URL
-            || (process.env.VERCEL_URL
-                ? `https://${process.env.VERCEL_URL}`
-                : null)
-            || "http://localhost:3000";
-
         if (!items || !Array.isArray(items) || items.length === 0) {
-            return NextResponse.json(
-            { error: 'Panier vide ou données manquantes' },
-            { status: 400 }
-            );
+            return NextResponse.json({ error: 'Panier vide' }, { status: 400 });
         }
 
-        // --- DÉBUT SÉCURISATION ---
-        const lineItems = [];
-        
+        // 1. Récupérer les produits frais depuis SumUp uniquement
+        let sumupCatalog = await getSumupProducts();
+        if (!sumupCatalog || sumupCatalog.length === 0) {
+            return NextResponse.json({ error: 'Aucun produit disponible (catalogue SumUp vide)' }, { status: 400 });
+        }
+
+        let totalAmount = 0;
+        let descriptionItems = [];
+
         for (const item of items) {
-            // Ignorer les items sans ID de prix valide (format string)
-            if (!item.stripePriceId || typeof item.stripePriceId !== 'string') {
-                continue;
-            }
-
-            // Conversion et validation de la quantité
+            const productId = item.stripePriceId;
+            const product = sumupCatalog.find(p => p.id === productId);
+            if (!product) continue;
+            const activeVariant = product.variants && product.variants.length > 0 ? product.variants[0] : null;
+            const unitPrice = product.price || (activeVariant ? activeVariant.price : 0);
+            const productName = product.name;
+            if (!unitPrice && unitPrice !== 0) continue;
             let qty = parseInt(item.quantity);
-            
-            // Si la quantité est invalide ou < 1, on met 1 par défaut
-            if (isNaN(qty) || qty < 1) {
-                qty = 1;
-            }
-            // Plafond de sécurité (anti-spam / anti-grosses commandes accidentelles)
-            if (qty > 50) {
-                qty = 50;
-            }
-
-            lineItems.push({
-                price: item.stripePriceId,
-                quantity: qty,
-            });
+            if (isNaN(qty) || qty < 1) qty = 1;
+            if (qty > 50) qty = 50;
+            totalAmount += unitPrice * qty;
+            descriptionItems.push(`${qty}x ${productName}`);
         }
 
-        if (lineItems.length === 0) {
-            return NextResponse.json(
-            { error: 'Aucun article valide dans le panier' },
-            { status: 400 }
-            );
+
+        if (totalAmount <= 0) {
+             return NextResponse.json({ error: 'Montant total invalide' }, { status: 400 });
         }
-        // --- FIN SÉCURISATION ---
+        
 
-        const session = await stripe.checkout.sessions.create({
-            ui_mode: 'embedded',
-            line_items: lineItems,
-            mode: 'payment',
+        // Formatage strict pour SumUp
+        // 1. amount doit être une string "10.00"
+        const amountStr = totalAmount.toFixed(2);
 
-            // Retourne toujours vers l'origine correcte, même sans variable d’env
-            return_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+        // 2. description : plain text, max 128 caractères, pas de caractères spéciaux
+        let description = descriptionItems.join(', ');
+        description = description.replace(/[^\w\s,.'\-]/g, '').substring(0, 128);
+        if (!description) description = 'Commande ExotiTSE';
 
-            shipping_address_collection: {
-                allowed_countries: ['FR'],
+        // 3. URL de retour
+        const headerOrigin = req.headers.get('origin');
+        const origin = headerOrigin 
+            || process.env.NEXT_PUBLIC_BASE_URL 
+            || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
+        const checkoutRef = `CMD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+
+        const sumupPayload = {
+            checkout_reference: checkoutRef,
+            amount: amountStr,
+            currency: "EUR",
+            pay_to_email: "tresorerie.exotitse@gmail.com",
+            description,
+            return_url: `${origin}/success?session_id=${checkoutRef}`,
+        };
+
+        const response = await fetch('https://api.sumup.com/v0.1/checkouts', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${SUMUP_KEY_SECRET}`,
+                'Content-Type': 'application/json',
             },
-            phone_number_collection: {
-                enabled: true,
-            },
+            body: JSON.stringify(sumupPayload),
         });
 
-        return NextResponse.json({ clientSecret: session.client_secret });
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.error('SumUp Error:', data);
+            return NextResponse.json({ error: `Erreur SumUp: ${data.message || 'Inconnue'}` }, { status: 500 });
+        }
+        
+        return NextResponse.json({ 
+            checkoutId: data.id, 
+            amount: totalAmount
+        });
 
     } catch (err) {
-        console.error('Stripe Checkout error:', err);
+        console.error('Server error:', err);
+        return NextResponse.json({ error: err.message }, { status: 500 });
+    }
+}
 
-        return NextResponse.json(
-        { error: err.message || 'Erreur lors de la création de la session de paiement' },
-        { status: 500 }
-        );
-    }
-    }
+
