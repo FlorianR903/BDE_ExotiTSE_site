@@ -80,7 +80,7 @@ export default function MaintenancePage() {
                 ) : (
                     <div className="mt-12 p-6 bg-white/10 rounded-2xl">
                         <p className="text-2xl font-bold text-emerald-300">
-                            🚀 Le site est en ligne !
+                            🚀 Le site est en maintenance !
                         </p>
                     </div>
                 )}
