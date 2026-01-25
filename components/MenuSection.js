@@ -16,6 +16,13 @@ export default function MenuSection({ items = [] }) {
 
   useEffect(() => {
     const date = new Date();
+    const currentHour = date.getHours();
+
+    // Si on est entre 00h et 02h, on considère que c'est encore le menu de la veille (ex: Lundi soir déborde sur Mardi matin)
+    if (currentHour >= 0 && currentHour < 2) {
+      date.setDate(date.getDate() - 1);
+    }
+
     const options = { weekday: 'long' };
     const formatted = date.toLocaleDateString('fr-FR', options);
     setCurrentDate(formatted.charAt(0).toUpperCase() + formatted.slice(1));
@@ -31,22 +38,41 @@ export default function MenuSection({ items = [] }) {
 
     const fetchMenu = async () => {
       try {
-        setLoading(true);
-        const res = await fetch('/api/menu');
-        if (!res.ok) throw new Error('Erreur serveur');
-        const data = await res.json();
+      setLoading(true);
+      const res = await fetch('/api/menu');
+      if (!res.ok) throw new Error('Erreur serveur');
+      const data = await res.json();
 
-        if (Array.isArray(data) && data.length > 0) {
-          // Filtrage par jour
-          const days = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'];
-          const currentDay = days[new Date().getDay()];
+      if (Array.isArray(data) && data.length > 0) {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const days = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'];
+        
+        let targetDayIndex = -1;
 
-          const filteredData = data.filter((item) => {
-            // Si pas de métadonnée 'Day', on l'affiche tout le temps
-            if (!item.day) return true;
-            // Sinon, on compare avec le jour actuel (minuscule pour être sûr)
-            return item.day.toLowerCase() === currentDay;
-          });
+        // Logique d'affichage :
+        // 1. ENTRE 02h00 ET 20h00 => RIEN NE S'AFFICHE
+        if (currentHour >= 2 && currentHour < 20) {
+         // targetDayIndex reste -1, donc rien ne sera affiché
+        } 
+        // 2. ENTRE 00h00 ET 02h00 => ON AFFICHE LE MENU DE LA VEILLE
+        else if (currentHour >= 0 && currentHour < 2) {
+         // On recule d'un jour. Si on est Dimanche (0), on veut Samedi (6).
+         targetDayIndex = (now.getDay() - 1 + 7) % 7;
+        } 
+        // 3. À PARTIR DE 20h00 JUSQU'À MINUIT => ON AFFICHE LE MENU DU JOUR
+        else {
+         targetDayIndex = now.getDay();
+        }
+
+        const filteredData = targetDayIndex === -1 ? [] : data.filter((item) => {
+        // Si pas de métadonnée 'Day', on l'affiche tout le temps
+        if (!item.day) return true;
+        
+        const targetDayName = days[targetDayIndex];
+        // Sinon, on compare avec le jour calculé
+        return item.day.toLowerCase() === targetDayName;
+        });
 
           setMenu(filteredData);
         } else {
@@ -149,6 +175,14 @@ export default function MenuSection({ items = [] }) {
         <div className="text-center mb-6">
             <p className="text-red-400 text-lg font-semibold">{error}</p>
             <p className="text-white/60 text-sm mt-2">Veuillez réessayer plus tard.</p>
+        </div>
+      )}
+
+      {/* Si le menu est vide (hors horaires d'ouverture ou pas de plat) et qu'il n'y a pas d'erreur */}
+      {!loading && !error && menu.length === 0 && (
+        <div className="text-center py-12 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 max-w-2xl mx-auto">
+          <p className="text-3xl font-bold text-white mb-4">Le menu est disponible à 20H</p>
+          <p className="text-white/60 text-lg">Revenez un peu plus tard pour découvrir nos plats !</p>
         </div>
       )}
 
