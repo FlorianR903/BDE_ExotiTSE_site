@@ -45,7 +45,7 @@ export default function MenuSection({ items = [] }) {
     setCurrentDate(formatted.charAt(0).toUpperCase() + formatted.slice(1));
   }, []);
 
-  // 🔁 récupère les produits Stripe via /api/menu
+  // 🔁 récupère les produit Stripe via /api/menu
   useEffect(() => {
     if (items.length > 0) {
       setMenu(items);
