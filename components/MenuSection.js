@@ -55,7 +55,7 @@ export default function MenuSection({ items = [] }) {
         if (currentHour >= 2 && currentHour < 19) {
          // targetDayIndex reste -1, donc rien ne sera affiché
         } 
-        // 2. ENTRE 00h00 ET 02h00 => ON AFFICHE LE MENU DE LA VEILLE
+        // 2. ENTRE 00h00 ET 01h00 => ON AFFICHE LE MENU DE LA VEILLE
         else if (currentHour >= 0 && currentHour < 1) {
          // On recule d'un jour. Si on est Dimanche (0), on veut Samedi (6).
          targetDayIndex = (now.getDay() - 1 + 7) % 7;
