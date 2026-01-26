@@ -25,6 +25,7 @@ export default function Cart() {
       lastName: '',
       address: '',
       phone: '',
+      email: '',
       note: ''
   });
 
@@ -115,11 +116,12 @@ export default function Cart() {
              throw new Error(data.message || "Erreur lors de l'envoi de la commande.");
           }
 
-          alert("Commande envoyée avec succès ! Vous paierez à la réception.");
+          // alert("Commande envoyée avec succès ! Vous paierez à la réception.");
           if (clearCart) clearCart(); 
           else items.forEach(i => removeItem(i.id)); // Fallback
 
           setShowCashForm(false);
+          // TODO: Maybe redirect to success page or show a nice UI confirmation instead of alert
 
       } catch (err) {
           console.error(err);
@@ -204,6 +206,15 @@ export default function Cart() {
                             value={cashFormData.address} onChange={handleCashFormChange}
                             className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
                             placeholder="123 rue de l'Exotisme..."
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs font-medium mb-1 text-gray-400">Email</label>
+                        <input 
+                            type="email" name="email" required 
+                            value={cashFormData.email} onChange={handleCashFormChange}
+                            className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                            placeholder="exemple@email.com"
                         />
                     </div>
                     <div>
