@@ -32,8 +32,8 @@ export default function MenuSection({ items = [] }) {
   useEffect(() => {
     setMounted(true);
     const date = new Date();
-    // const currentHour = date.getHours();
-    const currentHour = 21; // Pour tester l'affichage du menu en dehors des horaires
+    const currentHour = date.getHours();
+    // const currentHour = 21; // Pour tester l'affichage du menu en dehors des horaires
 
     // Si on est entre 00h et 02h, on considère que c'est encore le menu de la veille (ex: Lundi soir déborde sur Mardi matin)
     if (currentHour >= 0 && currentHour < 2) {
@@ -62,8 +62,8 @@ export default function MenuSection({ items = [] }) {
 
       if (Array.isArray(data) && data.length > 0) {
         const now = new Date();
-        // const currentHour = now.getHours();
-        const currentHour = 21; // Pour tester l'affichage du menu en dehors des horaires
+        const currentHour = now.getHours();
+        // const currentHour = 21; // Pour tester l'affichage du menu en dehors des horaires
         const days = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'];
         
         let targetDayIndex = -1;
