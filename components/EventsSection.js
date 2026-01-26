@@ -44,7 +44,7 @@ export default function EventsSection({ events = [] }) {
                 "Ramène ton meilleur déhanché, appelle ta clique, et viens vibrer AU MAXXXX 🔥! \n" +
                 "On vous prépare quelques surprises tout au long de la nuit... 👀 \n" +
                 "C'est le moment de montrer que t'as appris la chorée de la liste !!!🕺",
-            details: "💥 Au programme :\n RDV au Viv (28 Rue Bourgneuf). Shatta • Afrobeat • Dancehall • Amapiano -- \n Ambiance tropicale garantie ! OBJECTIF BORA BORA toute la soirée !"
+            details: "💥 Au programme :\n RDV à la Cowloc (3 Pl. Jean Jaurès). Shatta • Afrobeat • Dancehall • Amapiano -- \n Ambiance tropicale garantie ! OBJECTIF BORA BORA toute la soirée !"
         },
         {
             id: 3,
