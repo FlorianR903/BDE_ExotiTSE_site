@@ -66,12 +66,15 @@ export default function MenuSection({ items = [] }) {
         }
 
         const filteredData = targetDayIndex === -1 ? [] : data.filter((item) => {
-        // Si pas de métadonnée 'Day', on l'affiche tout le temps
-        if (!item.day) return true;
-        
-        const targetDayName = days[targetDayIndex];
-        // Sinon, on compare avec le jour calculé
-        return item.day.toLowerCase() === targetDayName;
+          // Si pas de métadonnée 'Day', on l'affiche tout le temps
+          if (!item.day) return true;
+          
+          const targetDayName = days[targetDayIndex];
+          
+          // Compatibilité : supporte "lun", "Lundi", "LUN"
+          const itemDayNormalized = item.day.toLowerCase().slice(0, 3);
+          
+          return itemDayNormalized === targetDayName;
         });
 
           setMenu(filteredData);
@@ -181,8 +184,8 @@ export default function MenuSection({ items = [] }) {
       {/* Si le menu est vide (hors horaires d'ouverture ou pas de plat) et qu'il n'y a pas d'erreur */}
       {!loading && !error && menu.length === 0 && (
         <div className="text-center py-12 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 max-w-2xl mx-auto">
-          <p className="text-3xl font-bold text-white mb-4">Le menu est disponible à 20H</p>
-          <p className="text-white/60 text-lg">Revenez un peu plus tard pour découvrir nos plats !</p>
+          <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 20H</p>
+          <p className="text-white/60 text-lg">Revenez un peu plus tard pour commander nos plats !</p>
         </div>
       )}
 
