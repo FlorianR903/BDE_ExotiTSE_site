@@ -9,41 +9,48 @@ import Footer from '../components/Footer';
 const albums = [
     {
         id: 1,
+        title: "BINGO !",
+        date: "26 janvier 2026",
+        cover: "/images/bingo.jpg", // Photo de couverture
+        driveLink: "https://drive.google.com/drive/u/1/folders/1RbuGTk06FhOjM7WWJIkOJgLJRZrCsyYh"
+    },
+    {
+        id: 2,
         title: "Soirée Flashy",
         date: "26 janvier 2026",
         cover: "/images/flashy.jpg", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1VJ0mdDB_pexcV3KzuuN4VZYBzKXBD93c"
     },
     {
-        id: 2,
+        id: 3,
         title: "Soirée Casino",
         date: "27 janvier 2026",
         cover: "/images/casino_soiree.jpg",
         driveLink: "https://drive.google.com/drive/u/1/folders/1kxsGvjxtsiSvUIR-dx6-fEYU7MTT3Q5X"
     },
     {
-        id: 3,
+        id: 4,
         title: "Le fameux Apparthon",
         date: "28 janvier 2026",
         cover: "/images/apparthon.jpg", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1lfPozV3Uey6r1p9j-LEiSuCRlNfc7OGF"
     },
     {
-        id: 4,
+        id: 5,
         title: "Koh-Lanta'waii",
         date: "29 janvier 2026",
         cover: "/images/koh-lant_hawaii.jpg", // Photo de couverture
         driveLink: "https://drive.google.com/drive/u/1/folders/1f9-gpiEb_ko47VZw0fTcKsSJUpA_5a82"
     },
     {
-        id: 5,
+        id: 6,
         title: "Shatta Night",
         date: "30 janvier 2026",
         cover: "/images/shatta_night.png",
         driveLink: "https://drive.google.com/drive/u/1/folders/1GNLBjcBpYiSH8lk_b_6HRB4wLwfY86Cy"
     },
     {
-        id: 6,
+        id: 7,
         title: "Soirée Mystère",
         date: "31 janvier 2026",
         cover: "/images/mystere.png", // Photo de couverture
