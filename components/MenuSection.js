@@ -1,6 +1,7 @@
 // components/MenuSection.js
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useCart } from './CartContext';
 import CheckoutModal from './CheckoutModal';
 
@@ -13,10 +14,26 @@ export default function MenuSection({ items = [] }) {
   const { addItem } = useCart();
   const [toast, setToast] = useState(null);
   const [currentDate, setCurrentDate] = useState('');
+  const [mounted, setMounted] = useState(false);
+
+  // States for payment choice and cash form
+  const [selectedItemForCheckout, setSelectedItemForCheckout] = useState(null);
+  const [showPaymentChoice, setShowPaymentChoice] = useState(false);
+  const [showCashForm, setShowCashForm] = useState(false);
+  const [cashFormData, setCashFormData] = useState({
+      firstName: '',
+      lastName: '',
+      address: '',
+      phone: '',
+      email: '',
+      note: ''
+  });
 
   useEffect(() => {
+    setMounted(true);
     const date = new Date();
     const currentHour = date.getHours();
+    // const currentHour = 21; // Pour tester l'affichage du menu en dehors des horaires
 
     // Si on est entre 00h et 02h, on considère que c'est encore le menu de la veille (ex: Lundi soir déborde sur Mardi matin)
     if (currentHour >= 0 && currentHour < 1) {
@@ -46,6 +63,7 @@ export default function MenuSection({ items = [] }) {
       if (Array.isArray(data) && data.length > 0) {
         const now = new Date();
         const currentHour = now.getHours();
+        // const currentHour = 21; // Pour tester l'affichage du menu en dehors des horaires
         const days = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam'];
         
         let targetDayIndex = -1;
@@ -94,6 +112,11 @@ export default function MenuSection({ items = [] }) {
     fetchMenu();
   }, [items]);
 
+  const renderPortal = (content) => {
+    if (!mounted) return null;
+    return createPortal(content, document.body);
+  };
+
   // ➕ Ajouter au panier
   const handleAddToCart = (item) => {
     addItem(item); 
@@ -101,8 +124,19 @@ export default function MenuSection({ items = [] }) {
     setTimeout(() => setToast(null), 3000);
   };
 
-  // 💳 Commander directement (1 exemplaire) via Stripe Checkout
-  const handleDirectCheckout = async (item) => {
+  // Triggered when clicking "Commander" on an item
+  const handleDirectCheckoutClick = (item) => {
+      setSelectedItemForCheckout(item);
+      setShowPaymentChoice(true);
+      setError(null);
+  };
+
+  // 1. Pay Online (Stripe) for Single Item
+  const handleStripeCheckout = async () => {
+    const item = selectedItemForCheckout;
+    setShowPaymentChoice(false);
+    if (!item) return;
+
     try {
       if (!item.stripePriceId) {
         setToast('Erreur: Produit non disponible à l\'achat (ID manquant)');
@@ -146,6 +180,50 @@ export default function MenuSection({ items = [] }) {
     }
   };
 
+  // 2. Pay on Delivery (CashForm)
+  const handleCashClick = () => {
+      setShowPaymentChoice(false);
+      setShowCashForm(true);
+  };
+
+  const handleCashFormChange = (e) => {
+      setCashFormData({ ...cashFormData, [e.target.name]: e.target.value });
+  };
+
+  // 3. Submit Cash Order
+  const handleCashSubmit = async (e) => {
+      e.preventDefault();
+      // Simple validation or loading state could be added here
+      
+      try {
+          const res = await fetch('/api/sendOrders', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                  itemName: selectedItemForCheckout?.title,
+                  quantity: 1, 
+                  itemPrice: selectedItemForCheckout?.price,
+                  ...cashFormData
+              })
+          });
+
+          if (!res.ok) {
+             const data = await res.json();
+             throw new Error(data.message || "Erreur lors de l'envoi de la commande.");
+          }
+
+          setToast("Commande envoyée avec succès !");
+          setTimeout(() => setToast(null), 3000);
+          setShowCashForm(false);
+          setSelectedItemForCheckout(null);
+
+      } catch (err) {
+          console.error(err);
+          setToast("Erreur: " + err.message);
+          setTimeout(() => setToast(null), 3000);
+      }
+  };
+
   return (
     <motion.section
       className="py-24 px-6 relative overflow-hidden"
@@ -154,6 +232,118 @@ export default function MenuSection({ items = [] }) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
+      {/* Portals for Modals */}
+      {showPaymentChoice && renderPortal(
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999] p-4">
+            <div className="bg-gray-900 border border-white/10 p-6 rounded-xl max-w-sm w-full relative">
+                <button 
+                  onClick={() => setShowPaymentChoice(false)}
+                  className="absolute top-2 right-2 text-gray-400 hover:text-white"
+                >✕</button>
+                <h3 className="text-xl font-bold mb-4 text-center">Moyen de paiement</h3>
+                <div className="flex flex-col gap-3">
+                    <button 
+                        onClick={handleStripeCheckout}
+                        className="bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    >
+                        <span>💳</span> Payer en ligne
+                    </button>
+                    <button 
+                        onClick={handleCashClick}
+                        className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    >
+                        <span>💵</span> Payer à la réception
+                    </button>
+                </div>
+            </div>
+        </div>
+      )}
+
+      {showCashForm && renderPortal(
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999] p-4 overflow-y-auto">
+            <div className="bg-gray-900 border border-white/10 p-6 rounded-xl max-w-md w-full relative my-8">
+                <button 
+                  onClick={() => setShowCashForm(false)}
+                  className="absolute top-2 right-2 text-gray-400 hover:text-white"
+                >✕</button>
+                <h3 className="text-xl font-bold mb-6 text-center text-emerald-400">Paiement à la réception</h3>
+                <h4 className="text-center text-white mb-4">
+                    {selectedItemForCheckout?.title} 
+                    <span className="opacity-70 text-sm ml-2">({selectedItemForCheckout?.price})</span>
+                </h4>
+                <form onSubmit={handleCashSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-xs font-medium mb-1 text-gray-400">Prénom</label>
+                            <input 
+                                type="text" name="firstName" required 
+                                value={cashFormData.firstName} onChange={handleCashFormChange}
+                                className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                                placeholder="Jean"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-medium mb-1 text-gray-400">Nom</label>
+                            <input 
+                                type="text" name="lastName" required 
+                                value={cashFormData.lastName} onChange={handleCashFormChange}
+                                className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                                placeholder="Dupont"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label className="block text-xs font-medium mb-1 text-gray-400">Adresse de livraison</label>
+                        <input 
+                            type="text" name="address" required 
+                            value={cashFormData.address} onChange={handleCashFormChange}
+                            className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                            placeholder="123 rue de l'Exotisme..."
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs font-medium mb-1 text-gray-400">Email</label>
+                        <input 
+                            type="email" name="email" required 
+                            value={cashFormData.email} onChange={handleCashFormChange}
+                            className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                            placeholder="exemple@email.com"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs font-medium mb-1 text-gray-400">Numéro de téléphone</label>
+                        <input 
+                            type="tel" name="phone" required 
+                            value={cashFormData.phone} onChange={handleCashFormChange}
+                            className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                            placeholder="06 12 34 56 78"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs font-medium mb-1 text-gray-400">Note additionnelle (optionnel)</label>
+                        <textarea 
+                            name="note" 
+                            rows="3"
+                            value={cashFormData.note} onChange={handleCashFormChange}
+                            className="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all placeholder-white/20"
+                            placeholder="Code porte, étage, intolérances..."
+                        ></textarea>
+                    </div>
+                    <button 
+                        type="submit" 
+                        disabled={loading}
+                        className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+                    >
+                        {loading ? 'Envoi de la commande...' : 'Confirmer la commande'}
+                    </button>
+                    <p className="text-xs text-center text-gray-500 mt-2">
+                        Vous réglerez votre commande directement à la livraison.
+                    </p>
+                </form>
+            </div>
+        </div>
+      )}
+
       {clientSecret && (
         <CheckoutModal 
           clientSecret={clientSecret} 
@@ -234,7 +424,7 @@ export default function MenuSection({ items = [] }) {
                     ? 'bg-emerald-500/80 hover:bg-emerald-500'
                     : 'bg-gray-500/60 cursor-not-allowed'
                 }`}
-                onClick={() => item.stripePriceId && handleDirectCheckout(item)}
+                onClick={() => item.stripePriceId && handleDirectCheckoutClick(item)}
                 disabled={!item.stripePriceId}
               >
                 Commander
