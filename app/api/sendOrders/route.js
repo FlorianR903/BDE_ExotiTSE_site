@@ -58,18 +58,23 @@ export async function POST(req) {
             return NextResponse.json({ message: "Panier vide ou commande invalide." }, { status: 400 });
         }
 
+        if (!process.env.MAIL_USERNAME || !process.env.MAIL_PASSWORD) {
+            console.error("ERREUR CRITIQUE : Les variables d'environnement MAIL_USERNAME ou MAIL_PASSWORD ne sont pas définies.");
+            return NextResponse.json({ message: "Configuration serveur incomplète (Email)." }, { status: 500 });
+        }
+
         const transporter = nodemailer.createTransport({
             service: "gmail",
-            secure: process.env.MAIL_SECURE === "true",
+            secure: false, // Gmail via nodemailer auto-detect ou starttls
             auth: {
-                user: process.env.MAIL_USER,
+                user: process.env.MAIL_USERNAME,
                 pass: process.env.MAIL_PASSWORD,
             },
         });
 
         const mailOptions = {
-            from: process.env.MAIL_USER,
-            to: process.env.MAIL_DESTINATION, // adresse qui recevra les commandes
+            from: process.env.MAIL_FROM_ADDRESS || process.env.MAIL_USERNAME,
+            to: process.env.MAIL_USERNAME, // On envoie à soi-même
             replyTo: email || undefined,
             subject: subject,
             text: `
@@ -89,12 +94,13 @@ export async function POST(req) {
             `,
         };
 
-        await transporter.sendMail(mailOptions);
+        const info = await transporter.sendMail(mailOptions);
+        console.log("Email envoyé avec succès. ID:", info.messageId);
 
         // --- ENVOI WEBHOOK ---
         // Envoi des infos à l'API externe
         try {
-            const webhookUrl = "https://api.exotitse.fr/webhooks/generic/order"; // URL Cible
+            const webhookUrl = "https://api.exotitse.fr/api/webhooks/generic/order"; // URL Cible corrigée
             
             const webhookPayload = {
                 event: "order.created",
