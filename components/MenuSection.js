@@ -69,16 +69,22 @@ export default function MenuSection({ items = [] }) {
         let targetDayIndex = -1;
 
         // Logique d'affichage :
-        // 1. ENTRE 02h00 ET 20h00 => RIEN NE S'AFFICHE
-        if (currentHour >= 2 && currentHour < 20) {
+        const stopCommand = process.env.NEXT_PUBLIC_STOP_COMMAND === 'true';
+
+        // 1. SI STOP COMMANDE activé => RIEN NE S'AFFICHE
+        if (stopCommand) {
+            // targetDayIndex reste -1
+        }
+        // 2. ENTRE 02h00 ET 20h00 => RIEN NE S'AFFICHE
+        else if (currentHour >= 2 && currentHour < 20) {
          // targetDayIndex reste -1, donc rien ne sera affiché
         } 
-        // 2. ENTRE 00h00 ET 02h00 => ON AFFICHE LE MENU DE LA VEILLE
+        // 3. ENTRE 00h00 ET 02h00 => ON AFFICHE LE MENU DE LA VEILLE
         else if (currentHour >= 0 && currentHour < 2) {
          // On recule d'un jour. Si on est Dimanche (0), on veut Samedi (6).
          targetDayIndex = (now.getDay() - 1 + 7) % 7;
         } 
-        // 3. À PARTIR DE 20h00 JUSQU'À MINUIT => ON AFFICHE LE MENU DU JOUR
+        // 4. À PARTIR DE 20h00 JUSQU'À MINUIT => ON AFFICHE LE MENU DU JOUR
         else {
          targetDayIndex = now.getDay();
         }
@@ -374,8 +380,17 @@ export default function MenuSection({ items = [] }) {
       {/* Si le menu est vide (hors horaires d'ouverture ou pas de plat) et qu'il n'y a pas d'erreur */}
       {!loading && !error && menu.length === 0 && (
         <div className="text-center py-12 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 max-w-2xl mx-auto">
-          <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 20H</p>
-          <p className="text-white/60 text-lg">Revenez un peu plus tard pour commander nos plats !</p>
+          {process.env.NEXT_PUBLIC_STOP_COMMAND === 'true' ? (
+                <>
+                <p className="text-3xl font-bold text-white mb-4">Merci d'avoir commandé chez Exoti'TSE !!</p>
+                <p className="text-white/60 text-lg">Les commandes sont fermées pour aujourd'hui.</p>
+                </>
+          ) : (
+                <>
+                <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 20H</p>
+                <p className="text-white/60 text-lg">Revenez un peu plus tard pour commander nos plats !</p>
+                </>
+          )}
         </div>
       )}
 
