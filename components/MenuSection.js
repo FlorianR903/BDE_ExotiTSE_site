@@ -19,7 +19,7 @@ export default function MenuSection({ items = [] }) {
     const currentHour = date.getHours();
 
     // Si on est entre 00h et 02h, on considère que c'est encore le menu de la veille (ex: Lundi soir déborde sur Mardi matin)
-    if (currentHour >= 0 && currentHour < 2) {
+    if (currentHour >= 0 && currentHour < 1) {
       date.setDate(date.getDate() - 1);
     }
 
@@ -51,16 +51,16 @@ export default function MenuSection({ items = [] }) {
         let targetDayIndex = -1;
 
         // Logique d'affichage :
-        // 1. ENTRE 02h00 ET 20h00 => RIEN NE S'AFFICHE
-        if (currentHour >= 2 && currentHour < 20) {
+        // 1. ENTRE 02h00 ET 19H00 => RIEN NE S'AFFICHE
+        if (currentHour >= 2 && currentHour < 19) {
          // targetDayIndex reste -1, donc rien ne sera affiché
         } 
         // 2. ENTRE 00h00 ET 02h00 => ON AFFICHE LE MENU DE LA VEILLE
-        else if (currentHour >= 0 && currentHour < 2) {
+        else if (currentHour >= 0 && currentHour < 1) {
          // On recule d'un jour. Si on est Dimanche (0), on veut Samedi (6).
          targetDayIndex = (now.getDay() - 1 + 7) % 7;
         } 
-        // 3. À PARTIR DE 20h00 JUSQU'À MINUIT => ON AFFICHE LE MENU DU JOUR
+        // 3. À PARTIR DE 19H00 JUSQU'À MINUIT => ON AFFICHE LE MENU DU JOUR
         else {
          targetDayIndex = now.getDay();
         }
@@ -184,7 +184,7 @@ export default function MenuSection({ items = [] }) {
       {/* Si le menu est vide (hors horaires d'ouverture ou pas de plat) et qu'il n'y a pas d'erreur */}
       {!loading && !error && menu.length === 0 && (
         <div className="text-center py-12 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 max-w-2xl mx-auto">
-          <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 20H</p>
+          <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 19H</p>
           <p className="text-white/60 text-lg">Revenez un peu plus tard pour commander nos plats !</p>
         </div>
       )}
