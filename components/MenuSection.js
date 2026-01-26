@@ -51,15 +51,9 @@ export default function MenuSection({ items = [] }) {
         let targetDayIndex = -1;
 
         // Logique d'affichage :
-        // 1. ENTRE 02h00 ET 19H00 => RIEN NE S'AFFICHE
-        const currentMinute = now.getMinutes();
-
         // 1. ENTRE 02h00 ET 19H30 => RIEN NE S'AFFICHE
-        if (
-          (currentHour >= 2 && currentHour < 19) ||
-          (currentHour === 19 && currentMinute < 30)
-        ) {
-          // targetDayIndex reste -1, donc rien ne sera affiché
+        if (currentHour >= 2 && currentHour < 19) {
+         // targetDayIndex reste -1, donc rien ne sera affiché
         } 
         // 2. ENTRE 00h00 ET 01h00 => ON AFFICHE LE MENU DE LA VEILLE
         else if (currentHour >= 0 && currentHour < 1) {
@@ -190,7 +184,7 @@ export default function MenuSection({ items = [] }) {
       {/* Si le menu est vide (hors horaires d'ouverture ou pas de plat) et qu'il n'y a pas d'erreur */}
       {!loading && !error && menu.length === 0 && (
         <div className="text-center py-12 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 max-w-2xl mx-auto">
-          <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 19H30</p>
+          <p className="text-3xl font-bold text-white mb-4">La commande est disponible à 19H</p>
           <p className="text-white/60 text-lg">Revenez un peu plus tard pour commander nos plats !</p>
         </div>
       )}
