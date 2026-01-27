@@ -102,7 +102,7 @@ export default function MenuSection({ items = [] }) {
     return createPortal(content, document.body);
   };
 
-  // ➕ Ajouter au panier
+  // ➕ Ajout au panier
   const handleAddToCart = (item) => {
     if ((item.quantity || 0) <= 0) return;
     addItem(item); 
