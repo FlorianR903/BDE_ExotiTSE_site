@@ -29,7 +29,7 @@ export default function MenuSection({ items = [] }) {
     setCurrentDate(formatted.charAt(0).toUpperCase() + formatted.slice(1));
   }, []);
 
-  // 🔁 récupère les produit via /api/menu (Proxy vers API externe)
+  // 🔁 récupère les produits via /api/menu (Proxy vers API externe)
   useEffect(() => {
     const fetchMenu = async () => {
       try {
