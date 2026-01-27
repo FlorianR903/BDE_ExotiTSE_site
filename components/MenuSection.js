@@ -58,17 +58,27 @@ export default function MenuSection({ items = [] }) {
             } 
             
             // Filtrer les produits disponibles
-            const filteredData = data.filter((item) => item.available).map(item => ({
-                id: item.id,
-                title: item.name,
-                desc: item.description,
-                img: '/images/logo.png', // Image par défaut car l'API n'en fournit pas
-                price: new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(item.price),
-                priceRaw: item.price,
-                rawAmount: Math.round(item.price * 100), // Correction pour CartContext (cents)
-                quantity: item.quantity,
-                available: item.available
-            }));
+            const filteredData = data.filter((item) => item.available).map(item => {
+                // Logique de mapping d'images
+                let imageUrl = '/images/logo.png';
+                const lowerName = (item.name || '').toLowerCase();
+                
+                if (lowerName.includes('tiramisu')) imageUrl = '/images/tiramisu_cafe.jpeg';
+                else if (lowerName.includes('gratin')) imageUrl = '/images/gratin_dauphinois.jpg';
+                else if (lowerName.includes('muhalabia')) imageUrl = '/images/muhalabia.jpg';
+
+                return {
+                    id: item.id,
+                    title: item.name,
+                    desc: item.description,
+                    img: imageUrl,
+                    price: new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(item.price),
+                    priceRaw: item.price,
+                    rawAmount: Math.round(item.price * 100), // Correction pour CartContext (cents)
+                    quantity: item.quantity,
+                    available: item.available
+                };
+            });
 
             setMenu(filteredData);
         } else {
