@@ -40,10 +40,10 @@ export default function MenuSection({ items = [] }) {
         const data = json.data || [];
 
         if (Array.isArray(data) && data.length > 0) {
-            const now = new Date();
-            const currentHour = now.getHours();
-            // const currentHour = 21; // Décalage horaire temporaire +1h
-            const currentMinute = now.getMinutes();
+          const now = new Date();
+          const currentHour = now.getHours();
+          // const currentHour = 21; // Décalage horaire temporaire +1h
+          const currentMinute = now.getMinutes();
             
             // Logique d'affichage :
             const stopCommand = process.env.NEXT_PUBLIC_STOP_COMMAND === 'true';
@@ -54,7 +54,7 @@ export default function MenuSection({ items = [] }) {
                 return;
             }
             // 2. ENTRE 02h00 ET 19h30 => RIEN NE S'AFFICHE
-            if (currentHour >= 2 && currentHour < 19 || !(currentHour === 19 && currentMinute >= 30)) {
+              if (currentHour >= 2 && (currentHour < 19 || (currentHour === 19 && currentMinute < 30))) {
                  setMenu([]);
                  return;
             } 
