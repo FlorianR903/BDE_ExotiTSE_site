@@ -54,7 +54,7 @@ export default function MenuSection({ items = [] }) {
                 return;
             }
             // 2. ENTRE 02h00 ET 19h30 => RIEN NE S'AFFICHE
-            if (currentHour >= 2 && currentHour < 19 && !(currentHour === 19 && currentMinute >= 30)) {
+            if (currentHour >= 2 && currentHour < 19 || !(currentHour === 19 && currentMinute >= 30)) {
                  setMenu([]);
                  return;
             } 
@@ -154,7 +154,7 @@ export default function MenuSection({ items = [] }) {
                 </>
           ) : (
                 <>
-                <p className='text-3xl font-bold text-white mb-4'>La commande est disponible à 20H</p>
+                <p className='text-3xl font-bold text-white mb-4'>La commande est disponible à 19H30</p>
                 <p className='text-white/60 text-lg'>Revenez un peu plus tard pour commander nos plats !</p>
                 </>
           )}
