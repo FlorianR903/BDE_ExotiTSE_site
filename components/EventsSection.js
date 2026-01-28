@@ -25,7 +25,7 @@ export default function EventsSection({ events = [] }) {
         {
             id: 1,
             title: "Le fameux Apparthon 🍻🏃‍♂️",
-            date: "28 janvier 2026 à partir de 20h",
+            date: "28 janvier 2026 à partir de 21h",
             desc: "Pourquoi rester dans un seul bar quand on peut explorer bien au-délà ? Ce soir, on transforme nos salons en escales festives 🎉 ! L'Apparthon, c'est le marathon ultime où la ligne d'arrivée n'est qu'un prétexte pour faire la fête !",
             details: "💥 Au programme :" + "\n Prenez part à 6 soirées dans Sainté ! " + "Dans chaque lieu : 1 cocktail - 1 activité - 1 nouvelle ambiance 🔥 ! " + " N'oubliez pas de récupérer votre carte de passage au 1er appart ! " + "🚨 1 réduction de -50% est offerte aux personnes ayant traversé TOUS les apparts !"
         },
