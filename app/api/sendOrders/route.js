@@ -1,28 +1,84 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
+/**
+ * API /api/sendOrders - Traite les commandes avec support flexible du format adresse
+ * 
+ * FORMATS ACCEPTÉS:
+ * 
+ * 1. Format imbriqué (Cart - ACTUEL):
+ *    POST /api/sendOrders
+ *    {
+ *      "customer": {
+ *        "fullName": "Jean Dupont",
+ *        "firstName": "Jean",
+ *        "lastName": "Dupont",
+ *        "email": "jean@example.com",
+ *        "phone": "0612345678",
+ *        "address": "123 rue de la Paix",
+ *        "city": "Saint-Etienne",
+ *        "note": "Digicode 4567"
+ *      },
+ *      "items": [
+ *        { "id": "prod_123", "name": "Ticket", "quantity": 2, "price": 2500 }
+ *      ],
+ *      "totalAmount": 5000,
+ *      "notes": "Digicode 4567"
+ *    }
+ * 
+ * 2. Format plat (Legacy - COMPATIBLE):
+ *    POST /api/sendOrders
+ *    {
+ *      "firstName": "Jean",
+ *      "lastName": "Dupont",
+ *      "email": "jean@example.com",
+ *      "phone": "0612345678",
+ *      "address": "123 rue de la Paix",
+ *      "city": "Saint-Etienne",
+ *      "itemName": "Ticket",
+ *      "quantity": 2,
+ *      "totalAmount": 5000
+ *    }
+ * 
+ * RÉCUPÉRATION DE LA VILLE:
+ * - Le serveur cherche d'abord "city" dans body.customer (structure imbriquée)
+ * - Sinon, cherche "city" au premier niveau du body (format plat)
+ * - Valide: city est REQUIS et limité à 100 caractères
+ * - Utilisée dans: Email client, Webhook externe
+ * 
+ * VALIDATION:
+ * - ✓ Nom requis (max 100 chars)
+ * - ✓ Adresse requise (max 500 chars)
+ * - ✓ Ville REQUISE (max 100 chars) - NOUVEAU
+ * - ✓ Téléphone requis
+ * - ✓ Email + Panier OU ItemName + Quantity
+ */
+
 export async function POST(req) {
 
     try {
         const body = await req.json();
         
-        // Champs unifiés et champs historiques
+        // Adaptation: accepte structure imbriquée { customer: {...} } ou flat { firstName, ... }
+        const customer = body.customer || {};
+        
         let { 
-            firstName, 
-            lastName, 
-            address, 
-            phone, 
-            note,
-            email, 
+            firstName = customer.firstName || '', 
+            lastName = customer.lastName || '', 
+            address = customer.address || '',
+            city = customer.city || '',
+            phone = customer.phone || '', 
+            note = customer.note || '',
+            email = customer.email || '', 
             itemName, 
             quantity, 
-            fullName,
-            items,
-            totalAmount
+            fullName = customer.fullName || '',
+            items = body.items,
+            totalAmount = body.totalAmount
         } = body;
 
         // Consolidate name
-        let finalName = fullName || `${firstName || ''} ${lastName || ''}`.trim();
+        let finalName = fullName || `${firstName} ${lastName}`.trim();
 
         // Validation
         if (!finalName || finalName.length > 100) {
@@ -30,6 +86,9 @@ export async function POST(req) {
         }
         if (!address || address.length > 500) {
              return NextResponse.json({ message: "Adresse trop longue." }, { status: 400 });
+        }
+        if (!city || city.length > 100) {
+             return NextResponse.json({ message: "Ville requise ou trop longue." }, { status: 400 });
         }
         if (!phone) {
              return NextResponse.json({ message: "Numéro de téléphone requis." }, { status: 400 });
@@ -85,6 +144,7 @@ export async function POST(req) {
             Email : ${email || "Non renseigné"}
             Téléphone : ${phone}
             Adresse de livraison : ${address}
+            Ville : ${city}
             
             Note additionnelle : 
             ${note || "Aucune"}
@@ -113,6 +173,7 @@ export async function POST(req) {
                     email: email || null,
                     phone: phone,
                     address: address,
+                    city: city,
                     note: note || ""
                 },
                 order: {

@@ -42,6 +42,8 @@ export default function MenuSection({ items = [] }) {
         if (Array.isArray(data) && data.length > 0) {
             const now = new Date();
             const currentHour = now.getHours();
+            // const currentHour = 21; // Décalage horaire temporaire +1h
+            const currentMinute = now.getMinutes();
             
             // Logique d'affichage :
             const stopCommand = process.env.NEXT_PUBLIC_STOP_COMMAND === 'true';
@@ -51,8 +53,8 @@ export default function MenuSection({ items = [] }) {
                 setMenu([]);
                 return;
             }
-            // 2. ENTRE 02h00 ET 20h00 => RIEN NE S'AFFICHE
-            if (currentHour >= 2 && currentHour < 19) {
+            // 2. ENTRE 02h00 ET 19h30 => RIEN NE S'AFFICHE
+            if (currentHour >= 2 && currentHour < 19 && !(currentHour === 19 && currentMinute >= 30)) {
                  setMenu([]);
                  return;
             } 
@@ -66,6 +68,10 @@ export default function MenuSection({ items = [] }) {
                 if (lowerName.includes('tiramisu')) imageUrl = '/images/tiramisu_cafe.jpeg';
                 else if (lowerName.includes('gratin')) imageUrl = '/images/gratin_dauphinois.jpg';
                 else if (lowerName.includes('muhalabia')) imageUrl = '/images/muhalabia.jpg';
+                else if (lowerName.includes('burgwer')) imageUrl = '/images/burgwer.jpg';
+                else if (lowerName.includes('kontourné')) imageUrl = '/images/riz_cantonnais.jpg';
+                else if (lowerName.includes('chocolat')) imageUrl = '/images/gateau_choco.jpg';
+
 
                 return {
                     id: item.id,

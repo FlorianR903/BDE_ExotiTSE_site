@@ -20,6 +20,7 @@ export default function Cart() {
       firstName: '',
       lastName: '',
       address: '',
+      city: '',
       phone: '',
       email: '',
       note: ''
@@ -55,7 +56,8 @@ export default function Cart() {
                   fullName: (formData.firstName + ' ' + formData.lastName).trim(),
                   email: formData.email,
                   phone: formData.phone,
-                  address: formData.address
+                  address: formData.address,
+                  city: formData.city
               },
               items: items.map(item => ({
                   id: item.id,
@@ -120,7 +122,11 @@ export default function Cart() {
                     </div>
                      <div>
                         <label className='block text-xs font-medium mb-1 text-gray-400'>Adresse de livraison *</label>
-                        <input type='text' name='address' required value={formData.address} onChange={handleFormChange} className='w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-emerald-500 transition-all placeholder-white/20' placeholder='123 rue...' />
+                        <input type='text' name='address' required value={formData.address} onChange={handleFormChange} className='w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-emerald-500 transition-all placeholder-white/20' placeholder="ne pas mettre le nom de l'event mais l'adresse" />
+                    </div>
+                    <div>
+                        <label className='block text-xs font-medium mb-1 text-gray-400'>Ville *</label>
+                        <input type='text' name='city' required value={formData.city} onChange={handleFormChange} className='w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-white outline-none focus:border-emerald-500 transition-all placeholder-white/20' placeholder='Saint-Etienne' />
                     </div>
                     <div>
                         <label className='block text-xs font-medium mb-1 text-gray-400'>Email *</label>
