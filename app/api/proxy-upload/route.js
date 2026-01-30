@@ -1,5 +1,39 @@
 import { NextResponse } from 'next/server';
 
+async function handleUpload(e) {
+    const files = e.target.files;
+    if (!files.length) return;
+
+    const formData = new FormData();
+    formData.append("eventName", "Soirée Casino");
+
+    for (const file of files) {
+        formData.append("file", file);
+    }
+
+    try {
+        const res = await fetch(
+            "https://script.google.com/macros/s/TON_ID/exec",
+            {
+                method: "POST",
+                body: formData,
+            }
+        );
+
+        const data = await res.json();
+
+        if (!data.success) throw new Error(data.error);
+
+        alert("Upload réussi !");
+        console.log("Drive:", data.folderUrl);
+
+    } catch (err) {
+        console.error(err);
+        alert("Erreur lors de l'envoi");
+    }
+}
+
+/*
 export async function POST(req) {
     // ⚠️ TODO: Déplacez cette URL dans votre fichier .env (GOOGLE_SCRIPT_URL)
     const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/AKfycbweIC5VBTWR5eN7dtshdpYt-XIUsUMiv03NZyquXnH1Am1JF-GhdYEoq2IKP21sWz80/exec";
@@ -30,3 +64,4 @@ export async function POST(req) {
         return NextResponse.json({ error: "Erreur lors de l'envoi au script." }, { status: 500 });
     }
 }
+*/
