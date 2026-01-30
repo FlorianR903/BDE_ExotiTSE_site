@@ -73,6 +73,8 @@ export default function MenuSection({ items = [] }) {
                 else if (lowerName.includes('chocolat')) imageUrl = '/images/gateau_choco.jpg';
                 else if (lowerName.includes('pomme')) imageUrl = '/images/tarte_pommes.jpg';
                 else if (lowerName.includes('mine')) imageUrl = '/images/saute_de_mines.jpg';
+                else if (lowerName.includes('hausse')) imageUrl = '/images/bol_renversé.jpg';
+                else if (lowerName.includes('fruit')) imageUrl = '/images/salade_de_fruits.jpg';
 
 
                 return {
