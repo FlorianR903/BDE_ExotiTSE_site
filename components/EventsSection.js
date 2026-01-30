@@ -3,7 +3,7 @@ import { useState } from "react"; // 1. On importe useState
 import { motion, AnimatePresence } from "framer-motion"; // 2. On importe AnimatePresence
 
 export default function EventsSection({ events = [] }) {
-    // État pour stocker l'événement sélectionné (null = aucun événement ouvert)
+    // État pour stocke l'événement sélectionné (null = aucun événement ouvert)
     const [selectedEvent, setSelectedEvent] = useState(null);
 
     const defaultEvents = [
