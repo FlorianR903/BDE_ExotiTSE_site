@@ -5,13 +5,12 @@ import Head from 'next/head';
 
 export default function UploadPhotoPage() {
     const events = [
-        { id: 1, title: "BINGO ! 🎁", date: "2026-01-26" },
-        { id: 2, title: "🌈🔥 Soirée Flashy 🔥🌈️", date: "2026-01-27" },
-        { id: 3, title: "♠️♥️ Soirée Casino ♦️♣️", date: "2026-01-28" },
-        { id: 4, title: "Le fameux Apparthon 🍻", date: "2026-01-29" },
-        { id: 5, title: "Koh-Lanta'waii 🧭", date: "2026-01-29" },
-        { id: 6, title: "🔥 Shatta Night 🔥", date: "2026-01-31" },
-        { id: 7, title: "❓ Soirée Mystère ❓", date: "2026-02-01" }
+        { id: 1, title: "🌈🔥 Soirée Flashy 🔥🌈️", date: "2026-01-27" },
+        { id: 2, title: "♠️♥️ Soirée Casino ♦️♣️", date: "2026-01-28" },
+        { id: 3, title: "Le fameux Apparthon 🍻", date: "2026-01-29" },
+        { id: 4, title: "Koh-Lanta'waii 🧭", date: "2026-01-29" },
+        { id: 5, title: "🔥 Shatta Night 🔥", date: "2026-01-31" },
+        { id: 6, title: "❓ Soirée Mystère ❓", date: "2026-02-01" }
     ];
 
     // Filtrer uniquement les événements passés
